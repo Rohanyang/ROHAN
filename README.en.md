@@ -1,5 +1,5 @@
 # ROHAN Digital
-
+![ROHAN Digital Cover](ROHAN-BACKGROUND.png)
 ## AI-Powered Digital Growth for Manufacturing SMEs
 
 ROHAN Digital helps Chinese manufacturing SMEs turn AI into practical business tools, export marketing systems, and digital assets.
