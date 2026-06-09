@@ -1,0 +1,1952 @@
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cases | ROHAN Industrial B2B Digital Architect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: "#0B1324",
+              surface: "#2D3E5F",
+              surfaceLight: "#1A2642",
+              accent: "#176BFF",
+              steel: "#4B5563",
+              cool: "#F5F7FA",
+              darker: "#070C1A",
+            },
+            fontFamily: {
+              heading: ['"Exo 2"', "sans-serif"],
+              body: ["Raleway", "sans-serif"],
+              tech: ["Orbitron", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0b1324;
+        color: #f5f7fa;
+        font-family: "Raleway", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .site-logo {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .bg-blueprint {
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          );
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+      }
+      .bg-diagonal {
+        background-image: linear-gradient(
+          -45deg,
+          transparent 48%,
+          rgba(23, 107, 255, 0.05) 50%,
+          transparent 52%
+        );
+        background-size: 30px 30px;
+      }
+      .glass-panel {
+        background: rgba(45, 62, 95, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(23, 107, 255, 0.15);
+      }
+      .clip-text {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      .reveal-line {
+        display: inline-block;
+        transform: translateY(110%);
+        will-change: transform;
+      }
+      .bento-card {
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgba(45, 62, 95, 0.4) 0%,
+          rgba(11, 19, 36, 0.6) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        overflow: hidden;
+        transition:
+          border-color 0.4s,
+          transform 0.4s;
+      }
+      .bento-card:hover {
+        border-color: rgba(23, 107, 255, 0.4);
+      }
+      .bento-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          600px circle at var(--mouse-x) var(--mouse-y),
+          rgba(23, 107, 255, 0.1),
+          transparent 40%
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .bento-card:hover::before {
+        opacity: 1;
+      }
+
+      .btn-accent {
+        position: relative;
+        background: #176bff;
+        color: #f5f7fa;
+        border: 1px solid #176bff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .btn-accent:hover {
+        background: transparent;
+        color: #176bff;
+        box-shadow: 0 0 20px rgba(23, 107, 255, 0.3);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(23, 107, 255, 0.4);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+      }
+      .btn-outline:hover {
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.1);
+      }
+
+      .hero-3d-scene {
+        perspective: 1500px;
+        transform-style: preserve-3d;
+      }
+      .hero-3d-group {
+        transform: translateX(200px) translateY(-50px) scale(1.4) rotateX(15deg)
+          rotateY(-20deg) rotateZ(5deg);
+        transform-style: preserve-3d;
+        position: relative;
+      }
+      .card-3d {
+        position: absolute;
+        width: 380px;
+        background: rgba(45, 62, 95, 0.85);
+        border: 1px solid rgba(23, 107, 255, 0.2);
+        backdrop-filter: blur(8px);
+        border-radius: 4px;
+        box-shadow:
+          -20px 20px 40px rgba(11, 19, 36, 0.9),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      }
+
+      .tech-input {
+        background: rgba(45, 62, 95, 0.2);
+        border: 1px solid rgba(75, 85, 99, 0.4);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+      }
+      .tech-input:focus {
+        outline: none;
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.05);
+        box-shadow: 0 0 15px rgba(23, 107, 255, 0.1);
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b1324;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #176bff;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-accent selection:text-white">
+    <div class="bg-blueprint"></div>
+    <div
+      class="fixed top-[-50%] right-[-10%] w-[120%] h-[150%] bg-surface/5 transform skew-x-12 pointer-events-none z-[-1]"
+    ></div>
+
+    <!-- Header -->
+    <header
+      class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="flex items-center hover:opacity-80 transition-opacity duration-300 z-50"
+        >
+          <img
+            src="./rohan-logo-top.png"
+            alt="ROHAN logo"
+            class="site-logo h-11 md:h-14 w-auto"
+          />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center gap-8 font-tech text-xs tracking-widest text-cool/80"
+        >
+          <a href="index.html" class="hover:text-accent transition-colors"
+            >Home</a
+          >
+          <a href="solutions.html" class="hover:text-accent transition-colors"
+            >Solutions</a
+          >
+          <!-- Cases 保持高亮 -->
+          <a href="cases.html" class="text-accent font-bold transition-colors"
+            >Cases</a
+          >
+          <a href="pricing.html" class="hover:text-accent transition-colors"
+            >Pricing</a
+          >
+          <a href="insights.html" class="hover:text-accent transition-colors"
+            >Insights</a
+          >
+          <a href="contact.html" class="hover:text-accent transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="contact.html"
+            class="text-xs font-tech tracking-wider border border-accent/40 px-5 py-2.5 hover:border-accent hover:bg-accent/10 transition-colors duration-300 backdrop-blur-md rounded-sm hidden md:block"
+          >
+            LET'S TALK
+          </a>
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-cool p-2 hover:text-accent transition-colors z-50"
+          >
+            <i class="ph-bold ph-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Panel -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-base/98 backdrop-blur-xl z-40 hidden flex-col pt-28 px-8 items-center border-t border-accent/20"
+      >
+        <nav
+          class="flex flex-col gap-8 text-center font-tech text-sm tracking-[0.2em] w-full"
+        >
+          <a
+            href="index.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >HOME</a
+          >
+          <a
+            href="solutions.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >SOLUTIONS</a
+          >
+          <a
+            href="cases.html"
+            class="mobile-link text-accent pb-4 border-b border-steel/20 block"
+            >CASES</a
+          >
+          <a
+            href="pricing.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >PRICING</a
+          >
+          <a
+            href="insights.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >INSIGHTS</a
+          >
+          <a
+            href="contact.html"
+            class="mobile-link text-cool hover:text-accent pb-4 block"
+            >LET'S TALK</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section
+      class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/5 blur-[120px] rounded-full pointer-events-none"
+      ></div>
+
+      <div
+        class="max-w-[1400px] mx-auto px-6 w-full flex flex-col lg:flex-row items-center relative z-10"
+      >
+        <!-- Left: Typography -->
+        <div class="lg:w-[55%] z-20">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-6 hero-element opacity-0 translate-y-4 flex items-center gap-2"
+          >
+            <i class="ph-fill ph-circles-three-plus"></i> Transformation Hub
+          </div>
+
+          <h1
+            class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] mb-6 uppercase"
+          >
+            <div class="clip-text">
+              <span class="reveal-line text-steel"
+                >From Static Materials To</span
+              >
+            </div>
+            <div class="clip-text">
+              <span class="reveal-line text-accent">Conversion-Ready</span>
+            </div>
+            <div class="clip-text">
+              <span class="reveal-line text-cool">Digital Assets.</span>
+            </div>
+          </h1>
+
+          <h2
+            class="font-heading text-xl md:text-2xl text-cool font-semibold mb-6 hero-element opacity-0 translate-y-4"
+          >
+            把传统官网、画册和零散素材，重构成可展示、可搜索、可转化的外贸数字资产。
+          </h2>
+
+          <p
+            class="text-cool/80 text-[15px] md:text-lg font-light max-w-lg mb-10 leading-relaxed clip-text font-body"
+          >
+            Selected demo cases and transformation frameworks for manufacturing
+            companies that need stronger overseas visibility, trust-building,
+            and sales enablement.<br /><br />
+            以下案例以制造业真实外贸痛点为基础，展示如何从旧资料、旧页面和零散内容中提炼专业表达，重建海外客户第一眼信任。
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 hero-element opacity-0 translate-y-4 font-tech text-xs md:text-sm"
+          >
+            <a
+              href="#case-overview"
+              class="btn-accent px-8 py-4 font-semibold flex items-center justify-center gap-2 rounded-sm"
+            >
+              VIEW CASE STUDIES <i class="ph-bold ph-arrow-down"></i>
+            </a>
+            <a
+              href="pricing.html"
+              class="btn-outline px-8 py-4 font-medium flex items-center justify-center gap-2 rounded-sm"
+            >
+              START WITH ¥999 SAMPLE
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: 3D UI Console -->
+        <div class="hidden lg:block w-[45%] mt-12 lg:mt-0">
+          <div class="hero-3d-scene w-full h-full">
+            <div class="hero-3d-group w-full h-full">
+              <!-- Console Back Panel -->
+              <div
+                class="card-3d p-6 border-accent/40 shadow-[0_0_50px_rgba(23,107,255,0.15)]"
+                style="transform: translateZ(100px)"
+              >
+                <div
+                  class="flex justify-between items-center border-b border-accent/40 pb-3 mb-4"
+                >
+                  <span
+                    class="font-tech text-xs text-accent tracking-widest flex items-center gap-2"
+                  >
+                    <i class="ph-bold ph-terminal-window"></i>
+                    CASE_TRANSFORMATION.exe
+                  </span>
+                  <div class="flex gap-1.5">
+                    <div class="w-2 h-2 rounded-full bg-steel/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-steel/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-accent/80"></div>
+                  </div>
+                </div>
+
+                <div
+                  class="font-tech text-[11px] text-cool/80 leading-loose opacity-90 mt-2 space-y-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Importing old
+                    brochure...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Extracting manufacturing
+                    capabilities...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Rebuilding website
+                    structure...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Generating content
+                    matrix...
+                  </div>
+                  <div
+                    class="text-accent mt-4 bg-accent/10 border border-accent/30 p-2 inline-block shadow-[inset_0_0_10px_rgba(23,107,255,0.1)]"
+                  >
+                    <span class="animate-pulse">_</span> Trust asset ready.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. CASE OVERVIEW -->
+    <section
+      id="case-overview"
+      class="py-24 bg-surfaceLight border-y border-white/5 bg-diagonal relative scroll-mt-20"
+    >
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="mb-16 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+          >
+            Project Index
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4 text-cool"
+          >
+            Three Transformation <span class="text-steel">Paths.</span>
+          </h2>
+          <p class="text-cool/80 text-[15px] max-w-2xl leading-relaxed">
+            制造业数字化出海通常不是缺“素材”，而是缺少把素材转化为清晰商业表达的架构。以下为您展示三种典型转化路径。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bento-grid-wrapper">
+          <!-- Card 1 -->
+          <a
+            href="#website-revamp"
+            class="block bento-card p-8 group gs-fade-up cursor-pointer hover:-translate-y-1"
+          >
+            <div
+              class="w-full h-32 mb-6 border border-steel/30 bg-base relative overflow-hidden flex items-center justify-center"
+            >
+              <div class="absolute inset-0 bg-blueprint opacity-30"></div>
+              <div class="flex items-center w-full px-4 gap-4 z-10">
+                <div
+                  class="w-1/2 h-20 border border-steel/20 bg-surface/30 p-2 flex flex-col gap-1 opacity-50"
+                >
+                  <div class="w-full h-4 bg-steel/30"></div>
+                  <div class="w-2/3 h-2 bg-steel/20"></div>
+                  <div class="w-3/4 h-2 bg-steel/20"></div>
+                </div>
+                <i
+                  class="ph-bold ph-arrow-right text-accent group-hover:translate-x-1 transition-transform"
+                ></i>
+                <div
+                  class="w-1/2 h-20 border border-accent/40 bg-accent/5 p-2 flex flex-col gap-1 shadow-[0_0_15px_rgba(23,107,255,0.1)]"
+                >
+                  <div
+                    class="w-full h-6 bg-accent/30 border-b border-accent/50"
+                  ></div>
+                  <div class="w-1/2 h-2 bg-accent/40 mt-1"></div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 text-[10px] font-tech text-steel group-hover:text-accent transition-colors tracking-widest mb-2"
+            >
+              <i class="ph-fill ph-layout"></i> CASE 01
+            </div>
+            <h3
+              class="font-heading text-xl font-bold text-cool mb-2 uppercase tracking-wide"
+            >
+              Website Revamp Demo
+            </h3>
+            <h4 class="font-heading text-[13px] text-accent mb-3 font-semibold">
+              传统制造业官网重构样板
+            </h4>
+            <p class="text-cool/70 text-sm leading-relaxed">
+              从陈旧展示站升级为高信任、响应式、SEO/GEO友好的工业数字门面。
+            </p>
+          </a>
+
+          <!-- Card 2 -->
+          <a
+            href="#linkedin-content-system"
+            class="block bento-card p-8 group gs-fade-up cursor-pointer hover:-translate-y-1"
+            style="transition-delay: 0.1s"
+          >
+            <div
+              class="w-full h-32 mb-6 border border-steel/30 bg-base relative overflow-hidden flex items-center justify-center p-4"
+            >
+              <div
+                class="grid grid-cols-3 grid-rows-2 gap-2 w-full h-full z-10"
+              >
+                <div class="border border-steel/20 bg-surface/30"></div>
+                <div
+                  class="border border-accent/40 bg-accent/10 row-span-2 col-span-2 relative flex items-end p-2 shadow-[0_0_15px_rgba(23,107,255,0.1)]"
+                >
+                  <i
+                    class="ph-fill ph-linkedin-logo text-accent/50 absolute top-2 right-2 text-xl"
+                  ></i>
+                  <div class="w-2/3 h-1 bg-accent/60"></div>
+                </div>
+                <div class="border border-steel/20 bg-surface/30"></div>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 text-[10px] font-tech text-steel group-hover:text-accent transition-colors tracking-widest mb-2"
+            >
+              <i class="ph-fill ph-share-network"></i> CASE 02
+            </div>
+            <h3
+              class="font-heading text-xl font-bold text-cool mb-2 uppercase tracking-wide"
+            >
+              LinkedIn Content System
+            </h3>
+            <h4 class="font-heading text-[13px] text-accent mb-3 font-semibold">
+              工业社媒内容资产矩阵
+            </h4>
+            <p class="text-cool/70 text-sm leading-relaxed">
+              把设备、工艺、品质和项目流程转化为连续输出的 LinkedIn / Medium
+              内容资产。
+            </p>
+          </a>
+
+          <!-- Card 3 -->
+          <a
+            href="#ai-workflow"
+            class="block bento-card p-8 group gs-fade-up cursor-pointer hover:-translate-y-1"
+            style="transition-delay: 0.2s"
+          >
+            <div
+              class="w-full h-32 mb-6 border border-steel/30 bg-base relative overflow-hidden flex items-center justify-center p-4"
+            >
+              <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(23,107,255,0.1)_0%,_transparent_70%)]"
+              ></div>
+              <div class="flex items-center gap-3 w-full justify-center z-10">
+                <div
+                  class="w-8 h-8 rounded border border-steel/40 bg-surface/50 flex items-center justify-center text-steel"
+                >
+                  <i class="ph-bold ph-files"></i>
+                </div>
+                <div
+                  class="h-px w-6 bg-accent/50 border-t border-dashed border-accent"
+                ></div>
+                <div
+                  class="w-10 h-10 rounded border border-accent/60 bg-accent/10 flex items-center justify-center text-accent shadow-[0_0_15px_rgba(23,107,255,0.2)]"
+                >
+                  <i class="ph-bold ph-robot"></i>
+                </div>
+                <div
+                  class="h-px w-6 bg-accent/50 border-t border-dashed border-accent"
+                ></div>
+                <div
+                  class="w-8 h-8 rounded border border-steel/40 bg-surface/50 flex items-center justify-center text-steel"
+                >
+                  <i class="ph-bold ph-check"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 text-[10px] font-tech text-steel group-hover:text-accent transition-colors tracking-widest mb-2"
+            >
+              <i class="ph-fill ph-cpu"></i> CASE 03
+            </div>
+            <h3
+              class="font-heading text-xl font-bold text-cool mb-2 uppercase tracking-wide"
+            >
+              AI Workflow for Mfg Team
+            </h3>
+            <h4 class="font-heading text-[13px] text-accent mb-3 font-semibold">
+              制造业团队 AI 效率工作流
+            </h4>
+            <p class="text-cool/70 text-sm leading-relaxed">
+              把技术翻译、开发信、PPT、社媒文案和资料整理变成可复用的 AI
+              工作流程。
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CASE 01: Website Revamp Demo -->
+    <section id="website-revamp" class="py-24 bg-base relative scroll-mt-20">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-12 gs-fade-up">
+          <div class="font-tech text-xs text-steel tracking-widest mb-2">
+            CASE 01
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4 text-cool"
+          >
+            Website Revamp <span class="text-accent">Demo</span>
+          </h2>
+          <h3 class="font-heading text-lg text-steel font-semibold mb-6">
+            传统制造业官网重构样板
+          </h3>
+          <div
+            class="inline-block border border-accent/30 bg-accent/10 px-6 py-3 text-sm text-cool/90"
+          >
+            把“像内部资料库一样的老官网”，重构为海外采购商能快速理解、愿意继续联系的专业数字门面。
+          </div>
+        </div>
+
+        <!-- Big Visual Before/After -->
+        <div
+          class="w-full bg-[#070C1A] border border-steel/30 rounded-sm mb-16 p-4 md:p-8 gs-fade-up relative overflow-hidden"
+        >
+          <div
+            class="font-tech text-[10px] text-steel mb-6 tracking-widest text-center"
+          >
+            ARCHITECTURE_RECONSTRUCTION.ui
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <!-- Before -->
+            <div
+              class="flex-1 w-full border border-steel/20 bg-surface/20 p-6 opacity-60"
+            >
+              <div class="text-xs font-tech text-steel mb-4">
+                BEFORE: Storage Folder
+              </div>
+              <div class="space-y-3">
+                <div class="w-full h-8 bg-steel/20"></div>
+                <div class="flex gap-3">
+                  <div class="w-1/3 h-20 bg-steel/20"></div>
+                  <div class="w-1/3 h-20 bg-steel/20"></div>
+                  <div class="w-1/3 h-20 bg-steel/20"></div>
+                </div>
+                <div class="w-3/4 h-3 bg-steel/20"></div>
+                <div class="w-1/2 h-3 bg-steel/20"></div>
+              </div>
+            </div>
+
+            <!-- Connection -->
+            <div class="flex flex-col items-center justify-center shrink-0">
+              <i
+                class="ph-light ph-arrow-right text-3xl text-accent hidden md:block"
+              ></i>
+              <i
+                class="ph-light ph-arrow-down text-3xl text-accent md:hidden"
+              ></i>
+            </div>
+
+            <!-- After -->
+            <div
+              class="flex-1 w-full border border-accent/40 bg-accent/5 p-6 shadow-[0_0_30px_rgba(23,107,255,0.1)] relative"
+            >
+              <div class="absolute inset-0 bg-blueprint opacity-20"></div>
+              <div class="relative z-10">
+                <div class="text-xs font-tech text-accent mb-4">
+                  AFTER: Sales Engineer
+                </div>
+                <div class="space-y-3">
+                  <div
+                    class="w-full h-12 bg-accent/20 border-l-2 border-accent flex items-center px-3"
+                  >
+                    <div class="w-1/3 h-2 bg-accent/40"></div>
+                  </div>
+                  <div class="flex gap-3">
+                    <div
+                      class="w-1/2 h-16 border border-accent/30 bg-surface/40 flex flex-col justify-center p-2"
+                    >
+                      <div class="w-1/2 h-2 bg-accent/50 mb-2"></div>
+                      <div class="w-3/4 h-1 bg-cool/30"></div>
+                    </div>
+                    <div
+                      class="w-1/2 h-16 border border-accent/30 bg-surface/40 flex flex-col justify-center p-2"
+                    >
+                      <div class="w-1/2 h-2 bg-accent/50 mb-2"></div>
+                      <div class="w-3/4 h-1 bg-cool/30"></div>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-8 bg-accent/80 mt-4 flex items-center justify-center text-[8px] font-tech text-base tracking-widest"
+                  >
+                    CLEAR INQUIRY PATH
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Takeaway -->
+          <div class="mt-12 text-center border-t border-steel/20 pt-8">
+            <p class="font-tech text-sm text-cool/90 italic tracking-wide mb-2">
+              "A manufacturing website should not behave like a storage folder.
+              It should behave like a trust-building sales engineer."
+            </p>
+            <p class="text-cool/60 text-xs">
+              制造业官网不应该像资料仓库，而应该像一个能建立信任的海外销售工程师。
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gs-fade-up">
+          <div class="bg-[#070C1A] border border-steel/20 p-8">
+            <h4
+              class="font-tech text-[11px] text-steel uppercase tracking-widest mb-6 border-b border-steel/20 pb-2"
+            >
+              A. Starting Point
+            </h4>
+            <ul class="space-y-4 text-[14px] text-cool/70 leading-relaxed">
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                首页像内部公司介绍，缺少销售逻辑
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                产品分类混乱，客户不知道主营能力
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                设备、工艺、质检能力没有视觉冲击
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                英文表达像机翻，缺少海外工程采购语境
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                页面没有清晰 CTA，客户不知道下一步该做什么
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#1A2642] border border-accent/40 p-8 shadow-[0_0_20px_rgba(23,107,255,0.05)]"
+          >
+            <h4
+              class="font-tech text-[11px] text-accent uppercase tracking-widest mb-6 border-b border-accent/20 pb-2"
+            >
+              B. Transformation
+            </h4>
+            <ul
+              class="space-y-4 text-[14px] text-cool/90 leading-relaxed font-medium"
+            >
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                重新定义首页信息优先级
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                将产品能力拆成清晰分类
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                将设备、工艺、案例做成视觉模块
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                重写符合工程语境的英文价值表达
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                加入明确询盘路径、FAQ与SEO结构
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-surface/30 border border-steel/30 p-8">
+            <h4
+              class="font-tech text-[11px] text-cool/80 uppercase tracking-widest mb-6 border-b border-steel/30 pb-2"
+            >
+              C. Output
+            </h4>
+            <ul
+              class="space-y-4 text-[13px] text-cool/80 font-tech tracking-wider"
+            >
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Homepage
+                structure
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Product page
+                framework
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Case section
+                layout
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Inquiry CTA
+                path
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Bilingual
+                copy direction
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> SEO metadata
+                direction
+              </li>
+            </ul>
+            <div class="mt-8 pt-6 border-t border-steel/20">
+              <a
+                href="solutions.html#website-architecture"
+                class="text-xs font-tech text-accent hover:text-cool transition-colors uppercase tracking-widest flex items-center gap-2"
+              >
+                View Website Solution <i class="ph-bold ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CASE 02: LinkedIn Content System -->
+    <section
+      id="linkedin-content-system"
+      class="py-24 bg-surfaceLight border-t border-white/5 relative bg-diagonal scroll-mt-20"
+    >
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-12 gs-fade-up">
+          <div class="font-tech text-xs text-steel tracking-widest mb-2">
+            CASE 02
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4 text-cool"
+          >
+            LinkedIn Content <span class="text-accent">System</span>
+          </h2>
+          <h3 class="font-heading text-lg text-steel font-semibold mb-6">
+            工业社媒内容资产矩阵
+          </h3>
+          <div
+            class="inline-block border border-accent/30 bg-accent/10 px-6 py-3 text-sm text-cool/90"
+          >
+            把“偶尔发产品图片”的社媒账号，升级为持续输出制造业专业度的内容系统。
+          </div>
+        </div>
+
+        <!-- Dashboard Visual -->
+        <div
+          class="w-full bg-[#070C1A] border border-steel/30 rounded-sm mb-16 p-6 md:p-10 gs-fade-up relative overflow-hidden"
+        >
+          <div
+            class="font-tech text-[10px] text-steel mb-8 tracking-widest text-center"
+          >
+            CONTENT_MATRIX_DASHBOARD.sys
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center relative z-10"
+          >
+            <!-- Left: Input -->
+            <div class="border border-steel/30 bg-base p-5">
+              <div class="text-[10px] font-tech text-steel mb-4 uppercase">
+                Material Input
+              </div>
+              <div class="space-y-2">
+                <div
+                  class="bg-surface/30 border border-steel/20 p-2 text-xs text-cool/60 flex items-center gap-2"
+                >
+                  <i class="ph-light ph-image"></i> Factory photos
+                </div>
+                <div
+                  class="bg-surface/30 border border-steel/20 p-2 text-xs text-cool/60 flex items-center gap-2"
+                >
+                  <i class="ph-light ph-cube"></i> Product images
+                </div>
+                <div
+                  class="bg-surface/30 border border-steel/20 p-2 text-xs text-cool/60 flex items-center gap-2"
+                >
+                  <i class="ph-light ph-clipboard-text"></i> Testing records
+                </div>
+                <div
+                  class="bg-surface/30 border border-steel/20 p-2 text-xs text-cool/60 flex items-center gap-2"
+                >
+                  <i class="ph-light ph-users"></i> Engineer notes
+                </div>
+              </div>
+            </div>
+
+            <!-- Center: Engine -->
+            <div
+              class="flex flex-col items-center justify-center border border-accent/50 bg-accent/10 p-5 py-8 shadow-[0_0_30px_rgba(23,107,255,0.15)] relative"
+            >
+              <i
+                class="ph-bold ph-arrows-left-right text-accent text-2xl absolute -left-5 md:-left-7 bg-[#070C1A] rotate-90 md:rotate-0"
+              ></i>
+              <i
+                class="ph-bold ph-arrows-left-right text-accent text-2xl absolute -right-5 md:-right-7 bg-[#070C1A] rotate-90 md:rotate-0"
+              ></i>
+
+              <div
+                class="text-[10px] font-tech text-accent mb-4 uppercase animate-pulse"
+              >
+                Content Engine
+              </div>
+              <div
+                class="flex flex-wrap justify-center gap-2 text-[10px] font-tech text-cool/80"
+              >
+                <span class="px-2 py-1 bg-surface/50 border border-steel/40"
+                  >Extract</span
+                >
+                <span class="px-2 py-1 bg-surface/50 border border-steel/40"
+                  >Translate</span
+                >
+                <span class="px-2 py-1 bg-surface/50 border border-steel/40"
+                  >Structure</span
+                >
+                <span class="px-2 py-1 bg-surface/50 border border-steel/40"
+                  >Design</span
+                >
+              </div>
+            </div>
+
+            <!-- Right: Output -->
+            <div class="border border-steel/30 bg-base p-5">
+              <div class="text-[10px] font-tech text-steel mb-4 uppercase">
+                Platform Output
+              </div>
+              <div class="space-y-2">
+                <div
+                  class="bg-surface/50 border border-accent/30 p-2 text-xs text-cool/90 flex items-center gap-2 border-l-2 border-l-accent"
+                >
+                  <i class="ph-fill ph-linkedin-logo text-accent"></i> LinkedIn
+                  Posts
+                </div>
+                <div
+                  class="bg-surface/30 border border-steel/20 p-2 text-xs text-cool/80 flex items-center gap-2"
+                >
+                  <i class="ph-fill ph-globe text-steel"></i> Website News
+                </div>
+                <div
+                  class="bg-surface/30 border border-steel/20 p-2 text-xs text-cool/80 flex items-center gap-2"
+                >
+                  <i class="ph-fill ph-article text-steel"></i> Medium Articles
+                </div>
+                <div
+                  class="bg-surface/30 border border-steel/20 p-2 text-xs text-cool/80 flex items-center gap-2"
+                >
+                  <i class="ph-fill ph-envelope-simple text-steel"></i> Email
+                  Outreach
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Takeaway -->
+          <div class="mt-12 text-center border-t border-steel/20 pt-8">
+            <p class="font-tech text-sm text-cool/90 italic tracking-wide mb-2">
+              "Social media for manufacturing is not about daily noise. It is
+              about turning technical credibility into visible trust."
+            </p>
+            <p class="text-cool/60 text-xs">
+              制造业社媒不是每天制造噪音，而是把技术可信度持续转化为看得见的信任。
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gs-fade-up">
+          <div class="bg-[#070C1A] border border-steel/20 p-8">
+            <h4
+              class="font-tech text-[11px] text-steel uppercase tracking-widest mb-6 border-b border-steel/20 pb-2"
+            >
+              A. Starting Point
+            </h4>
+            <ul class="space-y-4 text-[14px] text-cool/70 leading-relaxed">
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i> LinkedIn
+                长期空白或低频更新
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                只发产品图，没有解释背后的工艺价值
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                内容看起来像朋友圈，不像工业品牌
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                英文文案缺乏专业语境和技术深度
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                社媒内容无法反哺官网与销售沟通
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#1A2642] border border-accent/40 p-8 shadow-[0_0_20px_rgba(23,107,255,0.05)]"
+          >
+            <h4
+              class="font-tech text-[11px] text-accent uppercase tracking-widest mb-6 border-b border-accent/20 pb-2"
+            >
+              B. Transformation
+            </h4>
+            <ul
+              class="space-y-4 text-[14px] text-cool/90 leading-relaxed font-medium"
+            >
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                设计专业工业风的内容栏目结构
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                将设备能力转化为可阅读的专业图文
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                将工艺细节转化为工程采购商的语言
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                将检测与出货过程转化为信任背书
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                建立可持续的每月跨平台内容矩阵
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-surface/30 border border-steel/30 p-8">
+            <h4
+              class="font-tech text-[11px] text-cool/80 uppercase tracking-widest mb-6 border-b border-steel/30 pb-2"
+            >
+              C. Output
+            </h4>
+            <ul
+              class="space-y-4 text-[13px] text-cool/80 font-tech tracking-wider"
+            >
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> LinkedIn post
+                series
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Visual
+                templates
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Medium / Blog
+                drafts
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> YT title &
+                description
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Monthly
+                content calendar
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Repurposing
+                map
+              </li>
+            </ul>
+            <div class="mt-8 pt-6 border-t border-steel/20">
+              <a
+                href="solutions.html#social-media-assets"
+                class="text-xs font-tech text-accent hover:text-cool transition-colors uppercase tracking-widest flex items-center gap-2"
+              >
+                View Social Solution <i class="ph-bold ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CASE 03: AI Workflow for Manufacturing Team -->
+    <section
+      id="ai-workflow"
+      class="py-24 bg-base border-t border-white/5 relative scroll-mt-20"
+    >
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-12 gs-fade-up">
+          <div class="font-tech text-xs text-steel tracking-widest mb-2">
+            CASE 03
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4 text-cool"
+          >
+            AI Workflow <span class="text-accent">For Mfg Team</span>
+          </h2>
+          <h3 class="font-heading text-lg text-steel font-semibold mb-6">
+            制造业团队 AI 效率工作流
+          </h3>
+          <div
+            class="inline-block border border-accent/30 bg-accent/10 px-6 py-3 text-sm text-cool/90"
+          >
+            把 AI 从“聊天工具”升级为外贸、工程、项目、采购团队可复用的效率系统。
+          </div>
+        </div>
+
+        <!-- Pipeline Visual -->
+        <div
+          class="w-full bg-[#070C1A] border border-steel/30 rounded-sm mb-16 p-8 gs-fade-up relative overflow-hidden"
+        >
+          <div
+            class="font-tech text-[10px] text-steel mb-8 tracking-widest text-center"
+          >
+            AI_EFFICIENCY_PIPELINE.sys
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row items-stretch justify-between gap-4 relative z-10"
+          >
+            <!-- 1. Input -->
+            <div
+              class="flex-1 border border-steel/30 bg-surface/20 p-4 text-center relative group"
+            >
+              <div
+                class="w-10 h-10 mx-auto border border-steel bg-base flex items-center justify-center text-steel mb-3 group-hover:text-cool transition-colors"
+              >
+                <i class="ph-light ph-folder-open text-xl"></i>
+              </div>
+              <div class="font-tech text-[10px] text-steel mb-2 uppercase">
+                Raw Input
+              </div>
+              <div class="text-[11px] text-cool/60 leading-tight">
+                中文技术资料 / BOM<br />客户邮件 / 旧PPT
+              </div>
+            </div>
+
+            <div class="hidden md:flex flex-col justify-center">
+              <i class="ph-bold ph-caret-right text-accent"></i>
+            </div>
+
+            <!-- 2. AI Processing -->
+            <div
+              class="flex-1 border border-accent/40 bg-accent/5 p-4 text-center relative group shadow-[0_0_20px_rgba(23,107,255,0.1)]"
+            >
+              <div class="absolute inset-0 bg-blueprint opacity-20"></div>
+              <div
+                class="w-10 h-10 mx-auto border border-accent bg-accent/20 flex items-center justify-center text-accent mb-3 relative z-10"
+              >
+                <i class="ph-light ph-cpu text-xl"></i>
+              </div>
+              <div
+                class="font-tech text-[10px] text-accent mb-2 uppercase relative z-10"
+              >
+                AI Processing
+              </div>
+              <div class="text-[11px] text-cool/80 leading-tight relative z-10">
+                Prompt Library<br />Draft Gen / Translation
+              </div>
+            </div>
+
+            <div class="hidden md:flex flex-col justify-center">
+              <i class="ph-bold ph-caret-right text-accent"></i>
+            </div>
+
+            <!-- 3. Human Review -->
+            <div
+              class="flex-1 border border-steel/30 bg-surface/20 p-4 text-center relative group"
+            >
+              <div
+                class="w-10 h-10 mx-auto border border-steel bg-base flex items-center justify-center text-steel mb-3 group-hover:text-cool transition-colors"
+              >
+                <i class="ph-light ph-user-check text-xl"></i>
+              </div>
+              <div class="font-tech text-[10px] text-steel mb-2 uppercase">
+                Human Review
+              </div>
+              <div class="text-[11px] text-cool/60 leading-tight">
+                Engineer Check<br />Sales Check / Risk
+              </div>
+            </div>
+
+            <div class="hidden md:flex flex-col justify-center">
+              <i class="ph-bold ph-caret-right text-accent"></i>
+            </div>
+
+            <!-- 4. Output -->
+            <div
+              class="flex-1 border border-accent/30 bg-surface/40 p-4 text-center relative group"
+            >
+              <div
+                class="w-10 h-10 mx-auto border-2 border-accent bg-base flex items-center justify-center text-accent mb-3"
+              >
+                <i class="ph-bold ph-check text-xl"></i>
+              </div>
+              <div class="font-tech text-[10px] text-cool mb-2 uppercase">
+                Output Asset
+              </div>
+              <div class="text-[11px] text-cool/80 leading-tight">
+                英文标准说明 / 开发信<br />PPT初稿 / 社媒文案
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Takeaway -->
+          <div class="mt-12 text-center border-t border-steel/20 pt-8">
+            <p class="font-tech text-sm text-cool/90 italic tracking-wide mb-2">
+              "AI does not replace manufacturing expertise. It compresses
+              repetitive work and gives experts more time to make better
+              decisions."
+            </p>
+            <p class="text-cool/60 text-xs">
+              AI
+              不替代制造业经验，它压缩重复劳动，让专业人员有更多时间做真正重要的判断。
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gs-fade-up">
+          <div class="bg-[#070C1A] border border-steel/20 p-8">
+            <h4
+              class="font-tech text-[11px] text-steel uppercase tracking-widest mb-6 border-b border-steel/20 pb-2"
+            >
+              A. Starting Point
+            </h4>
+            <ul class="space-y-4 text-[14px] text-cool/70 leading-relaxed">
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                技术资料翻译慢且术语不统一
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                外贸邮件和开发信每次都从零开始
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                公司介绍、PPT、产品页文案反复返工
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i> 团队不会写
+                Prompt，AI 输出很不稳定
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x text-steel mt-1 shrink-0"></i>
+                没有人工审核流程，容易产生夸大表达
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#1A2642] border border-accent/40 p-8 shadow-[0_0_20px_rgba(23,107,255,0.05)]"
+          >
+            <h4
+              class="font-tech text-[11px] text-accent uppercase tracking-widest mb-6 border-b border-accent/20 pb-2"
+            >
+              B. Transformation
+            </h4>
+            <ul
+              class="space-y-4 text-[14px] text-cool/90 leading-relaxed font-medium"
+            >
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                建立制造业专用的场景 Prompt 库
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                建立技术翻译和术语统一自动化流程
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                将客户邮件、开发信、报价说明模板化
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                建立 PPT / 画册 / 社媒初稿生成流
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-caret-right text-accent mt-1 shrink-0"></i>
+                加入人工审核检查表与风控边界
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-surface/30 border border-steel/30 p-8">
+            <h4
+              class="font-tech text-[11px] text-cool/80 uppercase tracking-widest mb-6 border-b border-steel/30 pb-2"
+            >
+              C. Output
+            </h4>
+            <ul
+              class="space-y-4 text-[13px] text-cool/80 font-tech tracking-wider"
+            >
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Custom prompt
+                library
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Translation
+                workflow
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Email
+                response SOP
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> PPT drafting
+                workflow
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Social
+                content workflow
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="ph-fill ph-check-circle text-steel"></i> Review
+                checklist
+              </li>
+            </ul>
+            <div class="mt-8 pt-6 border-t border-steel/20">
+              <a
+                href="solutions.html#ai-training"
+                class="text-xs font-tech text-accent hover:text-cool transition-colors uppercase tracking-widest flex items-center gap-2"
+              >
+                View AI Solution <i class="ph-bold ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CASE COMPARISON -->
+    <section
+      class="py-24 bg-surfaceLight border-y border-white/5 relative bg-diagonal"
+    >
+      <div class="max-w-[1000px] mx-auto px-6">
+        <div class="text-center mb-16 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+          >
+            Value Delivered
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide text-cool"
+          >
+            What Changes After<br /><span class="text-steel"
+              >The Transformation?</span
+            >
+          </h2>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row border border-steel/30 shadow-2xl gs-fade-up"
+        >
+          <!-- Before -->
+          <div
+            class="flex-1 bg-base p-10 md:p-14 border-b md:border-b-0 md:border-r border-steel/30"
+          >
+            <div
+              class="font-tech text-sm text-steel mb-8 uppercase tracking-widest flex items-center gap-3 border-b border-steel/20 pb-4"
+            >
+              <i class="ph-bold ph-minus-circle text-xl"></i> Before
+              (Traditional)
+            </div>
+            <ul class="space-y-6 text-[15px] text-cool/60 font-medium">
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x mt-1 text-steel shrink-0"></i>
+                网站只是一个生硬的展示柜
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x mt-1 text-steel shrink-0"></i>
+                靠毫无计划的随机发帖更新
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x mt-1 text-steel shrink-0"></i>
+                英文资料满是毫无灵魂的机翻
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x mt-1 text-steel shrink-0"></i> AI
+                仅仅停留在极少数员工的个人试用
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x mt-1 text-steel shrink-0"></i>
+                销售资料零散，每次需要时现凑
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-x mt-1 text-steel shrink-0"></i>
+                客户理解你们专业度的成本极高
+              </li>
+            </ul>
+          </div>
+
+          <!-- After -->
+          <div
+            class="flex-1 bg-[#1A2642] p-10 md:p-14 relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-accent/10 blur-[80px] pointer-events-none"
+            ></div>
+            <div
+              class="font-tech text-sm text-accent mb-8 uppercase tracking-widest flex items-center gap-3 border-b border-accent/30 pb-4 relative z-10"
+            >
+              <i class="ph-fill ph-check-circle text-xl"></i> After (ROHAN
+              Framework)
+            </div>
+            <ul
+              class="space-y-6 text-[15px] text-cool font-semibold relative z-10"
+            >
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                网站成为建立初始信任的销售工程师
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                内容形成可持续积累的品牌资产
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                英文文案精准贴近海外工程采购语境
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i> AI
+                进入团队标准工作流，提升整体效率
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                销售物料模块化，随时调取高品质文档
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                客户第一眼就能判断出你们是顶级供应商
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. REUSABLE FRAMEWORK -->
+    <section class="py-24 bg-base relative">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="text-center mb-20 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+          >
+            Methodology
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide text-cool"
+          >
+            A Reusable Framework<br />
+            <span class="text-steel">For Industrial B2B Growth.</span>
+          </h2>
+          <p class="text-cool/70 text-[15px] mt-4 max-w-xl mx-auto">
+            每个企业的产品和行业不同，但将传统制造实力提炼为数字资产的底层重构逻辑是完全可复用的。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative gs-fade-up">
+          <!-- Connection Line -->
+          <div
+            class="hidden md:block absolute top-10 left-[10%] right-[10%] h-px bg-steel/30"
+          ></div>
+
+          <!-- Step 1 -->
+          <div class="relative pt-6 md:pt-0">
+            <div
+              class="w-20 h-20 mx-auto rounded-sm border border-steel/50 bg-surface flex items-center justify-center mb-6 relative z-10 shadow-[0_0_15px_rgba(11,19,36,1)]"
+            >
+              <span class="font-tech text-accent/80 text-xl font-bold">01</span>
+            </div>
+            <div class="text-center px-2">
+              <h4 class="font-heading font-bold text-cool uppercase mb-2">
+                Diagnose
+              </h4>
+              <p class="text-xs text-cool/60 leading-relaxed">
+                诊断旧官网、画册、社媒和资料中的表达缺陷。
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative pt-6 md:pt-0">
+            <div
+              class="w-20 h-20 mx-auto rounded-sm border border-steel/50 bg-surface flex items-center justify-center mb-6 relative z-10 shadow-[0_0_15px_rgba(11,19,36,1)]"
+            >
+              <span class="font-tech text-accent/80 text-xl font-bold">02</span>
+            </div>
+            <div class="text-center px-2">
+              <h4 class="font-heading font-bold text-cool uppercase mb-2">
+                Extract
+              </h4>
+              <p class="text-xs text-cool/60 leading-relaxed">
+                从混乱资料中提取工艺、设备、质量与案例真实卖点。
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative pt-6 md:pt-0">
+            <div
+              class="w-20 h-20 mx-auto rounded-sm border border-accent/50 bg-accent/10 flex items-center justify-center mb-6 relative z-10 shadow-[0_0_20px_rgba(23,107,255,0.2)]"
+            >
+              <span class="font-tech text-accent text-xl font-bold">03</span>
+            </div>
+            <div class="text-center px-2">
+              <h4 class="font-heading font-bold text-accent uppercase mb-2">
+                Structure
+              </h4>
+              <p class="text-xs text-cool/80 leading-relaxed">
+                重构页面架构、关键词地图、内容栏目和询盘路径。
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative pt-6 md:pt-0">
+            <div
+              class="w-20 h-20 mx-auto rounded-sm border border-steel/50 bg-surface flex items-center justify-center mb-6 relative z-10 shadow-[0_0_15px_rgba(11,19,36,1)]"
+            >
+              <span class="font-tech text-accent/80 text-xl font-bold">04</span>
+            </div>
+            <div class="text-center px-2">
+              <h4 class="font-heading font-bold text-cool uppercase mb-2">
+                Design
+              </h4>
+              <p class="text-xs text-cool/60 leading-relaxed">
+                用高端工业视觉和专业双语文案包装制造能力。
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="relative pt-6 md:pt-0">
+            <div
+              class="w-20 h-20 mx-auto rounded-sm border border-steel/50 bg-surface flex items-center justify-center mb-6 relative z-10 shadow-[0_0_15px_rgba(11,19,36,1)]"
+            >
+              <span class="font-tech text-accent/80 text-xl font-bold">05</span>
+            </div>
+            <div class="text-center px-2">
+              <h4 class="font-heading font-bold text-cool uppercase mb-2">
+                Deploy
+              </h4>
+              <p class="text-xs text-cool/60 leading-relaxed">
+                上线全新网站、发布资产库、支持销售和 AI 工作流。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CTA -->
+    <section
+      class="pt-32 relative overflow-hidden bg-surfaceLight border-t border-white/5 bg-diagonal"
+    >
+      <div
+        class="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-darker to-transparent pointer-events-none"
+      ></div>
+
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10 gs-fade-up pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2
+              class="font-heading text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wide leading-tight"
+            >
+              Want To See What Your<br />
+              <span class="text-accent">Materials Can Become?</span>
+            </h2>
+            <p class="text-cool/80 text-[15px] mb-10 max-w-md leading-relaxed">
+              发送你的旧官网、产品画册、公司介绍或零散图片。我们可以先从 ¥999
+              样板测试开始，零风险为您重构一小块真正可用的高阶数字资产。
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+              <a
+                href="pricing.html"
+                class="btn-accent px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+              >
+                START WITH ¥999 SAMPLE <i class="ph-bold ph-arrow-right"></i>
+              </a>
+              <a
+                href="contact.html"
+                class="btn-outline px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+              >
+                SEND WEBSITE / BROCHURE
+              </a>
+            </div>
+            <a
+              href="solutions.html"
+              class="inline-flex items-center gap-2 text-xs font-tech text-cool/60 hover:text-accent transition-colors uppercase tracking-widest"
+            >
+              Explore All Solutions <i class="ph-bold ph-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Diagnostic Abstract Box -->
+          <div
+            class="glass-panel p-8 relative border border-steel/40 shadow-xl"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-[50px] pointer-events-none"
+            ></div>
+
+            <div class="grid grid-cols-2 gap-8">
+              <div>
+                <div
+                  class="font-tech text-xs text-steel mb-4 uppercase tracking-widest border-b border-steel/30 pb-2"
+                >
+                  INPUT
+                </div>
+                <ul
+                  class="space-y-3 font-tech text-[11px] text-cool/70 tracking-wider"
+                >
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-folder-open text-steel"></i> Old
+                    website
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-folder-open text-steel"></i> Brochure
+                    PDF
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-folder-open text-steel"></i> Factory
+                    photos
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-folder-open text-steel"></i> Product
+                    list
+                  </li>
+                </ul>
+              </div>
+
+              <div class="relative">
+                <div
+                  class="absolute -left-6 top-1/2 -translate-y-1/2 text-accent text-xl hidden md:block"
+                >
+                  <i class="ph-light ph-arrow-right"></i>
+                </div>
+
+                <div
+                  class="font-tech text-xs text-accent mb-4 uppercase tracking-widest border-b border-accent/30 pb-2"
+                >
+                  OUTPUT
+                </div>
+                <ul
+                  class="space-y-3 font-tech text-[11px] text-cool/90 tracking-wider"
+                >
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Visual
+                    sample
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Copy
+                    direction
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i>
+                    Architecture
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Roadmap
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <section class="bg-base relative border-t border-steel/30 pt-16 pb-8">
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+          <!-- Logo Area -->
+          <div class="col-span-2 md:col-span-1">
+            <a
+              href="index.html"
+              class="block hover:opacity-80 transition-opacity duration-300 mb-6"
+            >
+              <img
+                src="./rohan-logo-low.png"
+                alt="ROHAN logo"
+                class="site-logo h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+            </a>
+            <p class="text-cool/50 text-xs leading-relaxed max-w-[200px]">
+              Industrial B2B Digital Architect. <br />Crafting high-conversion
+              assets for global manufacturing excellence.
+            </p>
+          </div>
+
+          <!-- Links -->
+          <div class="md:col-start-2">
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              SOLUTIONS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="solutions.html#website-architecture"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Website Architecture</a
+              >
+              <a
+                href="solutions.html#seo-geo-aeo"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >SEO / GEO</a
+              >
+              <a
+                href="solutions.html#social-media-assets"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Social Media Assets</a
+              >
+              <a
+                href="solutions.html#ai-training"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >AI Training</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              COMPANY
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="about.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >About</a
+              >
+              <a
+                href="approach.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Approach</a
+              >
+              <a
+                href="cases.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Cases</a
+              >
+              <a
+                href="pricing.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Pricing</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              INSIGHTS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="insights.html#ai-manufacturing"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >AI for Manufacturing</a
+              >
+              <a
+                href="insights.html#b2b-marketing"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >B2B Marketing</a
+              >
+              <a
+                href="insights.html#industrial-website-design"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Industrial Website Design</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              CONNECT
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="mailto:rohanyangrh@outlook.com"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >rohanyangrh@outlook.com</a
+              >
+              <a
+                href="https://www.linkedin.com/in/rohanyang?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                class="text-xs text-cool/70 hover:text-accent transition-colors flex items-center gap-1"
+                >LinkedIn <i class="ph-bold ph-arrow-up-right text-[10px]"></i
+              ></a>
+              <a
+                href="contact.html#diagnosis-form"
+                class="text-xs text-accent hover:text-cool transition-colors mt-2"
+                >Book a Diagnosis &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center border-t border-steel/20 pt-6"
+        >
+          <div
+            class="text-[10px] text-steel font-tech tracking-wider mb-4 md:mb-0"
+          >
+            © 2026 ROHAN. ALL RIGHTS RESERVED.
+          </div>
+          <div
+            class="flex gap-6 text-[10px] font-tech text-steel tracking-wider"
+          >
+            <a
+              href="privacy-policy.html"
+              class="hover:text-cool transition-colors uppercase"
+              >Privacy Policy</a
+            >
+            <a
+              href="terms-of-use.html"
+              class="hover:text-cool transition-colors uppercase"
+              >Terms of Use</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GSAP & JS Logic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+        const icon = mobileBtn.querySelector("i");
+        if (mobileMenu.classList.contains("hidden")) {
+          icon.classList.replace("ph-x", "ph-list");
+        } else {
+          icon.classList.replace("ph-list", "ph-x");
+        }
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          mobileBtn.querySelector("i").classList.replace("ph-x", "ph-list");
+        });
+      });
+
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+      const revealLines = document.querySelectorAll(".reveal-line");
+      const heroElements = document.querySelectorAll(".hero-element");
+      const tlHero = gsap.timeline();
+      tlHero
+        .to(revealLines, {
+          y: 0,
+          duration: 1,
+          stagger: 0.15,
+          ease: "power4.out",
+          delay: 0.1,
+        })
+        .to(
+          heroElements,
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" },
+          "-=0.5",
+        );
+
+      // Card Hover Effect Logic
+      const bentoContainers = document.querySelectorAll(".bento-grid-wrapper");
+      bentoContainers.forEach((container) => {
+        container.addEventListener("mousemove", (e) => {
+          for (const card of container.getElementsByClassName("bento-card")) {
+            const rect = card.getBoundingClientRect(),
+              x = e.clientX - rect.left,
+              y = e.clientY - rect.top;
+            card.style.setProperty("--mouse-x", `${x}px`);
+            card.style.setProperty("--mouse-y", `${y}px`);
+          }
+        });
+      });
+
+      const fadeUpElements = document.querySelectorAll(".gs-fade-up");
+      fadeUpElements.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // Hero 3D Scene subtle mouse interaction
+      const scene = document.querySelector(".hero-3d-scene");
+      const group = document.querySelector(".hero-3d-group");
+      if (scene && window.innerWidth > 1024) {
+        scene.addEventListener("mousemove", (e) => {
+          const xAxis = (window.innerWidth / 2 - e.pageX) / 60;
+          const yAxis = (window.innerHeight / 2 - e.pageY) / 60;
+          gsap.to(group, {
+            rotationY: -20 + xAxis,
+            rotationX: 15 - yAxis,
+            duration: 1,
+            ease: "power1.out",
+          });
+        });
+        scene.addEventListener("mouseleave", () => {
+          gsap.to(group, {
+            rotationY: -20,
+            rotationX: 15,
+            duration: 1,
+            ease: "power1.out",
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- META TITLE START -->
+    <title>
+      为什么客户看完你的画册，还是不知道你强在哪里？ | ROHAN Insights
+    </title>
+    <!-- META TITLE END -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: "#0B1324",
+              surface: "#2D3E5F",
+              surfaceLight: "#1A2642",
+              accent: "#176BFF",
+              steel: "#4B5563",
+              cool: "#F5F7FA",
+              darker: "#070C1A",
+            },
+            fontFamily: {
+              heading: ['"Exo 2"', "sans-serif"],
+              body: ["Raleway", "sans-serif"],
+              tech: ["Orbitron", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0b1324;
+        color: #f5f7fa;
+        font-family: "Raleway", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .site-logo {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* Background Textures */
+      .bg-blueprint {
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          );
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+      }
+      .bg-diagonal {
+        background-image: linear-gradient(
+          -45deg,
+          transparent 48%,
+          rgba(23, 107, 255, 0.05) 50%,
+          transparent 52%
+        );
+        background-size: 30px 30px;
+      }
+      .glass-panel {
+        background: rgba(45, 62, 95, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(23, 107, 255, 0.15);
+      }
+
+      /* UI Components */
+      .btn-accent {
+        position: relative;
+        background: #176bff;
+        color: #f5f7fa;
+        border: 1px solid #176bff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .btn-accent:hover {
+        background: transparent;
+        color: #176bff;
+        box-shadow: 0 0 20px rgba(23, 107, 255, 0.3);
+      }
+
+      .tech-input {
+        background: rgba(11, 19, 36, 0.6);
+        border: 1px solid rgba(75, 85, 99, 0.5);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+      .tech-input:focus {
+        outline: none;
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.05);
+        box-shadow: 0 0 15px rgba(23, 107, 255, 0.15);
+      }
+
+      /* Insight Card Hover Scanline */
+      .insight-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .insight-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(23, 107, 255, 0.05),
+          transparent
+        );
+        transform: skewX(-20deg);
+        transition: left 0.6s ease;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .insight-card:hover::after {
+        left: 200%;
+      }
+
+      /* Custom Article Typography Styling */
+      .article-prose h2 {
+        font-family: "Exo 2", sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #f5f7fa;
+        margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+        scroll-margin-top: 100px; /* For TOC anchoring */
+      }
+      .article-prose h3 {
+        font-family: "Exo 2", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: rgba(245, 247, 250, 0.9);
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .article-prose p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: rgba(245, 247, 250, 0.8);
+        margin-bottom: 1.5rem;
+      }
+      .article-prose strong {
+        color: #f5f7fa;
+        font-weight: 600;
+      }
+      .article-prose blockquote {
+        border-left: 2px solid #176bff;
+        padding-left: 1.5rem;
+        font-style: italic;
+        color: rgba(245, 247, 250, 0.7);
+        background: rgba(45, 62, 95, 0.15);
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        padding-right: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+      }
+      .article-prose ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 2rem;
+      }
+      .article-prose ul li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: rgba(245, 247, 250, 0.8);
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+      .article-prose ul li::before {
+        content: "•";
+        color: #176bff;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+      .article-prose ol {
+        list-style-type: decimal;
+        padding-left: 1.25rem;
+        margin-bottom: 2rem;
+        color: rgba(245, 247, 250, 0.8);
+        font-size: 0.95rem;
+      }
+      .article-prose ol li {
+        margin-bottom: 0.75rem;
+        line-height: 1.7;
+      }
+      .article-prose figure {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .article-prose figure img {
+        width: 100%;
+        height: auto;
+        border: 1px solid rgba(75, 85, 99, 0.3);
+        background-color: rgba(11, 19, 36, 0.6);
+      }
+      .article-prose figcaption {
+        text-align: center;
+        font-family: "Orbitron", sans-serif;
+        font-size: 0.65rem;
+        color: #4b5563;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 0.75rem;
+      }
+      .article-prose table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        font-size: 0.85rem;
+      }
+      .article-prose th {
+        background: rgba(23, 107, 255, 0.05);
+        color: #f5f7fa;
+        font-weight: 600;
+        padding: 1rem;
+        border: 1px solid rgba(75, 85, 99, 0.3);
+        text-align: left;
+      }
+      .article-prose td {
+        padding: 1rem;
+        border: 1px solid rgba(75, 85, 99, 0.2);
+        color: rgba(245, 247, 250, 0.8);
+      }
+
+      /* TOC Active State */
+      .toc-link {
+        transition: all 0.3s ease;
+      }
+      .toc-link.active {
+        color: #176bff;
+        border-left-color: #176bff;
+        padding-left: 1.25rem;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b1324;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #176bff;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-accent selection:text-white">
+    <div class="bg-blueprint"></div>
+    <div
+      class="fixed top-[-50%] left-[-10%] w-[120%] h-[150%] bg-surface/5 transform -skew-x-12 pointer-events-none z-[-1]"
+    ></div>
+
+    <!-- Header -->
+    <header
+      class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="../../index.html"
+          class="flex items-center hover:opacity-80 transition-opacity z-50"
+        >
+          <img
+            src="../../rohan-logo-top.png"
+            alt="ROHAN logo"
+            class="site-logo h-11 md:h-14 w-auto"
+          />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center gap-8 font-tech text-xs tracking-widest text-cool/80"
+        >
+          <a href="../../index.html" class="hover:text-accent transition-colors"
+            >Home</a
+          >
+          <a
+            href="../../solutions.html"
+            class="hover:text-accent transition-colors"
+            >Solutions</a
+          >
+          <a href="../../cases.html" class="hover:text-accent transition-colors"
+            >Cases</a
+          >
+          <a
+            href="../../pricing.html"
+            class="hover:text-accent transition-colors"
+            >Pricing</a
+          >
+          <a
+            href="../../insights.html"
+            class="text-accent font-bold transition-colors"
+            >Insights</a
+          >
+          <a
+            href="../../contact.html"
+            class="hover:text-accent transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="../../contact.html"
+            class="text-xs font-tech tracking-wider border border-accent/40 px-5 py-2.5 hover:border-accent hover:bg-accent/10 transition-colors backdrop-blur-md rounded-sm hidden md:block"
+          >
+            LET'S TALK
+          </a>
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-cool p-2 hover:text-accent transition-colors z-50"
+          >
+            <i class="ph-bold ph-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Panel -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-base/98 backdrop-blur-xl z-40 hidden flex-col pt-28 px-8 items-center border-t border-accent/20"
+      >
+        <nav
+          class="flex flex-col gap-8 text-center font-tech text-sm tracking-[0.2em] w-full"
+        >
+          <a
+            href="../../index.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >HOME</a
+          >
+          <a
+            href="../../solutions.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >SOLUTIONS</a
+          >
+          <a
+            href="../../cases.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >CASES</a
+          >
+          <a
+            href="../../pricing.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >PRICING</a
+          >
+          <a
+            href="../../insights.html"
+            class="mobile-link text-accent pb-4 border-b border-steel/20 block"
+            >INSIGHTS</a
+          >
+          <a
+            href="../../contact.html"
+            class="mobile-link text-cool hover:text-accent pb-4 block"
+            >LET'S TALK</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ARTICLE HERO SECTION -->
+    <section class="pt-40 pb-12 relative overflow-hidden">
+      <div class="max-w-[1000px] mx-auto px-6 relative z-10 gs-fade-up">
+        <!-- Breadcrumbs -->
+        <div
+          class="font-tech text-[10px] text-steel uppercase tracking-widest mb-6 flex items-center gap-2"
+        >
+          <a
+            href="../../insights.html"
+            class="hover:text-accent transition-colors"
+            >Insights</a
+          >
+          <span>/</span>
+          <!-- META CATEGORY START -->
+          <span
+            class="text-accent border border-accent/30 bg-accent/5 px-2 py-1"
+            >Brand Assets</span
+          >
+          <!-- META CATEGORY END -->
+        </div>
+
+        <!-- TITLE START -->
+        <h1
+          class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-cool uppercase"
+        >
+          为什么客户看完你的画册，<span class="text-accent"
+            >还是不知道你强在哪里？</span
+          >
+        </h1>
+        <!-- TITLE END -->
+
+        <!-- SUBTITLE/SUMMARY START -->
+        <p
+          class="text-cool/80 text-[15px] md:text-lg font-light max-w-3xl mb-8 leading-relaxed font-body border-l-2 border-steel/50 pl-4"
+        >
+          Why Buyers Still Do Not Understand Your Strength.
+          很多传统画册只是在无重点地堆叠设备、资质证书和口号，却毫无逻辑去解释主营护城河、制造边界与差异化壁垒。
+        </p>
+        <!-- SUBTITLE/SUMMARY END -->
+
+        <!-- META INFO START -->
+        <div class="flex items-center gap-6 border-t border-white/10 pt-6">
+          <div
+            class="font-tech text-xs text-steel flex items-center gap-2 tracking-widest uppercase"
+          >
+            <i class="ph-bold ph-calendar-blank"></i> JUNE 12, 2026
+          </div>
+          <div
+            class="font-tech text-xs text-steel flex items-center gap-2 tracking-widest uppercase"
+          >
+            <i class="ph-bold ph-clock"></i> 6 MIN READ
+          </div>
+          <div
+            class="font-tech text-xs text-steel flex items-center gap-2 tracking-widest uppercase hidden sm:flex"
+          >
+            <i class="ph-bold ph-user"></i> By ROHAN Team
+          </div>
+        </div>
+        <!-- META INFO END -->
+      </div>
+    </section>
+
+    <!-- COVER IMAGE START -->
+    <div class="max-w-[1200px] mx-auto px-6 mb-16 gs-fade-up">
+      <div class="w-full relative border border-steel/30 bg-surface/20">
+        <img
+          src="cover.png"
+          alt="Why Buyers Still Do Not Understand Your Strength Cover Image"
+          class="w-full h-[300px] md:h-[500px] object-cover opacity-90"
+          onerror="
+            this.src =
+              'https://placehold.co/1200x500/0B1324/176BFF?text=Cover+Image+Placeholder'
+          "
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-base to-transparent opacity-80 pointer-events-none"
+        ></div>
+      </div>
+    </div>
+    <!-- COVER IMAGE END -->
+
+    <!-- MAIN ARTICLE & TOC -->
+    <section class="pb-24 relative z-10">
+      <div
+        class="max-w-[1200px] mx-auto px-6 flex flex-col lg:flex-row gap-16 relative"
+      >
+        <!-- Left: Article Content Layout -->
+        <article
+          class="lg:w-[70%] article-prose gs-fade-up"
+          id="article-content"
+        >
+          <!-- ARTICLE CONTENT START -->
+          <p>
+            几乎所有的制造业企业都有一份公司画册、产品目录或用于发送给海外客户的
+            PDF 介绍文件。如果你翻开这些资料，里面通常会毫无悬念地包含以下板块：
+          </p>
+          <ul>
+            <li>公司简介与发展历程</li>
+            <li>几张厂房与车间大门的照片</li>
+            <li>长长的设备清单与规格表</li>
+            <li>排列整齐的资质证书与专利墙</li>
+            <li>没有场景说明的产品抠图</li>
+            <li>合作过的客户 Logo 墙</li>
+            <li>“专业、高质量、快速响应”等经营理念</li>
+            <li>最后的联系方式</li>
+          </ul>
+          <p>
+            这些内容并不是没有用，但最大的问题在于：<strong
+              >很多画册只是把所有资料物理叠加在一起，并没有形成一条清晰的判断逻辑。</strong
+            >
+          </p>
+          <p>
+            当潜在客户翻完这份精美的 PDF
+            时，他脑海中留下的唯一印象可能只是“哦，这是一家在做这个产品的工厂”。至于你们到底擅长什么、工艺壁垒在哪里、为什么要选择你们而不是同行，他依然一头雾水。
+          </p>
+
+          <h2>1. 为什么传统画册容易失效？</h2>
+          <p>
+            传统画册最大的痛点，从来不是“设计排版不够漂亮”，而是<strong>信息毫无重点，缺乏取舍</strong>。
+          </p>
+          <p>
+            很多工厂在制作画册时，总是担心漏掉任何一个可能的卖点，于是试图把所有内容都塞进去。最后导致的结果就是：
+          </p>
+          <ul>
+            <li>每个页面都在大谈特谈自己，却没有一处落脚到客户的痛点。</li>
+            <li>每个优势都说得很泛滥，缺乏具体的数据与事实支撑。</li>
+            <li>每张设备图旁边只有冷冰冰的型号，没有解释其实际加工意义。</li>
+            <li>每张产品图都像是在孤立展示，缺乏应用场景和工艺难点解析。</li>
+            <li>
+              每个资质证书都只是贴了个图，没有说明它对客户项目意味着什么。
+            </li>
+            <li>
+              每一句话都充斥着“专业、稳定、高质量、快速交付”这种毫无辨识度的形容词。
+            </li>
+          </ul>
+          <p>
+            在 B2B
+            采购语境下，客户真正需要的是<strong>判断依据</strong>，而不是单纯的资料堆叠。
+          </p>
+
+          <h2>2. 客户看画册时，真正想判断什么？</h2>
+          <p>
+            你要明白，海外的资深采购工程师或项目经理打开你们的画册，绝对不是为了欣赏高大上的排版设计。他们的核心诉求是“高效筛选”，他们试图从字里行间快速找到以下答案：
+          </p>
+          <ul>
+            <li>这家工厂到底是做什么的？（核心定位）</li>
+            <li>他们适不适合承接我手头的这个项目？（项目匹配度）</li>
+            <li>他们的核心工艺能力究竟卡在哪个层级？（制造边界）</li>
+            <li>有哪些具体的设备和检测手段在支撑这些承诺？（硬件实力）</li>
+            <li>他们有没有在类似行业或严苛场景下的成功经验？（信任背书）</li>
+            <li>一旦合作，项目的交付流程是否清晰可控？（管理成熟度）</li>
+            <li>他们对质量风险的把控是否专业可信？（品控逻辑）</li>
+            <li>
+              看完这些，这家公司到底值不值得我发一封邮件进一步沟通？（最终决策）
+            </li>
+          </ul>
+          <p>
+            如果你的画册没有围绕着这些极其务实的问题来组织内容框架，无论画面再精美，客户也很难记住你。
+          </p>
+
+          <h2>3. 画册应该先解释主营“护城河”与边界</h2>
+          <p>
+            很多画册喜欢在第一页长篇大论地介绍公司成立于哪一年、占地多少亩、有多少员工、买了几台新机器。但其实，客户在翻开画册的最初几秒钟，最急切想知道的是：
+          </p>
+          <blockquote>“你们最擅长解决哪类问题？”</blockquote>
+          <p>
+            一份真正有战斗力的制造业画册，必须敢于在开篇就亮明自己的<strong>护城河与边界</strong>：
+          </p>
+          <ul>
+            <li>
+              你们的主营核心工艺到底是什么？（比如是高精密五金车削，还是大型钣金冲压？）
+            </li>
+            <li>你们的工艺最适合哪些终端行业和产品类型？</li>
+            <li>
+              你们能驾驭的项目复杂度边界在哪里？（比如公差能稳定控制在什么级别？最大加工尺寸是多少？）
+            </li>
+            <li>在整个供应链中，哪些能力是你们别人很难替代的核心优势？</li>
+            <li>
+              甚至，<strong
+                >哪些低端或不匹配的项目是你们明确不适合承接的？</strong
+              >
+            </li>
+          </ul>
+          <p>
+            请记住：<strong>敢于讲清楚自己的边界，本身就是一种极具专业感的表现。</strong>如果一家工厂在画册里宣称自己什么都能做，反而会让买家极度缺乏安全感，难以判断你们真正的强项。
+          </p>
+
+          <h2>4. 设备不是优势，设备能解决的问题才是优势</h2>
+          <p>
+            绝大多数工厂的画册里，都有一页密密麻麻的设备清单（Equipment
+            List）或者几张冷冰冰的机器照片。
+          </p>
+          <p>
+            但现实是，当客户看到一台高精度五轴
+            CNC、大吨位冲床或者进口的三坐标测量仪（CMM）时，他并不一定能立刻把这些设备与他的项目价值联系起来。设备页面绝不应该仅仅停留在展示“你看，我们有这些牛逼的机器”，而应该向客户解释：
+          </p>
+          <ul>
+            <li>这台高阶设备主要覆盖什么样的加工范围和材料？</li>
+            <li>它能实现怎样苛刻的尺寸控制与精度要求？</li>
+            <li>它的引入，是如何从根本上缩短项目交期、提升良品率的？</li>
+            <li>它能为客户的特定项目规避掉哪些潜在的制造风险？</li>
+            <li>
+              简而言之：<strong>它对客户到底有什么实际的商业价值？</strong>
+            </li>
+          </ul>
+          <p>
+            设备本身从来不是差异化（因为只要有钱，同行也能买到），<strong
+              >设备背后的工艺驾驭能力、质量控制体系和项目匹配度，才是客户真正关心的核心内容。</strong
+            >
+          </p>
+
+          <h2>5. 证书不是信任，流程才是信任</h2>
+          <p>
+            几乎每家工厂都会把 ISO 9001、IATF
+            16949、各类材质检测报告和体系证书骄傲地放在画册里。这当然是必要的，但在今天极度内卷的供应链环境中，证书只能证明你们“具备了上牌桌的基本资格”，它无法在客户心中建立起深度的信任。
+          </p>
+          <p>
+            客户更关心的是这些体系在你们工厂里<strong>是如何真正落地的</strong>：
+          </p>
+          <ul>
+            <li>当生产中出现潜在缺陷时，你们的质检环节是如何及时发现的？</li>
+            <li>首件打样（FAI）的尺寸与公差是如何与客户进行严谨确认的？</li>
+            <li>试模或首批试产出现问题时，工程团队的反馈机制是怎样的？</li>
+            <li>遇到异常状况，你们是如何向远在海外的客户进行透明沟通的？</li>
+            <li>在最终装箱出海前，最后一道防线是如何检查的？</li>
+            <li>整个项目的关键节点（Timeline）是如何被有效管理的？</li>
+          </ul>
+          <p>
+            所以，画册千万不能只贴几张干瘪的证书。<strong
+              >证书仅仅能让客户放心一点，而详尽透明的流程解释，才能让客户真正理解你们是如何在实操中控制风险的。</strong
+            >
+          </p>
+
+          <h2>6. 产品图不是案例，案例需要有上下文</h2>
+          <p>
+            翻开很多工厂的产品目录，里面全是白底抠图的产品展示，没有任何文字说明。如果缺乏上下文（Context），客户很难评估这些零散图片的工程价值。
+          </p>
+          <p>
+            一个高转化率的“项目案例”页面，不应该是单纯的图片陈列，而应该清晰地说明：
+          </p>
+          <ul>
+            <li>这个部件或项目属于什么样的具体应用场景？</li>
+            <li>在这个项目中，最棘手的工艺难点或设计挑战是什么？</li>
+            <li>为了确保良率，生产过程中需要重点控制哪些风险？</li>
+            <li>你们工厂在这个项目中究竟承担了哪些具体的制造环节？</li>
+            <li>最终为客户交付了什么样的切实价值？</li>
+          </ul>
+          <p>
+            有些工厂会顾虑保密协议（NDA）而不敢放案例。其实大可不必，你完全不需要公开客户的具体图纸和敏感信息，只要从<strong>“加工能力”、“应用场景”和“解决流程”</strong>的角度去客观陈述，就足以向潜在客户证明你们的实战经验了。
+          </p>
+
+          <h2>7. 建立清晰的信息与判断路径</h2>
+          <p>
+            一份优秀的 B2B
+            制造业画册，绝不能是一盘大杂烩。它应该像是一次精心设计的、面对面的技术销售沟通，引导客户一步步完成逻辑严密的判断过程：
+          </p>
+          <ol>
+            <li>
+              <strong>第一步：</strong>明确你们是谁，主要服务于哪些类型的客户。
+            </li>
+            <li>
+              <strong>第二步：</strong>清晰界定你们最擅长的工艺范围和项目类型。
+            </li>
+            <li>
+              <strong>第三步：</strong
+              >展示支撑这些能力的设备、检测手段与专业团队。
+            </li>
+            <li>
+              <strong>第四步：</strong
+              >详细解释你们的项目管理流程与风险控制机制。
+            </li>
+            <li>
+              <strong>第五步：</strong>用有说服力的场景案例证明你们的过往经验。
+            </li>
+            <li>
+              <strong>第六步（CTA）：</strong
+              >明确告诉客户，如果觉得合适，下一步应该如何联系你们，以及初期需要提供哪些图纸或技术资料。
+            </li>
+          </ol>
+          <p>
+            只有沿着这样清晰的信息路径，客户看完画册后，才能笃定地得出“这家工厂不仅专业，而且非常适合我当前项目”的结论。
+          </p>
+
+          <h2>8. 对中小制造企业的实际意义</h2>
+          <p>
+            广大的中小制造企业没有国际知名品牌自带的光环，也往往没有机会飞到海外向客户进行长达几个小时的面对面演说。你们的数字资产（包括官方网站、公司画册、LinkedIn
+            主页、甚至开发信里的 PDF
+            附件），往往就是客户对你们进行首轮评估的唯一依据。
+          </p>
+          <p>
+            如果这些核心资料仅仅是“看起来很完整”，却完全没有把你们真正的核心能力讲透彻，你们就很容易在激烈的比价中被客户快速略过。
+          </p>
+          <p>
+            更聪明、更有胜算的做法，是把画册从一个被动的“资料库”，升级为一个主动出击的<strong>信任构建工具</strong>：用它来解释能力边界，解释工艺价值，解释质量控制，解释项目流程，解释差异化。只有极大程度地<strong>降低客户的理解成本</strong>，你们才能在看不见的竞争中抢占先机。
+          </p>
+
+          <h2>9. 结语</h2>
+          <p>
+            海外买家看不懂你们的优势，很多时候并不是因为你们缺乏制造硬实力，而是因为你们的宣传资料没有把这份实力用正确的逻辑翻译出来。
+          </p>
+          <p>
+            传统画册的通病，从来不是由于车间图片不够多、设备数量不够震撼或者证书不够齐全，而是缺少了一条<strong>引导客户进行专业判断的清晰逻辑</strong>。
+          </p>
+          <p>
+            在 B2B
+            工业品出海的语境下，重新审视并重构你的公司画册吧。它真正要完成的使命，不是一股脑儿地把公司所有的冗杂资料都塞给客户，而是<strong
+              >把极其复杂的制造能力，系统地整理成让海外客户能快速理解、心生信任、且方便在他们内部采购会议上进行评估与转发的硬核资产。</strong
+            >
+          </p>
+          <!-- ARTICLE CONTENT END -->
+
+          <!-- Article Footer Meta -->
+          <div
+            class="mt-16 pt-8 border-t border-steel/30 flex flex-wrap items-center justify-between gap-4"
+          >
+            <div class="flex items-center gap-2">
+              <span
+                class="font-tech text-[10px] text-steel uppercase tracking-widest"
+                >Share Article:</span
+              >
+              <button
+                id="copy-link-btn"
+                class="w-8 h-8 rounded bg-surface/30 border border-steel/30 flex items-center justify-center text-cool hover:text-accent hover:border-accent transition-colors"
+                title="Copy article link"
+              >
+                <i class="ph-bold ph-link"></i>
+              </button>
+
+              <button
+                id="linkedin-share-btn"
+                class="w-8 h-8 rounded bg-surface/30 border border-steel/30 flex items-center justify-center text-cool hover:text-accent hover:border-accent transition-colors"
+                title="Share on LinkedIn"
+              >
+                <i class="ph-bold ph-linkedin-logo"></i>
+              </button>
+            </div>
+            <div>
+              <a
+                href="../../insights.html"
+                class="font-tech text-xs text-accent uppercase tracking-widest hover:text-cool transition-colors flex items-center gap-2"
+              >
+                <i class="ph-bold ph-arrow-left"></i> Back to Insights
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right: Sticky TOC Sidebar -->
+        <aside class="lg:w-[30%] relative hidden md:block">
+          <div
+            class="sticky top-32 glass-panel p-6 border border-steel/20 rounded-sm"
+          >
+            <div
+              class="font-tech text-xs text-accent uppercase tracking-widest mb-4 flex items-center gap-2"
+            >
+              <i class="ph-bold ph-list-dashes"></i> Table of Contents
+            </div>
+            <!-- TOC Container: populated by JS -->
+            <ul
+              class="border-l-2 border-steel/20 flex flex-col space-y-1"
+              id="toc-container"
+            >
+              <!-- Automatically generated items will go here -->
+            </ul>
+
+            <!-- Internal Promo Block -->
+            <div class="mt-10 pt-8 border-t border-steel/20">
+              <div
+                class="font-tech text-[10px] text-steel uppercase tracking-widest mb-3"
+              >
+                Service Recommended
+              </div>
+              <a
+                href="../../pricing.html#digital-foundation"
+                class="block bg-base border border-accent/30 p-4 hover:border-accent transition-colors group"
+              >
+                <h4
+                  class="font-heading text-sm font-bold text-cool mb-1 group-hover:text-accent transition-colors"
+                >
+                  Digital Foundation System
+                </h4>
+                <p class="text-[11px] text-cool/60 mb-3 line-clamp-2">
+                  针对制造企业的数字基建服务，包含官网架构重构与品牌视觉升级。
+                </p>
+                <span
+                  class="text-[10px] font-tech text-accent uppercase tracking-widest flex items-center gap-1"
+                  >View Details <i class="ph-bold ph-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RELATED SECTION -->
+    <section
+      class="py-24 bg-surfaceLight border-y border-white/5 bg-diagonal relative"
+    >
+      <div class="max-w-[1200px] mx-auto px-6 gs-fade-up">
+        <div class="mb-12 flex justify-between items-end">
+          <div>
+            <div
+              class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-2"
+            >
+              Continue Reading
+            </div>
+            <h2
+              class="font-heading text-2xl md:text-3xl font-bold uppercase tracking-wide text-cool"
+            >
+              Related <span class="text-steel">Insights.</span>
+            </h2>
+          </div>
+          <a
+            href="../../insights.html"
+            class="hidden sm:flex font-tech text-xs text-cool/70 hover:text-accent uppercase tracking-widest items-center gap-2 transition-colors"
+          >
+            View All <i class="ph-bold ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Related Insight 1 -->
+          <a
+            href="../P10/p10.html"
+            class="block bg-base border border-steel/30 p-8 hover:border-accent/50 transition-colors group insight-card"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <span
+                class="font-tech text-[10px] text-accent border border-accent/40 bg-accent/5 px-2 py-1 tracking-widest uppercase"
+                >Social Media</span
+              >
+              <span
+                class="font-tech text-[10px] text-steel flex items-center gap-1"
+                ><i class="ph-bold ph-clock"></i> 7 MIN</span
+              >
+            </div>
+            <h3
+              class="font-heading text-xl font-bold text-cool mb-2 leading-snug group-hover:text-accent transition-colors"
+            >
+              制造业社媒不是发朋友圈，而是建立技术信任
+            </h3>
+            <p
+              class="text-[13px] text-cool/70 leading-relaxed mb-6 font-medium"
+            >
+              工业社媒的价值绝不是凑热闹和追求点赞量，而是让买家在每一次接触中，不断叠加对企业工业实力的判断与信任。
+            </p>
+            <div
+              class="border-t border-steel/20 pt-4 flex justify-between items-center"
+            >
+              <span class="text-[10px] font-tech text-cool/60 uppercase"
+                >Read Article</span
+              >
+              <i
+                class="ph-bold ph-arrow-right text-accent group-hover:translate-x-1 transition-transform"
+              ></i>
+            </div>
+          </a>
+
+          <!-- Related Insight 2 -->
+          <a
+            href="../P8/p8.html"
+            class="block bg-base border border-steel/30 p-8 hover:border-accent/50 transition-colors group insight-card"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <span
+                class="font-tech text-[10px] text-accent border border-accent/40 bg-accent/5 px-2 py-1 tracking-widest uppercase"
+                >SEO / GEO / AEO</span
+              >
+              <span
+                class="font-tech text-[10px] text-steel flex items-center gap-1"
+                ><i class="ph-bold ph-clock"></i> 5 MIN</span
+              >
+            </div>
+            <h3
+              class="font-heading text-xl font-bold text-cool mb-2 leading-snug group-hover:text-accent transition-colors"
+            >
+              为什么 FAQ 页面正在变得比你想象中更重要？
+            </h3>
+            <p
+              class="text-[13px] text-cool/70 leading-relaxed mb-6 font-medium"
+            >
+              FAQ 不仅仅是客户内容。它能承接长尾搜索问题，也能极大地帮助 AI
+              系统明确理解企业能力边界与服务细则。
+            </p>
+            <div
+              class="border-t border-steel/20 pt-4 flex justify-between items-center"
+            >
+              <span class="text-[10px] font-tech text-cool/60 uppercase"
+                >Read Article</span
+              >
+              <i
+                class="ph-bold ph-arrow-right text-accent group-hover:translate-x-1 transition-transform"
+              ></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-24 relative overflow-hidden bg-base">
+      <div
+        class="max-w-[1200px] mx-auto px-6 relative z-10 gs-fade-up text-center"
+      >
+        <h2
+          class="font-heading text-3xl md:text-4xl font-bold mb-4 uppercase tracking-wide"
+        >
+          Ready To Optimize Your<br />
+          <span class="text-accent">Digital Presence?</span>
+        </h2>
+        <p
+          class="text-cool/80 text-[15px] mb-8 max-w-lg mx-auto leading-relaxed"
+        >
+          让你的制造能力不仅能被客户搜到，更能被 AI 准确理解与推荐。
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="../../solutions.html#seo-geo-aeo"
+            class="btn-accent px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+          >
+            VIEW SEO / GEO SERVICES <i class="ph-bold ph-arrow-right"></i>
+          </a>
+          <a
+            href="../../contact.html"
+            class="bg-transparent border border-steel/50 text-cool hover:border-accent hover:bg-accent/10 transition-all px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+          >
+            BOOK A DIAGNOSIS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="bg-base relative border-t border-steel/30 pt-16 pb-8">
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+          <div class="col-span-2 md:col-span-1">
+            <a
+              href="../../index.html"
+              class="block hover:opacity-80 transition-opacity duration-300 mb-6"
+            >
+              <img
+                src="../../rohan-logo-low.png"
+                alt="ROHAN logo"
+                class="site-logo h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            <p class="text-cool/50 text-xs leading-relaxed max-w-[200px]">
+              Industrial B2B Digital Architect. <br />Crafting high-conversion
+              assets for global manufacturing.
+            </p>
+          </div>
+          <div class="md:col-start-2">
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              SOLUTIONS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="../../solutions.html#website-architecture"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Website Architecture</a
+              >
+              <a
+                href="../../solutions.html#seo-geo-aeo"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >SEO / GEO</a
+              >
+              <a
+                href="../../solutions.html#social-media-assets"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Social Media Assets</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              COMPANY
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="../../about.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >About</a
+              >
+              <a
+                href="../../approach.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Approach</a
+              >
+              <a
+                href="../../pricing.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Pricing</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              INSIGHTS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="../../insights.html#ai-manufacturing"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >AI for Manufacturing</a
+              >
+              <a
+                href="../../insights.html#industrial-website-design"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Website Design</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              CONNECT
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="mailto:rohanyangrh@outlook.com"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >rohanyangrh@outlook.com</a
+              >
+              <a
+                href="../../contact.html"
+                class="text-xs text-accent hover:text-cool transition-colors mt-2"
+                >Book Diagnosis &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row justify-between items-center border-t border-steel/20 pt-6"
+        >
+          <div
+            class="text-[10px] text-steel font-tech tracking-wider mb-4 md:mb-0"
+          >
+            © 2026 ROHAN. ALL RIGHTS RESERVED.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      // Mobile Menu Logic
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+        const icon = mobileBtn.querySelector("i");
+        if (mobileMenu.classList.contains("hidden")) {
+          icon.classList.replace("ph-x", "ph-list");
+        } else {
+          icon.classList.replace("ph-list", "ph-x");
+        }
+      });
+
+      // Automated TOC Generator & Scroll Spy
+      document.addEventListener("DOMContentLoaded", () => {
+        const articleContent = document.getElementById("article-content");
+        const headings = articleContent.querySelectorAll("h2");
+        const tocContainer = document.getElementById("toc-container");
+
+        if (headings.length === 0) {
+          tocContainer.parentElement.style.display = "none"; // Hide TOC if no h2
+        }
+
+        const tocLinks = [];
+
+        headings.forEach((h2, index) => {
+          // Generate an ID if not present
+          if (!h2.id) {
+            h2.id = `section-${index + 1}`;
+          }
+
+          // Create TOC item
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `#${h2.id}`;
+          a.className =
+            "toc-link block py-1.5 pl-4 border-l-2 border-transparent text-[13px] text-cool/70 hover:text-accent font-body";
+
+          // Strip numbering like "1. " from h2 text for TOC (optional, basic regex)
+          let titleText = h2.innerText;
+          a.innerText = titleText;
+
+          li.appendChild(a);
+          tocContainer.appendChild(li);
+          tocLinks.push({ element: h2, link: a });
+        });
+
+        // Intersection Observer for scroll spy
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px 0px -80% 0px",
+          threshold: 0,
+        };
+
+        let currentActiveLink = null;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const activeId = entry.target.id;
+
+              tocLinks.forEach((item) => {
+                if (item.link.getAttribute("href") === `#${activeId}`) {
+                  item.link.classList.add("active", "text-accent", "font-bold");
+                  item.link.classList.remove("text-cool/70");
+                } else {
+                  item.link.classList.remove(
+                    "active",
+                    "text-accent",
+                    "font-bold",
+                  );
+                  item.link.classList.add("text-cool/70");
+                }
+              });
+            }
+          });
+        }, observerOptions);
+
+        headings.forEach((h2) => observer.observe(h2));
+
+        // Smooth scroll fallback
+        tocContainer.addEventListener("click", (e) => {
+          if (e.target.tagName === "A") {
+            e.preventDefault();
+            const targetId = e.target.getAttribute("href").slice(1);
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+              window.scrollTo({
+                top: targetEl.offsetTop - 100, // Offset for sticky header
+                behavior: "smooth",
+              });
+            }
+          }
+        });
+      });
+
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+      const fadeUpElements = document.querySelectorAll(".gs-fade-up");
+      fadeUpElements.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+      // Share Article Buttons
+      const copyLinkBtn = document.getElementById("copy-link-btn");
+      const linkedinShareBtn = document.getElementById("linkedin-share-btn");
+
+      if (copyLinkBtn) {
+        copyLinkBtn.addEventListener("click", async () => {
+          const articleUrl = window.location.href;
+
+          try {
+            await navigator.clipboard.writeText(articleUrl);
+            copyLinkBtn.innerHTML = '<i class="ph-bold ph-check"></i>';
+
+            setTimeout(() => {
+              copyLinkBtn.innerHTML = '<i class="ph-bold ph-link"></i>';
+            }, 1600);
+          } catch (err) {
+            alert("Copy failed. Please copy the URL manually.");
+          }
+        });
+      }
+
+      if (linkedinShareBtn) {
+        linkedinShareBtn.addEventListener("click", () => {
+          const articleUrl = encodeURIComponent(window.location.href);
+          const shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${articleUrl}`;
+          window.open(shareUrl, "_blank", "noopener,noreferrer");
+        });
+      }
+    </script>
+  </body>
+</html>

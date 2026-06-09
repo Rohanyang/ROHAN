@@ -1,0 +1,1706 @@
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | ROHAN Industrial B2B Digital Architect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: "#0B1324",
+              surface: "#2D3E5F",
+              surfaceLight: "#1A2642",
+              accent: "#176BFF",
+              steel: "#4B5563",
+              cool: "#F5F7FA",
+              darker: "#070C1A",
+            },
+            fontFamily: {
+              heading: ['"Exo 2"', "sans-serif"],
+              body: ["Raleway", "sans-serif"],
+              tech: ["Orbitron", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0b1324;
+        color: #f5f7fa;
+        font-family: "Raleway", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .site-logo {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .bg-blueprint {
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          );
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+      }
+      .bg-diagonal {
+        background-image: linear-gradient(
+          -45deg,
+          transparent 48%,
+          rgba(23, 107, 255, 0.05) 50%,
+          transparent 52%
+        );
+        background-size: 30px 30px;
+      }
+      .glass-panel {
+        background: rgba(45, 62, 95, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(23, 107, 255, 0.15);
+      }
+      .clip-text {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      .reveal-line {
+        display: inline-block;
+        transform: translateY(110%);
+        will-change: transform;
+      }
+      .bento-card {
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgba(45, 62, 95, 0.4) 0%,
+          rgba(11, 19, 36, 0.6) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        overflow: hidden;
+        transition:
+          border-color 0.4s,
+          transform 0.4s;
+      }
+      .bento-card:hover {
+        border-color: rgba(23, 107, 255, 0.4);
+      }
+      .bento-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          600px circle at var(--mouse-x) var(--mouse-y),
+          rgba(23, 107, 255, 0.1),
+          transparent 40%
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .bento-card:hover::before {
+        opacity: 1;
+      }
+
+      .btn-accent {
+        position: relative;
+        background: #176bff;
+        color: #f5f7fa;
+        border: 1px solid #176bff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .btn-accent:hover {
+        background: transparent;
+        color: #176bff;
+        box-shadow: 0 0 20px rgba(23, 107, 255, 0.3);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(23, 107, 255, 0.4);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+      }
+      .btn-outline:hover {
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.1);
+      }
+
+      .hero-3d-scene {
+        perspective: 1500px;
+        transform-style: preserve-3d;
+      }
+      .hero-3d-group {
+        transform: translateX(180px) translateY(-50px) scale(1.4) rotateX(15deg)
+          rotateY(-20deg) rotateZ(5deg);
+        transform-style: preserve-3d;
+        position: relative;
+      }
+      .card-3d {
+        position: absolute;
+        width: 380px;
+        background: rgba(45, 62, 95, 0.85);
+        border: 1px solid rgba(23, 107, 255, 0.2);
+        backdrop-filter: blur(8px);
+        border-radius: 4px;
+        box-shadow:
+          -20px 20px 40px rgba(11, 19, 36, 0.9),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      }
+
+      /* Advanced Form Inputs */
+      .tech-input {
+        background: rgba(11, 19, 36, 0.6);
+        border: 1px solid rgba(75, 85, 99, 0.5);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+      .tech-input::placeholder {
+        color: rgba(245, 247, 250, 0.3);
+      }
+      .tech-input:focus {
+        outline: none;
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.05);
+        box-shadow: 0 0 15px rgba(23, 107, 255, 0.15);
+      }
+
+      /* Custom Checkbox */
+      .tech-checkbox {
+        appearance: none;
+        background-color: rgba(11, 19, 36, 0.6);
+        margin: 0;
+        font: inherit;
+        color: #176bff;
+        width: 1.15em;
+        height: 1.15em;
+        border: 1px solid rgba(75, 85, 99, 0.5);
+        border-radius: 2px;
+        display: grid;
+        place-content: center;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .tech-checkbox::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em #176bff;
+        transform-origin: center;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+      .tech-checkbox:checked {
+        border-color: #176bff;
+        background-color: rgba(23, 107, 255, 0.1);
+      }
+      .tech-checkbox:checked::before {
+        transform: scale(1);
+      }
+
+      /* Custom Select */
+      .tech-select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234B5563'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1em;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b1324;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #176bff;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-accent selection:text-white">
+    <div class="bg-blueprint"></div>
+    <div
+      class="fixed top-[-50%] right-[-10%] w-[120%] h-[150%] bg-surface/5 transform skew-x-12 pointer-events-none z-[-1]"
+    ></div>
+
+    <!-- Header -->
+    <header
+      class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="flex items-center hover:opacity-80 transition-opacity duration-300 z-50"
+        >
+          <img
+            src="./rohan-logo-top.png"
+            alt="ROHAN logo"
+            class="site-logo h-11 md:h-14 w-auto"
+          />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center gap-8 font-tech text-xs tracking-widest text-cool/80"
+        >
+          <a href="index.html" class="hover:text-accent transition-colors"
+            >Home</a
+          >
+          <a href="solutions.html" class="hover:text-accent transition-colors"
+            >Solutions</a
+          >
+          <a href="cases.html" class="hover:text-accent transition-colors"
+            >Cases</a
+          >
+          <a href="pricing.html" class="hover:text-accent transition-colors"
+            >Pricing</a
+          >
+          <a href="insights.html" class="hover:text-accent transition-colors"
+            >Insights</a
+          >
+          <!-- Contact 保持高亮 -->
+          <a href="contact.html" class="text-accent font-bold transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="contact.html"
+            class="text-xs font-tech tracking-wider border border-accent/40 px-5 py-2.5 hover:border-accent hover:bg-accent/10 transition-colors duration-300 backdrop-blur-md rounded-sm hidden md:block text-accent"
+          >
+            LET'S TALK
+          </a>
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-cool p-2 hover:text-accent transition-colors z-50"
+          >
+            <i class="ph-bold ph-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Panel -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-base/98 backdrop-blur-xl z-40 hidden flex-col pt-28 px-8 items-center border-t border-accent/20"
+      >
+        <nav
+          class="flex flex-col gap-8 text-center font-tech text-sm tracking-[0.2em] w-full"
+        >
+          <a
+            href="index.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >HOME</a
+          >
+          <a
+            href="solutions.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >SOLUTIONS</a
+          >
+          <a
+            href="cases.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >CASES</a
+          >
+          <a
+            href="pricing.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >PRICING</a
+          >
+          <a
+            href="insights.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >INSIGHTS</a
+          >
+          <a href="contact.html" class="mobile-link text-accent pb-4 block"
+            >LET'S TALK</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section
+      class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/5 blur-[120px] rounded-full pointer-events-none"
+      ></div>
+
+      <div
+        class="max-w-[1400px] mx-auto px-6 w-full flex flex-col lg:flex-row items-center relative z-10"
+      >
+        <!-- Left: Typography -->
+        <div class="lg:w-[55%] z-20">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-6 hero-element opacity-0 translate-y-4 flex items-center gap-2"
+          >
+            <i class="ph-fill ph-stethoscope"></i> Initial Diagnosis
+          </div>
+
+          <h1
+            class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] mb-6 uppercase"
+          >
+            <div class="clip-text">
+              <span class="reveal-line text-steel">Let's Diagnose Your</span>
+            </div>
+            <div class="clip-text">
+              <span class="reveal-line text-accent">Overseas Digital</span>
+            </div>
+            <div class="clip-text">
+              <span class="reveal-line text-cool">Assets.</span>
+            </div>
+          </h1>
+
+          <h2
+            class="font-heading text-xl md:text-2xl text-cool font-semibold mb-6 hero-element opacity-0 translate-y-4 leading-relaxed"
+          >
+            发送你的旧官网、画册或产品资料，获取一次外贸数字资产诊断。
+          </h2>
+
+          <p
+            class="text-cool/80 text-[15px] md:text-lg font-light max-w-lg mb-10 leading-relaxed clip-text font-body"
+          >
+            Whether you need a website rebuild, SEO/GEO structure, social media
+            content system, or AI workflow training, the first step is to
+            understand what you already have.<br /><br />
+            无论你需要独立站重构、SEO/GEO 内容架构、社媒内容系统，还是 AI
+            效率培训，第一步都是先看清你现有资料的问题和机会。
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 hero-element opacity-0 translate-y-4 font-tech text-xs md:text-sm"
+          >
+            <a
+              href="#diagnosis-form"
+              class="btn-accent px-8 py-4 font-semibold flex items-center justify-center gap-2 rounded-sm"
+            >
+              START DIAGNOSIS <i class="ph-bold ph-arrow-down"></i>
+            </a>
+            <a
+              href="mailto:rohanyangrh@outlook.com"
+              class="btn-outline px-8 py-4 font-medium flex items-center justify-center gap-2 rounded-sm"
+            >
+              EMAIL DIRECTLY
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: 3D UI Console -->
+        <div class="hidden lg:block w-[45%] mt-12 lg:mt-0">
+          <div class="hero-3d-scene w-full h-full">
+            <div class="hero-3d-group w-full h-full">
+              <!-- Console Back Panel -->
+              <div
+                class="card-3d p-6 border-accent/40 shadow-[0_0_50px_rgba(23,107,255,0.15)]"
+                style="transform: translateZ(100px)"
+              >
+                <div
+                  class="flex justify-between items-center border-b border-accent/40 pb-3 mb-4"
+                >
+                  <span
+                    class="font-tech text-xs text-accent tracking-widest flex items-center gap-2"
+                  >
+                    <i class="ph-bold ph-terminal-window"></i>
+                    DIAGNOSIS_ENGINE.exe
+                  </span>
+                  <div class="flex gap-1.5">
+                    <div class="w-2 h-2 rounded-full bg-steel/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-steel/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-accent/80"></div>
+                  </div>
+                </div>
+
+                <div
+                  class="font-tech text-[11px] text-cool/80 leading-loose opacity-90 mt-2 space-y-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Waiting for website
+                    URL...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Brochure PDF accepted...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Product images ready...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Mapping digital asset
+                    gaps...
+                  </div>
+                  <div
+                    class="text-accent mt-4 bg-accent/10 border border-accent/30 p-2 inline-block shadow-[inset_0_0_10px_rgba(23,107,255,0.1)]"
+                  >
+                    <span class="animate-pulse">_</span> Initial direction
+                    pending.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. CHOOSE YOUR STARTING POINT -->
+    <section
+      id="starting-point"
+      class="py-24 bg-surfaceLight border-y border-white/5 bg-diagonal relative scroll-mt-20"
+    >
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="text-center mb-16 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+          >
+            Module Selection
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4 text-cool"
+          >
+            Choose Your <span class="text-steel">Starting Point.</span>
+          </h2>
+          <p class="text-cool/80 text-[15px] max-w-2xl mx-auto leading-relaxed">
+            如果你暂时不确定应该先做什么，可以根据当前最明显的问题选择一个方向。我们会基于您的资料，判断您更适合从样板测试、基础搭建还是持续增长系统开始。
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bento-grid-wrapper gs-fade-up"
+        >
+          <!-- Card 1 -->
+          <div class="bento-card p-6 flex flex-col group h-full">
+            <div
+              class="w-12 h-12 border border-steel/50 bg-surface flex items-center justify-center text-steel mb-4 group-hover:text-accent group-hover:border-accent transition-colors"
+            >
+              <i class="ph-light ph-layout text-2xl"></i>
+            </div>
+            <h3
+              class="font-heading text-lg font-bold text-cool uppercase tracking-wide mb-1"
+            >
+              Website Rebuild
+            </h3>
+            <h4 class="font-heading text-[13px] text-accent mb-3 font-semibold">
+              官网重构 / 独立站搭建
+            </h4>
+            <p class="text-cool/70 text-xs leading-relaxed mb-6 flex-grow">
+              适合旧官网过时、产品分类混乱、询盘路径不清晰、海外客户看不懂主营能力的企业。
+            </p>
+            <a
+              href="solutions.html#website-architecture"
+              class="text-[10px] font-tech text-cool/60 hover:text-accent uppercase tracking-widest flex items-center gap-1 mt-auto"
+            >
+              View Detail <i class="ph-bold ph-arrow-up-right"></i>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bento-card p-6 flex flex-col group h-full">
+            <div
+              class="w-12 h-12 border border-steel/50 bg-surface flex items-center justify-center text-steel mb-4 group-hover:text-accent group-hover:border-accent transition-colors"
+            >
+              <i class="ph-light ph-magnifying-glass text-2xl"></i>
+            </div>
+            <h3
+              class="font-heading text-lg font-bold text-cool uppercase tracking-wide mb-1"
+            >
+              SEO / GEO Diagnosis
+            </h3>
+            <h4 class="font-heading text-[13px] text-accent mb-3 font-semibold">
+              搜索与 AI 可读内容诊断
+            </h4>
+            <p class="text-cool/70 text-xs leading-relaxed mb-6 flex-grow">
+              适合官网有内容但搜索表现弱、FAQ缺失、工艺信息没有被引擎与 AI
+              正确引用的企业。
+            </p>
+            <a
+              href="solutions.html#seo-geo-aeo"
+              class="text-[10px] font-tech text-cool/60 hover:text-accent uppercase tracking-widest flex items-center gap-1 mt-auto"
+            >
+              View Detail <i class="ph-bold ph-arrow-up-right"></i>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bento-card p-6 flex flex-col group h-full">
+            <div
+              class="w-12 h-12 border border-steel/50 bg-surface flex items-center justify-center text-steel mb-4 group-hover:text-accent group-hover:border-accent transition-colors"
+            >
+              <i class="ph-light ph-share-network text-2xl"></i>
+            </div>
+            <h3
+              class="font-heading text-lg font-bold text-cool uppercase tracking-wide mb-1"
+            >
+              Social Media System
+            </h3>
+            <h4 class="font-heading text-[13px] text-accent mb-3 font-semibold">
+              社媒内容资产矩阵
+            </h4>
+            <p class="text-cool/70 text-xs leading-relaxed mb-6 flex-grow">
+              适合 LinkedIn
+              等平台空白，或只是随机发图片，缺乏持续专业内容表达的团队。
+            </p>
+            <a
+              href="solutions.html#social-media-assets"
+              class="text-[10px] font-tech text-cool/60 hover:text-accent uppercase tracking-widest flex items-center gap-1 mt-auto"
+            >
+              View Detail <i class="ph-bold ph-arrow-up-right"></i>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bento-card p-6 flex flex-col group h-full">
+            <div
+              class="w-12 h-12 border border-steel/50 bg-surface flex items-center justify-center text-steel mb-4 group-hover:text-accent group-hover:border-accent transition-colors"
+            >
+              <i class="ph-light ph-robot text-2xl"></i>
+            </div>
+            <h3
+              class="font-heading text-lg font-bold text-cool uppercase tracking-wide mb-1"
+            >
+              AI Workflow Training
+            </h3>
+            <h4 class="font-heading text-[13px] text-accent mb-3 font-semibold">
+              AI 培训与效率工作流
+            </h4>
+            <p class="text-cool/70 text-xs leading-relaxed mb-6 flex-grow">
+              适合希望用 AI
+              提升外贸邮件、技术翻译、PPT、社媒编写效率的外贸与工程团队。
+            </p>
+            <a
+              href="solutions.html#ai-training"
+              class="text-[10px] font-tech text-cool/60 hover:text-accent uppercase tracking-widest flex items-center gap-1 mt-auto"
+            >
+              View Detail <i class="ph-bold ph-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. QUICK DIAGNOSIS FORM & INFO -->
+    <section id="diagnosis-form" class="py-24 bg-base relative scroll-mt-20">
+      <div
+        class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12"
+      >
+        <!-- Left: Form -->
+        <div class="lg:col-span-8 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+          >
+            <i class="ph-fill ph-terminal-window"></i> Initialization
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide text-cool mb-4"
+          >
+            Send Your Materials.<br />
+            <span class="text-steel">Get A Clear Next Step.</span>
+          </h2>
+          <p class="text-cool/80 text-[15px] mb-10 max-w-xl leading-relaxed">
+            不需要一开始就准备完美资料。旧官网、公司介绍、产品图、设备清单、社媒账号，只要能体现你现在的状态，都可以作为诊断输入。
+          </p>
+
+          <!-- Form Structure -->
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="glass-panel p-8 md:p-10 border-steel/40 bg-surface/30 relative"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="41eaa295-0617-4294-8eba-8135c0450ed5"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="New ROHAN Contact Diagnosis Request"
+            />
+            <input type="hidden" name="from_name" value="ROHAN Website" />
+            <input
+              type="hidden"
+              name="form_type"
+              value="ROHAN Contact Page Diagnosis"
+            />
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-accent/5 blur-[50px] pointer-events-none"
+            ></div>
+
+            <div class="space-y-6 relative z-10">
+              <!-- Basic Info -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    class="block text-[10px] font-tech text-steel mb-2 uppercase tracking-wider"
+                    >01. Company Name / 公司名称 *</label
+                  >
+                  <input
+                    type="text"
+                    name="company_name"
+                    class="w-full tech-input px-4 py-3 text-sm"
+                    placeholder="e.g. Acme Machining"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-tech text-steel mb-2 uppercase tracking-wider"
+                    >02. Your Name / 联系人 *</label
+                  >
+                  <input
+                    type="text"
+                    name="contact_name"
+                    class="w-full tech-input px-4 py-3 text-sm"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    class="block text-[10px] font-tech text-steel mb-2 uppercase tracking-wider"
+                    >03. Contact Method / 联系方式 *</label
+                  >
+                  <input
+                    type="text"
+                    name="contact_method"
+                    class="w-full tech-input px-4 py-3 text-sm"
+                    placeholder="Email / WhatsApp / WeChat"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-tech text-steel mb-2 uppercase tracking-wider"
+                    >04. Current Website URL / 当前官网链接</label
+                  >
+                  <input
+                    type="url"
+                    name="website_url"
+                    class="w-full tech-input px-4 py-3 text-sm"
+                    placeholder="https://your-company.com"
+                  />
+                </div>
+              </div>
+
+              <!-- Industry & Market -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    class="block text-[10px] font-tech text-steel mb-2 uppercase tracking-wider"
+                    >05. Industry / 行业 *</label
+                  >
+                  <select
+                    name="industry"
+                    class="w-full tech-input tech-select px-4 py-3 text-sm text-cool/90"
+                    required
+                  >
+                    <option value="" disabled selected class="bg-base">
+                      Select your industry
+                    </option>
+                    <option value="Tooling" class="bg-base">
+                      Tooling / Mold / Die
+                    </option>
+                    <option value="Stamping" class="bg-base">
+                      Stamping / Metal Parts
+                    </option>
+                    <option value="CNC" class="bg-base">CNC / Machining</option>
+                    <option value="Equipment" class="bg-base">
+                      Equipment / Automation
+                    </option>
+                    <option value="Automotive" class="bg-base">
+                      Automotive Parts
+                    </option>
+                    <option value="Other" class="bg-base">
+                      Other Manufacturing
+                    </option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-tech text-steel mb-2 uppercase tracking-wider"
+                    >06. Target Market / 目标市场</label
+                  >
+                  <input
+                    type="text"
+                    name="target_market"
+                    class="w-full tech-input px-4 py-3 text-sm"
+                    placeholder="North America / Europe / SE Asia..."
+                  />
+                </div>
+              </div>
+
+              <!-- Needs & Budget -->
+              <div>
+                <label
+                  class="block text-[10px] font-tech text-steel mb-3 uppercase tracking-wider"
+                  >07. What do you need most? / 当前最需要什么</label
+                >
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-[13px] text-cool/80"
+                >
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      class="tech-checkbox"
+                      name="needs"
+                      value="Website rebuild"
+                    />
+                    <span class="group-hover:text-accent transition-colors"
+                      >Website rebuild</span
+                    >
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      class="tech-checkbox"
+                      name="needs"
+                      value="SEO / GEO structure"
+                    />
+                    <span class="group-hover:text-accent transition-colors"
+                      >SEO / GEO structure</span
+                    >
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      class="tech-checkbox"
+                      name="needs"
+                      value="Social media content"
+                    />
+                    <span class="group-hover:text-accent transition-colors"
+                      >Social media content</span
+                    >
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      class="tech-checkbox"
+                      name="needs"
+                      value="AI training"
+                    />
+                    <span class="group-hover:text-accent transition-colors"
+                      >AI training</span
+                    >
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      class="tech-checkbox"
+                      name="needs"
+                      value="Brochure upgrade"
+                    />
+                    <span class="group-hover:text-accent transition-colors"
+                      >Brochure / PPT upgrade</span
+                    >
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      class="tech-checkbox"
+                      name="needs"
+                      value="Not sure"
+                    />
+                    <span class="group-hover:text-accent transition-colors"
+                      >Not sure yet, need diagnosis</span
+                    >
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-tech text-steel mb-2 uppercase tracking-wider"
+                  >08. Expected Budget Range / 预算范围预估</label
+                >
+                <select
+                  name="budget_range"
+                  class="w-full md:w-1/2 tech-input tech-select px-4 py-3 text-sm text-cool/90"
+                >
+                  <option value="" disabled selected class="bg-base">
+                    Select budget range
+                  </option>
+                  <option value="999" class="bg-base">
+                    ¥999 Sample Project
+                  </option>
+                  <option value="5k-10k" class="bg-base">
+                    ¥5,000 - ¥10,000
+                  </option>
+                  <option value="10k-30k" class="bg-base">
+                    ¥10,000 - ¥30,000
+                  </option>
+                  <option value="monthly" class="bg-base">
+                    Monthly Service (Retainer)
+                  </option>
+                  <option value="unsure" class="bg-base">Not sure yet</option>
+                </select>
+              </div>
+
+              <!-- Text Areas -->
+              <div>
+                <label
+                  class="block text-[10px] font-tech text-steel mb-2 uppercase tracking-wider"
+                  >09. Main Products & Capabilities / 主营产品与能力简述</label
+                >
+                <textarea
+                  name="main_products_capabilities"
+                  rows="3"
+                  class="w-full tech-input px-4 py-3 text-sm resize-y"
+                  placeholder="Briefly describe your main products, processes, or core manufacturing capabilities..."
+                ></textarea>
+              </div>
+
+              <div>
+                <div
+                  class="flex flex-col md:flex-row justify-between md:items-end mb-2"
+                >
+                  <label
+                    class="block text-[10px] font-tech text-steel uppercase tracking-wider"
+                    >10. Materials / 资料提交方式</label
+                  >
+                  <span
+                    class="text-[10px] font-tech text-accent/60 tracking-wider"
+                    >Google Drive / WeTransfer / Baidu / URL</span
+                  >
+                </div>
+                <textarea
+                  name="materials_links"
+                  rows="3"
+                  class="w-full tech-input px-4 py-3 text-sm resize-y"
+                  placeholder="Paste website links, brochure cloud links, product catalog links, or LinkedIn page URL here..."
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-tech text-steel mb-2 uppercase tracking-wider"
+                  >11. Main Challenge / 当前最大问题或痛点</label
+                >
+                <textarea
+                  name="main_challenge"
+                  rows="3"
+                  class="w-full tech-input px-4 py-3 text-sm resize-y"
+                  placeholder="Tell us what feels outdated, unclear, inefficient, or difficult in your current overseas marketing materials..."
+                ></textarea>
+              </div>
+
+              <div class="pt-4 border-t border-steel/20">
+                <button
+                  type="submit"
+                  class="btn-accent w-full py-5 font-tech font-bold text-sm tracking-widest flex items-center justify-center gap-3"
+                >
+                  SUBMIT DIAGNOSIS REQUEST
+                  <i class="ph-bold ph-paper-plane-right"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Flow & Info -->
+        <div class="lg:col-span-4 flex flex-col gap-8 gs-fade-up">
+          <!-- What Happens Next -->
+          <div class="bg-[#070C1A] border border-steel/30 p-6">
+            <h4
+              class="font-tech text-[11px] text-accent uppercase tracking-widest mb-6 border-b border-steel/30 pb-3 flex items-center gap-2"
+            >
+              <i class="ph-fill ph-gear"></i> What Happens Next?
+            </h4>
+            <div
+              class="space-y-6 relative before:absolute before:inset-y-2 before:left-[11px] before:w-px before:bg-steel/30"
+            >
+              <div class="relative pl-8">
+                <div
+                  class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface border border-steel flex items-center justify-center text-[9px] font-tech text-cool z-10"
+                >
+                  01
+                </div>
+                <h5 class="text-sm font-bold text-cool mb-1">
+                  Submit Materials
+                </h5>
+                <p class="text-xs text-cool/60 leading-relaxed">
+                  发送旧官网、画册、产品图、公司介绍或现有社媒账号链接。
+                </p>
+              </div>
+
+              <div class="relative pl-8">
+                <div
+                  class="absolute left-0 top-1 w-6 h-6 rounded-full bg-accent/20 border border-accent flex items-center justify-center text-[9px] font-tech text-accent z-10 shadow-[0_0_10px_rgba(23,107,255,0.2)]"
+                >
+                  02
+                </div>
+                <h5 class="text-sm font-bold text-accent mb-1">
+                  Receive Initial Direction
+                </h5>
+                <p class="text-xs text-cool/70 leading-relaxed">
+                  我们会判断您当前更适合从 Sample、Foundation 还是 Growth 开始。
+                </p>
+              </div>
+
+              <div class="relative pl-8">
+                <div
+                  class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface border border-steel flex items-center justify-center text-[9px] font-tech text-cool z-10"
+                >
+                  03
+                </div>
+                <h5 class="text-sm font-bold text-cool mb-1">
+                  Start with Clear Scope
+                </h5>
+                <p class="text-xs text-cool/60 leading-relaxed">
+                  确认交付范围、周期、价格、修改轮次和资料配合后再启动项目。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Contact -->
+          <div class="bg-surface/30 border border-steel/30 p-6">
+            <h4
+              class="font-tech text-[11px] text-cool uppercase tracking-widest mb-6 border-b border-steel/30 pb-3 flex items-center gap-2"
+            >
+              <i class="ph-fill ph-address-book"></i> Direct Contact
+            </h4>
+
+            <div class="space-y-5">
+              <!-- Email -->
+              <div>
+                <div
+                  class="text-[10px] font-tech text-steel uppercase tracking-widest mb-1"
+                >
+                  Email
+                </div>
+                <a
+                  href="mailto:rohanyangrh@outlook.com"
+                  class="text-[15px] font-tech font-semibold text-cool hover:text-accent transition-colors flex items-center gap-2"
+                >
+                  rohanyangrh@outlook.com
+                  <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
+                </a>
+              </div>
+
+              <!-- Phone / WhatsApp -->
+              <div>
+                <div
+                  class="text-[10px] font-tech text-steel uppercase tracking-widest mb-1"
+                >
+                  Phone / WhatsApp
+                </div>
+                <a
+                  href="tel:+8613622666236"
+                  class="text-[14px] font-tech font-semibold text-cool hover:text-accent transition-colors flex items-center gap-2"
+                >
+                  +86 136 2266 6236
+                  <i class="ph-bold ph-phone text-[12px]"></i>
+                </a>
+              </div>
+
+              <!-- WeChat / QQ -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="border border-steel/30 bg-base/40 p-4">
+                  <div
+                    class="text-[10px] font-tech text-steel uppercase tracking-widest mb-2"
+                  >
+                    WeChat
+                  </div>
+                  <div class="text-[14px] font-tech font-semibold text-cool">
+                    yrh2333
+                  </div>
+                </div>
+
+                <div class="border border-steel/30 bg-base/40 p-4">
+                  <div
+                    class="text-[10px] font-tech text-steel uppercase tracking-widest mb-2"
+                  >
+                    QQ
+                  </div>
+                  <div class="text-[14px] font-tech font-semibold text-cool">
+                    2425377267
+                  </div>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div>
+                <div
+                  class="text-[10px] font-tech text-steel uppercase tracking-widest mb-1"
+                >
+                  LinkedIn
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/rohanyang?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-[14px] text-cool hover:text-accent transition-colors flex items-center gap-2 font-medium"
+                >
+                  ROHAN / Rohan Yang
+                  <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
+                </a>
+              </div>
+
+              <!-- Response SLA -->
+              <div class="bg-accent/10 border border-accent/20 p-4 mt-2">
+                <div
+                  class="text-[10px] font-tech text-accent uppercase tracking-widest mb-1"
+                >
+                  Response SLA
+                </div>
+                <p class="text-[12px] text-cool/80 leading-snug">
+                  收到有效资料后，通常 24
+                  小时内给出初步诊断方向。紧急需求可优先通过微信或电话 联系。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. MATERIALS & BOUNDARIES -->
+    <section
+      class="py-24 bg-surfaceLight border-t border-white/5 bg-diagonal relative"
+    >
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 gs-fade-up">
+          <!-- What You Can Send -->
+          <div class="bento-card p-8 md:p-10 border border-steel/40">
+            <h3
+              class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-4"
+            >
+              Messy Materials <span class="text-steel">Are Welcome.</span>
+            </h3>
+            <p class="text-cool/80 text-[14px] leading-relaxed mb-6">
+              很多制造企业并不是没有素材，而是素材分散、表达混乱。即使资料不完美，也可以作为第一轮诊断的输入。
+            </p>
+
+            <ul
+              class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-[13px] text-cool/70 mb-8 font-medium"
+            >
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> Existing website URL
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> Company profile /
+                PDF
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> Product catalog
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> Product photos
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> Factory photos
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> Equipment list
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> Project cases
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> LinkedIn pages
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> Customer FAQ
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-bold ph-check text-steel"></i> Tech docs / BOM
+              </li>
+            </ul>
+
+            <div
+              class="p-4 bg-surface/50 border border-accent/40 text-sm text-accent font-medium leading-relaxed shadow-[inset_0_0_15px_rgba(23,107,255,0.05)]"
+            >
+              "Even messy materials can be turned into structured digital
+              assets."<br />
+              <span class="text-cool/70 text-xs font-normal mt-1 block"
+                >资料不完美没关系，零散素材也可以被重新整理成清晰的数字资产。</span
+              >
+            </div>
+          </div>
+
+          <!-- Professional Boundaries -->
+          <div
+            class="glass-panel p-8 md:p-10 border border-steel/40 relative overflow-hidden"
+          >
+            <div
+              class="absolute -bottom-10 -right-10 w-40 h-40 bg-accent/5 blur-[40px] pointer-events-none"
+            ></div>
+            <h3
+              class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-4"
+            >
+              Clear Boundaries.<br /><span class="text-steel"
+                >Clean Collaboration.</span
+              >
+            </h3>
+            <p class="text-cool/70 text-[14px] leading-relaxed mb-6">
+              为了避免传统外包合作中常见的模糊承诺，我们会在开始前确认界限。
+            </p>
+
+            <ul class="space-y-4 text-[13px] text-cool/80 leading-relaxed">
+              <li class="flex items-start gap-3">
+                <i
+                  class="ph-bold ph-warning-circle text-accent mt-0.5 shrink-0"
+                ></i>
+                不承诺短期任何具体 SEO 排名位置。
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  class="ph-bold ph-warning-circle text-accent mt-0.5 shrink-0"
+                ></i>
+                不承诺具体的发询盘数量或直接销售收益额。
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  class="ph-bold ph-warning-circle text-accent mt-0.5 shrink-0"
+                ></i>
+                不替代客户内部进行核心硬核工程技术判断。
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  class="ph-bold ph-warning-circle text-accent mt-0.5 shrink-0"
+                ></i>
+                AI 生成内容必须经过客户内部工程人员确认审核。
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  class="ph-bold ph-warning-circle text-accent mt-0.5 shrink-0"
+                ></i>
+                不确认具体工作范围前，绝不随意启动项目或收费。
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  class="ph-bold ph-warning-circle text-accent mt-0.5 shrink-0"
+                ></i>
+                需要客户内部有人对接，提供真实产品资料并配合确认。
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FAQ -->
+    <section class="py-24 bg-base relative">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-16 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+          >
+            Common Questions
+          </div>
+          <h2
+            class="font-heading text-3xl font-bold uppercase tracking-wide text-cool"
+          >
+            Contact <span class="text-steel">FAQ.</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 gs-fade-up">
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q1: 我资料很不完整，可以提交吗？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              完全可以。旧官网、旧画册、零碎的产品图片、设备清单或过时的公司介绍
+              PPT，只要能体现你当前的状态，都可以用于第一轮诊断。梳理混乱资料本来就是我们的核心工作。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q2: 表单提交后一定要付费购买服务吗？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A: 完全不一定。我们会先判断您的真实需求是否契合 ROHAN
+              的服务方式。如果不适合，我们会诚实告知。如果适合且需要进一步测试，可以从
+              ¥999 Sample Project 低风险开始。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q3: ¥999 Sample Project 具体适合什么情况？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              适合第一次合作、对最终效果有疑虑、想低成本验证我们的设计水准、工业理解力和英文重构能力的客户。它交付的不是完整网站，而是一个极其精细的局部样板和改造路线图。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q4: 我只有纯中文的内销资料，没有英文内容怎么办？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              没问题。制造业英文表达深度重构本身就是我们的核心服务之一。我们将从您的中文规格书和介绍中，提炼出符合海外工程采购商习惯的专业英文表达。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q5: 你们能不能只帮我代运营社媒，不做官网重构？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              技术上可以。但在商业逻辑上，我们强烈建议您至少拥有一个足够专业的官网或落地页承接社媒流量，否则客户在社媒上对你产生兴趣，点进破旧官网后信任感会瞬间消失。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q6: 表单提交后多久会收到回复？支持在线会议吗？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A: 如果您提交的资料链接清晰可访问，我们通常会在 24
+              小时内邮件给出初步诊断方向。在基础资料判断通过后，我们可以随时为您安排
+              30 分钟的线上诊断视频会议。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FINAL CTA -->
+    <section
+      class="pt-32 relative overflow-hidden bg-surfaceLight border-t border-white/5 bg-diagonal"
+    >
+      <div
+        class="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-darker to-transparent pointer-events-none"
+      ></div>
+
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10 gs-fade-up pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2
+              class="font-heading text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wide leading-tight"
+            >
+              Ready To Turn Materials Into A <br />
+              <span class="text-accent">Digital Roadmap?</span>
+            </h2>
+            <p class="text-cool/80 text-[15px] mb-10 max-w-md leading-relaxed">
+              发送你的旧官网、产品画册或公司介绍。我们先诊断问题，再建议你从
+              Sample、Foundation 或 Growth 的哪一步稳妥开始。
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+              <button
+                onclick="
+                  document
+                    .getElementById('diagnosis-form')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+                class="btn-accent px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+              >
+                START DIAGNOSIS <i class="ph-bold ph-arrow-up"></i>
+              </button>
+              <a
+                href="pricing.html"
+                class="btn-outline px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+              >
+                VIEW PRICING
+              </a>
+            </div>
+            <a
+              href="solutions.html"
+              class="inline-flex items-center gap-2 text-xs font-tech text-cool/60 hover:text-accent transition-colors uppercase tracking-widest"
+            >
+              Explore All Solutions <i class="ph-bold ph-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Output Abstract Box -->
+          <div
+            class="glass-panel p-8 relative border border-steel/40 shadow-xl"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-[50px] pointer-events-none"
+            ></div>
+
+            <div class="grid grid-cols-2 gap-8">
+              <div>
+                <div
+                  class="font-tech text-xs text-steel mb-4 uppercase tracking-widest border-b border-steel/30 pb-2"
+                >
+                  DIAGNOSIS INPUT
+                </div>
+                <ul
+                  class="space-y-3 font-tech text-[11px] text-cool/70 tracking-wider"
+                >
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-file-text text-steel"></i> Website URL
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-file-text text-steel"></i> Brochure PDF
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-file-text text-steel"></i> Product
+                    Photos
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-file-text text-steel"></i> Target
+                    Market
+                  </li>
+                </ul>
+              </div>
+
+              <div class="relative">
+                <div
+                  class="absolute -left-6 top-1/2 -translate-y-1/2 text-accent text-xl hidden md:block"
+                >
+                  <i class="ph-light ph-arrow-right"></i>
+                </div>
+
+                <div
+                  class="font-tech text-xs text-accent mb-4 uppercase tracking-widest border-b border-accent/30 pb-2"
+                >
+                  EXPECTED OUTPUT
+                </div>
+                <ul
+                  class="space-y-3 font-tech text-[11px] text-cool/90 tracking-wider"
+                >
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Package
+                    recommend
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Asset
+                    gap diagnosis
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Visual
+                    direction
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Roadmap
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <section class="bg-base relative border-t border-steel/30 pt-16 pb-8">
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+          <!-- Logo Area -->
+          <div class="col-span-2 md:col-span-1">
+            <a
+              href="index.html"
+              class="block hover:opacity-80 transition-opacity duration-300 mb-6"
+            >
+              <img
+                src="./rohan-logo-low.png"
+                alt="ROHAN logo"
+                class="site-logo h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+            </a>
+            <p class="text-cool/50 text-xs leading-relaxed max-w-[200px]">
+              Industrial B2B Digital Architect. <br />Crafting high-conversion
+              assets for global manufacturing excellence.
+            </p>
+          </div>
+
+          <!-- Links -->
+          <div class="md:col-start-2">
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              SOLUTIONS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="solutions.html#website-architecture"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Website Architecture</a
+              >
+              <a
+                href="solutions.html#seo-geo-aeo"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >SEO / GEO</a
+              >
+              <a
+                href="solutions.html#social-media-assets"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Social Media Assets</a
+              >
+              <a
+                href="solutions.html#ai-training"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >AI Training</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              COMPANY
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="about.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >About</a
+              >
+              <a
+                href="approach.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Approach</a
+              >
+              <a
+                href="cases.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Cases</a
+              >
+              <a
+                href="pricing.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Pricing</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              INSIGHTS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="insights.html#ai-manufacturing"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >AI for Manufacturing</a
+              >
+              <a
+                href="insights.html#b2b-marketing"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >B2B Marketing</a
+              >
+              <a
+                href="insights.html#industrial-website-design"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Industrial Website Design</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              CONNECT
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="mailto:contact@rohan.com"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >contact@rohan.com</a
+              >
+              <a
+                href="https://www.linkedin.com/in/rohanyang?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                class="text-xs text-cool/70 hover:text-accent transition-colors flex items-center gap-1"
+                >LinkedIn <i class="ph-bold ph-arrow-up-right text-[10px]"></i
+              ></a>
+              <a
+                href="contact.html#diagnosis-form"
+                class="text-xs text-accent hover:text-cool transition-colors mt-2"
+                >Book a Diagnosis &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center border-t border-steel/20 pt-6"
+        >
+          <div
+            class="text-[10px] text-steel font-tech tracking-wider mb-4 md:mb-0"
+          >
+            © 2026 ROHAN. ALL RIGHTS RESERVED.
+          </div>
+          <div
+            class="flex gap-6 text-[10px] font-tech text-steel tracking-wider"
+          >
+            <a
+              href="privacy-policy.html"
+              class="hover:text-cool transition-colors uppercase"
+              >Privacy Policy</a
+            >
+            <a
+              href="terms-of-use.html"
+              class="hover:text-cool transition-colors uppercase"
+              >Terms of Use</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GSAP & JS Logic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+        const icon = mobileBtn.querySelector("i");
+        if (mobileMenu.classList.contains("hidden")) {
+          icon.classList.replace("ph-x", "ph-list");
+        } else {
+          icon.classList.replace("ph-list", "ph-x");
+        }
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          mobileBtn.querySelector("i").classList.replace("ph-x", "ph-list");
+        });
+      });
+
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+      const revealLines = document.querySelectorAll(".reveal-line");
+      const heroElements = document.querySelectorAll(".hero-element");
+      const tlHero = gsap.timeline();
+      tlHero
+        .to(revealLines, {
+          y: 0,
+          duration: 1,
+          stagger: 0.15,
+          ease: "power4.out",
+          delay: 0.1,
+        })
+        .to(
+          heroElements,
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" },
+          "-=0.5",
+        );
+
+      // Card Hover Effect Logic
+      const bentoContainers = document.querySelectorAll(".bento-grid-wrapper");
+      bentoContainers.forEach((container) => {
+        container.addEventListener("mousemove", (e) => {
+          for (const card of container.getElementsByClassName("bento-card")) {
+            const rect = card.getBoundingClientRect(),
+              x = e.clientX - rect.left,
+              y = e.clientY - rect.top;
+            card.style.setProperty("--mouse-x", `${x}px`);
+            card.style.setProperty("--mouse-y", `${y}px`);
+          }
+        });
+      });
+
+      const fadeUpElements = document.querySelectorAll(".gs-fade-up");
+      fadeUpElements.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // Hero 3D Scene subtle mouse interaction
+      const scene = document.querySelector(".hero-3d-scene");
+      const group = document.querySelector(".hero-3d-group");
+      if (scene && window.innerWidth > 1024) {
+        scene.addEventListener("mousemove", (e) => {
+          const xAxis = (window.innerWidth / 2 - e.pageX) / 60;
+          const yAxis = (window.innerHeight / 2 - e.pageY) / 60;
+          gsap.to(group, {
+            rotationY: -20 + xAxis,
+            rotationX: 15 - yAxis,
+            duration: 1,
+            ease: "power1.out",
+          });
+        });
+        scene.addEventListener("mouseleave", () => {
+          gsap.to(group, {
+            rotationY: -20,
+            rotationX: 15,
+            duration: 1,
+            ease: "power1.out",
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

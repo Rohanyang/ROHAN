@@ -1,0 +1,1456 @@
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | ROHAN Industrial B2B Digital Architect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: "#0B1324",
+              surface: "#2D3E5F",
+              surfaceLight: "#1A2642",
+              accent: "#176BFF",
+              steel: "#4B5563",
+              cool: "#F5F7FA",
+              darker: "#070C1A",
+            },
+            fontFamily: {
+              heading: ['"Exo 2"', "sans-serif"],
+              body: ["Raleway", "sans-serif"],
+              tech: ["Orbitron", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0b1324;
+        color: #f5f7fa;
+        font-family: "Raleway", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .site-logo {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .bg-blueprint {
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          );
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+      }
+      .bg-diagonal {
+        background-image: linear-gradient(
+          -45deg,
+          transparent 48%,
+          rgba(23, 107, 255, 0.05) 50%,
+          transparent 52%
+        );
+        background-size: 30px 30px;
+      }
+      .glass-panel {
+        background: rgba(45, 62, 95, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(23, 107, 255, 0.15);
+      }
+      .clip-text {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      .reveal-line {
+        display: inline-block;
+        transform: translateY(110%);
+        will-change: transform;
+      }
+      .bento-card {
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgba(45, 62, 95, 0.4) 0%,
+          rgba(11, 19, 36, 0.6) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        overflow: hidden;
+        transition:
+          border-color 0.4s,
+          transform 0.4s;
+      }
+      .bento-card:hover {
+        border-color: rgba(23, 107, 255, 0.4);
+      }
+      .bento-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          600px circle at var(--mouse-x) var(--mouse-y),
+          rgba(23, 107, 255, 0.1),
+          transparent 40%
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .bento-card:hover::before {
+        opacity: 1;
+      }
+
+      .btn-accent {
+        position: relative;
+        background: #176bff;
+        color: #f5f7fa;
+        border: 1px solid #176bff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .btn-accent:hover {
+        background: transparent;
+        color: #176bff;
+        box-shadow: 0 0 20px rgba(23, 107, 255, 0.3);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(23, 107, 255, 0.4);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+      }
+      .btn-outline:hover {
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.1);
+      }
+
+      .hero-3d-scene {
+        perspective: 1500px;
+        transform-style: preserve-3d;
+      }
+      .hero-3d-group {
+        transform: translateX(180px) translateY(-50px) scale(1.4) rotateX(15deg)
+          rotateY(-20deg) rotateZ(5deg);
+        transform-style: preserve-3d;
+        position: relative;
+      }
+      .card-3d {
+        position: absolute;
+        width: 380px;
+        background: rgba(45, 62, 95, 0.85);
+        border: 1px solid rgba(23, 107, 255, 0.2);
+        backdrop-filter: blur(8px);
+        border-radius: 4px;
+        box-shadow:
+          -20px 20px 40px rgba(11, 19, 36, 0.9),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b1324;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #176bff;
+      }
+
+      .policy-text-block p {
+        margin-bottom: 1.25rem;
+        line-height: 1.7;
+        color: rgba(245, 247, 250, 0.8);
+      }
+      .policy-text-block ul {
+        margin-bottom: 1.5rem;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-accent selection:text-white">
+    <div class="bg-blueprint"></div>
+    <div
+      class="fixed top-[-50%] right-[-10%] w-[120%] h-[150%] bg-surface/5 transform skew-x-12 pointer-events-none z-[-1]"
+    ></div>
+
+    <!-- Header -->
+    <header
+      class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="flex items-center hover:opacity-80 transition-opacity duration-300 z-50"
+        >
+          <img
+            src="./rohan-logo-top.png"
+            alt="ROHAN logo"
+            class="site-logo h-11 md:h-14 w-auto"
+          />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center gap-8 font-tech text-xs tracking-widest text-cool/80"
+        >
+          <a href="index.html" class="hover:text-accent transition-colors"
+            >Home</a
+          >
+          <a href="solutions.html" class="hover:text-accent transition-colors"
+            >Solutions</a
+          >
+          <a href="cases.html" class="hover:text-accent transition-colors"
+            >Cases</a
+          >
+          <a href="pricing.html" class="hover:text-accent transition-colors"
+            >Pricing</a
+          >
+          <a href="insights.html" class="hover:text-accent transition-colors"
+            >Insights</a
+          >
+          <a href="contact.html" class="hover:text-accent transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="contact.html#diagnosis-form"
+            class="text-xs font-tech tracking-wider border border-accent/40 px-5 py-2.5 hover:border-accent hover:bg-accent/10 transition-colors duration-300 backdrop-blur-md rounded-sm hidden md:block"
+          >
+            LET'S TALK
+          </a>
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-cool p-2 hover:text-accent transition-colors z-50"
+          >
+            <i class="ph-bold ph-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Panel -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-base/98 backdrop-blur-xl z-40 hidden flex-col pt-28 px-8 items-center border-t border-accent/20"
+      >
+        <nav
+          class="flex flex-col gap-8 text-center font-tech text-sm tracking-[0.2em] w-full"
+        >
+          <a
+            href="index.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >HOME</a
+          >
+          <a
+            href="solutions.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >SOLUTIONS</a
+          >
+          <a
+            href="cases.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >CASES</a
+          >
+          <a
+            href="pricing.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >PRICING</a
+          >
+          <a
+            href="insights.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >INSIGHTS</a
+          >
+          <a href="contact.html" class="mobile-link text-accent pb-4 block"
+            >LET'S TALK</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section
+      class="relative pt-32 pb-20 flex items-center overflow-hidden border-b border-white/5"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/5 blur-[120px] rounded-full pointer-events-none"
+      ></div>
+
+      <div
+        class="max-w-[1400px] mx-auto px-6 w-full flex flex-col lg:flex-row items-center relative z-10"
+      >
+        <!-- Left: Typography -->
+        <div class="lg:w-[55%] z-20 py-10">
+          <div
+            class="font-tech text-xs text-steel tracking-[0.2em] uppercase mb-6 hero-element opacity-0 translate-y-4 flex items-center gap-2"
+          >
+            <i class="ph-fill ph-shield-check"></i> Legal & Compliance
+          </div>
+
+          <h1
+            class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 uppercase"
+          >
+            <div class="clip-text">
+              <span class="reveal-line text-cool">Privacy</span>
+            </div>
+            <div class="clip-text">
+              <span class="reveal-line text-steel">Policy.</span>
+            </div>
+          </h1>
+
+          <h2
+            class="font-heading text-lg md:text-xl text-accent font-medium mb-6 hero-element opacity-0 translate-y-4 tracking-wide leading-snug"
+          >
+            How ROHAN collects, uses, and protects information submitted through
+            this website.
+          </h2>
+
+          <p
+            class="text-cool/80 text-[15px] font-medium max-w-xl mb-4 leading-relaxed hero-element opacity-0 translate-y-4 font-body"
+          >
+            本隐私政策说明 ROHAN
+            如何收集、使用和保护通过本网站、联系表单、诊断请求、邮件以及项目沟通中提交的信息。
+          </p>
+
+          <p
+            class="text-cool/60 text-[14px] font-light max-w-xl mb-10 leading-relaxed hero-element opacity-0 translate-y-4 font-body border-l-2 border-steel/30 pl-4"
+          >
+            We only collect information that visitors voluntarily submit or that
+            is necessary to improve website performance and communication.<br />
+            <span class="mt-2 block"
+              >我们只收集访问者主动提交的信息，或用于改善网站体验和沟通流程所需的基础信息。</span
+            >
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 hero-element opacity-0 translate-y-4 font-tech text-xs md:text-sm"
+          >
+            <a
+              href="contact.html#diagnosis-form"
+              class="btn-accent px-8 py-4 font-semibold flex items-center justify-center gap-2 rounded-sm shadow-[0_0_20px_rgba(23,107,255,0.2)]"
+            >
+              CONTACT ROHAN <i class="ph-bold ph-arrow-right"></i>
+            </a>
+            <a
+              href="index.html"
+              class="btn-outline px-8 py-4 font-medium flex items-center justify-center gap-2 rounded-sm"
+            >
+              BACK TO HOME
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: 3D UI Console -->
+        <div class="hidden lg:block w-[45%] mt-12 lg:mt-0">
+          <div class="hero-3d-scene w-full h-full">
+            <div class="hero-3d-group w-full h-full">
+              <!-- Console Back Panel -->
+              <div
+                class="card-3d p-6 border-steel/40 shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-[#070C1A]/90"
+                style="transform: translateZ(100px)"
+              >
+                <div
+                  class="flex justify-between items-center border-b border-steel/40 pb-3 mb-4"
+                >
+                  <span
+                    class="font-tech text-xs text-steel tracking-widest flex items-center gap-2"
+                  >
+                    <i class="ph-bold ph-lock-key"></i> PRIVACY_PROTOCOL.exe
+                  </span>
+                  <div class="flex gap-1.5">
+                    <div class="w-2 h-2 rounded-full bg-steel/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-steel/50"></div>
+                    <div
+                      class="w-2 h-2 rounded-full bg-accent/80 animate-pulse"
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  class="font-tech text-[11px] text-cool/70 leading-loose opacity-90 mt-2 space-y-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <span class="text-accent">></span> Contact data received...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-accent">></span> Project materials
+                    protected...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-accent">></span> No public case use
+                    without permission...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-accent">></span> AI-assisted workflow
+                    boundaries active...
+                  </div>
+                  <div
+                    class="text-cool mt-4 bg-surface/30 border border-steel/30 p-2 inline-block"
+                  >
+                    <span class="text-accent animate-pulse">_</span> Privacy
+                    notice loaded.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. POLICY OVERVIEW -->
+    <section class="py-20 bg-surfaceLight relative border-b border-white/5">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="mb-12 gs-fade-up text-center">
+          <h2
+            class="font-heading text-2xl md:text-3xl font-bold uppercase tracking-wide text-cool mb-4"
+          >
+            Policy <span class="text-steel">Overview.</span>
+          </h2>
+          <p class="text-cool/80 text-[15px] leading-relaxed max-w-2xl mx-auto">
+            ROHAN
+            尊重客户和访问者提交的信息。本页面解释我们可能收集哪些信息、如何使用这些信息、如何处理客户资料，以及你可以如何联系我们。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 gs-fade-up">
+          <div
+            class="glass-panel p-6 border-steel/20 flex gap-4 items-start hover:border-accent/30 transition-colors"
+          >
+            <div class="font-tech text-xl text-steel font-bold mt-1">01</div>
+            <div>
+              <p
+                class="font-heading text-cool font-semibold tracking-wide mb-1 text-[15px]"
+              >
+                We collect only submitted or necessary information.
+              </p>
+              <p class="text-cool/60 text-[13px]">
+                我们只收集主动提交或必要的信息。
+              </p>
+            </div>
+          </div>
+          <div
+            class="glass-panel p-6 border-steel/20 flex gap-4 items-start hover:border-accent/30 transition-colors"
+          >
+            <div class="font-tech text-xl text-steel font-bold mt-1">02</div>
+            <div>
+              <p
+                class="font-heading text-cool font-semibold tracking-wide mb-1 text-[15px]"
+              >
+                We use information to communicate and deliver services.
+              </p>
+              <p class="text-cool/60 text-[13px]">
+                我们使用信息用于沟通、诊断、报价和项目交付。
+              </p>
+            </div>
+          </div>
+          <div
+            class="glass-panel p-6 border-steel/20 flex gap-4 items-start hover:border-accent/30 transition-colors"
+          >
+            <div class="font-tech text-xl text-steel font-bold mt-1">03</div>
+            <div>
+              <p
+                class="font-heading text-cool font-semibold tracking-wide mb-1 text-[15px]"
+              >
+                We do not sell or publicly disclose materials without
+                permission.
+              </p>
+              <p class="text-cool/60 text-[13px]">
+                未经允许，我们不会出售或公开客户资料。
+              </p>
+            </div>
+          </div>
+          <div
+            class="glass-panel p-6 border-steel/20 flex gap-4 items-start hover:border-accent/30 transition-colors"
+          >
+            <div class="font-tech text-xl text-steel font-bold mt-1">04</div>
+            <div>
+              <p
+                class="font-heading text-cool font-semibold tracking-wide mb-1 text-[15px]"
+              >
+                Sensitive materials are minimized when using AI tools.
+              </p>
+              <p class="text-cool/60 text-[13px]">
+                使用 AI 工具时，会尽量减少敏感信息暴露或进行匿名化。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN POLICY CONTENT -->
+    <div class="bg-base relative py-20">
+      <div
+        class="absolute inset-0 bg-diagonal opacity-20 pointer-events-none"
+      ></div>
+
+      <div
+        class="max-w-[800px] mx-auto px-6 space-y-24 relative z-10 policy-text-block"
+      >
+        <!-- 3. Information We Collect -->
+        <section id="information-we-collect" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 01
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            Information We Collect
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            我们收集的信息
+          </h3>
+
+          <p class="text-[15px]">
+            ROHAN may collect information that you voluntarily submit through
+            contact forms, diagnosis requests, email communication, or project
+            discussions.
+          </p>
+          <p class="text-[14px] text-cool/60">
+            ROHAN
+            可能会收集你通过联系表单、诊断请求、邮件沟通或项目讨论中主动提交的信息。
+          </p>
+
+          <div
+            class="bg-[#070C1A] border border-steel/30 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.5)] my-8"
+          >
+            <div
+              class="font-tech text-[10px] text-steel uppercase tracking-widest mb-4 border-b border-steel/30 pb-2"
+            >
+              Data Input Profile
+            </div>
+            <ul
+              class="space-y-3 text-[14px] text-cool/80 font-medium list-none mb-0"
+            >
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check-square text-accent mt-0.5"></i>
+                <span>Company name / 公司名称</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check-square text-accent mt-0.5"></i>
+                <span>Contact person / 联系人姓名</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check-square text-accent mt-0.5"></i>
+                <span
+                  >Email, WhatsApp, WeChat, or other contact methods /
+                  邮箱、WhatsApp、微信等</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check-square text-accent mt-0.5"></i>
+                <span>Website URL / 官网链接</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check-square text-accent mt-0.5"></i>
+                <span>Industry type & main products / 行业类型与主营产品</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check-square text-accent mt-0.5"></i>
+                <span>Target markets & budget range / 目标市场与预算范围</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check-square text-accent mt-0.5"></i>
+                <span>Project needs or challenges / 项目需求或当前问题</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="ph-bold ph-check-square text-accent mt-0.5"></i>
+                <span class="leading-snug"
+                  >Brochures, catalogs, product photos, technical documents, or
+                  other materials you choose to submit /
+                  你主动提交的画册、图片、技术资料等</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="border-l-2 border-accent pl-4">
+            <p class="text-[15px] font-semibold text-cool mb-1">
+              We only collect information that you voluntarily submit or that is
+              necessary for website operation and communication.
+            </p>
+            <p class="text-[14px] text-cool/60 mb-0">
+              我们只收集你主动提交的信息，或网站运行和沟通所需的基础信息。
+            </p>
+          </div>
+        </section>
+
+        <!-- 4. How We Use Information -->
+        <section id="how-we-use-information" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 02
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            How We Use Information
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            我们如何使用信息
+          </h3>
+
+          <p class="text-[15px]">
+            Submitted information may be used to understand your needs, respond
+            to inquiries, provide initial diagnosis, prepare quotations, deliver
+            agreed services, and improve ROHAN’s website content and service
+            workflow.
+          </p>
+          <p class="text-[14px] text-cool/60">
+            你提交的信息可能用于了解需求、回复咨询、提供初步诊断、准备报价、执行双方确认的项目服务，以及改进
+            ROHAN 的网站内容和服务流程。
+          </p>
+
+          <ul class="space-y-4 text-[14px] text-cool/80 list-none my-8">
+            <li
+              class="flex items-start gap-4 p-4 border border-white/5 bg-surface/20"
+            >
+              <i
+                class="ph-fill ph-envelope-simple text-steel text-xl mt-0.5"
+              ></i>
+              <div>
+                <span class="block font-semibold text-cool"
+                  >Replying to your inquiry</span
+                >
+                <span class="text-[13px] text-cool/60 block mt-1"
+                  >回复咨询</span
+                >
+              </div>
+            </li>
+            <li
+              class="flex items-start gap-4 p-4 border border-white/5 bg-surface/20"
+            >
+              <i
+                class="ph-fill ph-magnifying-glass text-steel text-xl mt-0.5"
+              ></i>
+              <div>
+                <span class="block font-semibold text-cool"
+                  >Providing initial digital asset diagnosis & checking
+                  match</span
+                >
+                <span class="text-[13px] text-cool/60 block mt-1"
+                  >判断需求是否匹配，并提供初步数字资产诊断</span
+                >
+              </div>
+            </li>
+            <li
+              class="flex items-start gap-4 p-4 border border-white/5 bg-surface/20"
+            >
+              <i class="ph-fill ph-file-text text-steel text-xl mt-0.5"></i>
+              <div>
+                <span class="block font-semibold text-cool"
+                  >Preparing project suggestions or quotations & delivering
+                  services</span
+                >
+                <span class="text-[13px] text-cool/60 block mt-1"
+                  >提供项目建议、报价并执行已确认的服务</span
+                >
+              </div>
+            </li>
+            <li
+              class="flex items-start gap-4 p-4 border border-white/5 bg-surface/20"
+            >
+              <i class="ph-fill ph-chart-line-up text-steel text-xl mt-0.5"></i>
+              <div>
+                <span class="block font-semibold text-cool"
+                  >Improving website content, forms, and communication
+                  process</span
+                >
+                <span class="text-[13px] text-cool/60 block mt-1"
+                  >改进网站内容、表单和沟通流程</span
+                >
+              </div>
+            </li>
+          </ul>
+
+          <div class="border-l-2 border-accent pl-4">
+            <p class="text-[15px] font-semibold text-cool mb-1">
+              ROHAN will not use submitted client materials for unrelated
+              marketing without permission.
+            </p>
+            <p class="text-[14px] text-cool/60 mb-0">
+              未经允许，ROHAN 不会将客户提交的资料用于无关营销用途。
+            </p>
+          </div>
+        </section>
+
+        <!-- 5. Project Materials -->
+        <section id="project-materials" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 03
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            Project Materials
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            客户资料与项目文件
+          </h3>
+
+          <div
+            class="bg-surfaceLight border-t-2 border-accent p-8 relative overflow-hidden mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+          >
+            <i
+              class="ph-fill ph-shield-check absolute -right-4 -bottom-4 text-[120px] text-base/50 pointer-events-none"
+            ></i>
+            <div class="relative z-10">
+              <p class="text-[15px] font-medium text-cool">
+                Manufacturing companies may submit brochures, product photos,
+                catalogs, technical documents, BOMs, specifications, drawings,
+                project notes, or case materials for diagnosis or project
+                delivery.
+              </p>
+              <p class="text-[14px] text-cool/60 mb-6">
+                制造业客户可能会提交画册、产品图片、目录、技术文件、BOM、规格书、图纸说明、项目记录或案例资料，用于诊断或项目交付。
+              </p>
+
+              <div class="bg-base border border-steel/20 p-4 mb-4">
+                <p class="text-[14px] text-accent font-semibold mb-1">
+                  These materials will only be used for communication,
+                  diagnosis, quotation, and agreed project delivery.
+                </p>
+                <p class="text-[13px] text-cool/70 mb-0">
+                  这些资料仅用于沟通、诊断、报价和双方确认的项目交付。
+                </p>
+              </div>
+
+              <div class="bg-base border border-steel/20 p-4">
+                <p class="text-[14px] text-cool font-semibold mb-1">
+                  ROHAN will not publicly display client project materials,
+                  logos, customer names, technical files, or case details
+                  without permission.
+                </p>
+                <p class="text-[13px] text-cool/70 mb-0">
+                  未经允许，ROHAN
+                  不会公开展示客户项目资料、Logo、客户名称、技术文件或案例细节。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. What We Do Not Do -->
+        <section id="what-we-do-not-do" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 04
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            What We Do Not Do
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            我们不会做什么
+          </h3>
+
+          <div
+            class="border border-steel/40 bg-[#070C1A] p-8 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]"
+          >
+            <div
+              class="font-tech text-[11px] text-steel uppercase tracking-widest mb-6 flex items-center gap-2"
+            >
+              <i class="ph-bold ph-prohibit"></i> Trust Boundary
+            </div>
+
+            <ul
+              class="space-y-6 text-[14px] text-cool/90 font-medium list-none mb-0"
+            >
+              <li class="flex items-start gap-4">
+                <i class="ph-bold ph-x text-steel text-lg mt-0.5"></i>
+                <div>
+                  <span class="block">We do not sell client information.</span>
+                  <span class="block text-[13px] text-cool/50 font-normal mt-1"
+                    >我们不会出售客户信息。</span
+                  >
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <i class="ph-bold ph-x text-steel text-lg mt-0.5"></i>
+                <div>
+                  <span class="block"
+                    >We do not publicly disclose submitted materials without
+                    permission.</span
+                  >
+                  <span class="block text-[13px] text-cool/50 font-normal mt-1"
+                    >未经允许，我们不会公开客户提交的资料。</span
+                  >
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <i class="ph-bold ph-x text-steel text-lg mt-0.5"></i>
+                <div>
+                  <span class="block"
+                    >We do not use client logos, project photos, or case details
+                    without permission.</span
+                  >
+                  <span class="block text-[13px] text-cool/50 font-normal mt-1"
+                    >未经允许，我们不会使用客户 Logo、项目图片或案例细节。</span
+                  >
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <i class="ph-bold ph-x text-steel text-lg mt-0.5"></i>
+                <div>
+                  <span class="block"
+                    >We do not share technical documents with unrelated third
+                    parties.</span
+                  >
+                  <span class="block text-[13px] text-cool/50 font-normal mt-1"
+                    >我们不会将客户技术资料分享给无关第三方。</span
+                  >
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <i class="ph-bold ph-x text-steel text-lg mt-0.5"></i>
+                <div>
+                  <span class="block"
+                    >We do not use client materials for unrelated promotion
+                    without consent.</span
+                  >
+                  <span class="block text-[13px] text-cool/50 font-normal mt-1"
+                    >未经同意，我们不会将客户资料用于无关推广。</span
+                  >
+                </div>
+              </li>
+              <li class="flex items-start gap-4 border-t border-steel/20 pt-6">
+                <i class="ph-bold ph-info text-steel text-lg mt-0.5"></i>
+                <div>
+                  <span class="block text-cool/70"
+                    >We do not promise that any website, platform, or digital
+                    communication is completely risk-free.</span
+                  >
+                  <span class="block text-[13px] text-cool/40 font-normal mt-1"
+                    >我们不承诺任何网站、平台或数字通信方式完全零风险。</span
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 7. AI-Assisted Workflows -->
+        <section id="ai-assisted-workflows" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 05
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            AI-Assisted Workflows
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            AI 辅助工作流
+          </h3>
+
+          <div
+            class="bg-[#070C1A] border-l-2 border-accent p-6 md:p-8 relative overflow-hidden"
+          >
+            <i
+              class="ph-fill ph-robot absolute -right-6 -bottom-6 text-[150px] text-accent/5 pointer-events-none"
+            ></i>
+            <div class="relative z-10">
+              <p class="text-[15px]">
+                ROHAN may use AI tools to assist with drafting, translation,
+                content structuring, SEO/GEO planning, or workflow design. When
+                using AI tools, sensitive information should be minimized or
+                anonymized whenever possible.
+              </p>
+              <p class="text-[14px] text-cool/60 mb-6">
+                ROHAN 可能使用 AI 工具辅助文案起草、翻译、内容结构整理、SEO/GEO
+                规划或工作流设计。在使用 AI
+                工具时，会尽量减少敏感信息暴露，并在必要时进行匿名化处理。
+              </p>
+
+              <div class="bg-accent/10 border border-accent/20 p-5 rounded-sm">
+                <p
+                  class="text-[14px] font-semibold text-accent mb-2 flex items-center gap-2"
+                >
+                  <i class="ph-bold ph-warning-circle"></i> Human Review
+                  Boundary
+                </p>
+                <p class="text-[14px] text-cool/90 mb-1">
+                  AI-generated content should be reviewed by humans before
+                  publication or business use, especially when it involves
+                  technical claims, product specifications, customer
+                  commitments, or engineering details.
+                </p>
+                <p class="text-[13px] text-cool/60 mb-0">
+                  AI
+                  生成内容在发布或用于商业沟通前，应经过人工审核，尤其涉及技术承诺、产品规格、客户承诺或工程细节时。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Third-Party Tools -->
+        <section id="third-party-tools" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 06
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            Third-Party Tools
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            第三方工具
+          </h3>
+
+          <p class="text-[15px]">
+            This website may use third-party tools for website hosting, form
+            submission, email communication, analytics, file sharing, or
+            AI-assisted workflows.
+          </p>
+          <p class="text-[14px] text-cool/60 mb-6">
+            本网站可能使用第三方工具进行网站托管、表单提交、邮件沟通、网站分析、文件分享或
+            AI 辅助工作流。
+          </p>
+
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 text-[13px] text-cool/80 list-none mb-6"
+          >
+            <li class="bg-surface/20 border border-white/5 p-4 rounded-sm">
+              <span class="font-semibold block text-cool"
+                >Website hosting platforms</span
+              >
+              网站托管平台
+            </li>
+            <li class="bg-surface/20 border border-white/5 p-4 rounded-sm">
+              <span class="font-semibold block text-cool">Form services</span>
+              表单服务 (e.g., Formspree, Netlify)
+            </li>
+            <li class="bg-surface/20 border border-white/5 p-4 rounded-sm">
+              <span class="font-semibold block text-cool"
+                >Email & Analytics providers</span
+              >
+              邮件与数据分析服务
+            </li>
+            <li class="bg-surface/20 border border-white/5 p-4 rounded-sm">
+              <span class="font-semibold block text-cool"
+                >File sharing tools</span
+              >
+              文件分享工具 (e.g., Drive, WeTransfer)
+            </li>
+            <li
+              class="bg-surface/20 border border-white/5 p-4 rounded-sm md:col-span-2"
+            >
+              <span class="font-semibold block text-cool"
+                >AI tools for drafting & translation</span
+              >
+              用于文案翻译的 AI 工具
+            </li>
+          </ul>
+
+          <p class="text-[14px] font-medium text-cool mb-1">
+            These third-party tools may process information according to their
+            own privacy policies.
+          </p>
+          <p class="text-[13px] text-cool/60">
+            这些第三方工具可能会根据其自身隐私政策处理相关信息。
+          </p>
+        </section>
+
+        <!-- 9. Cookies and Analytics -->
+        <section id="cookies-analytics" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 07
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            Cookies and Analytics
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            Cookie 与网站分析
+          </h3>
+
+          <p class="text-[15px]">
+            This website may use cookies or analytics tools to understand
+            website traffic, page performance, and user behavior in an
+            aggregated way. These analytics are used to improve website content,
+            user experience, and communication flow.
+          </p>
+          <p class="text-[14px] text-cool/60 mb-6">
+            本网站可能使用 Cookie
+            或网站分析工具，以汇总方式了解访问量、页面表现和用户行为。这些分析用于改进网站内容、用户体验和沟通流程。
+          </p>
+
+          <div class="border-l-2 border-steel pl-4">
+            <p class="text-[14px] text-cool mb-1">
+              You may disable cookies through your browser settings, but some
+              website functions may not work as expected.
+            </p>
+            <p class="text-[13px] text-cool/60 mb-0">
+              你可以通过浏览器设置禁用
+              Cookie，但部分网站功能可能无法按预期运行。
+            </p>
+          </div>
+        </section>
+
+        <!-- 10. Data Retention -->
+        <section id="data-retention" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 08
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            Data Retention
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            信息保留
+          </h3>
+
+          <p class="text-[15px]">
+            ROHAN retains submitted information only as long as necessary for
+            communication, diagnosis, quotation, project delivery, or reasonable
+            business record purposes.
+          </p>
+          <p class="text-[14px] text-cool/60 mb-6">
+            ROHAN
+            仅在沟通、诊断、报价、项目交付或合理业务记录所需期间保留相关信息。
+          </p>
+
+          <p class="text-[15px]">
+            When information is no longer needed, ROHAN may delete, archive, or
+            anonymize it where appropriate.
+          </p>
+          <p class="text-[14px] text-cool/60">
+            当相关信息不再需要时，ROHAN 可能会视情况删除、归档或匿名化处理。
+          </p>
+        </section>
+
+        <!-- 11. Your Rights -->
+        <section id="your-rights" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 09
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            Your Rights
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            你的权利
+          </h3>
+
+          <p class="text-[15px]">
+            You may contact ROHAN to request access, correction, or deletion of
+            information you have submitted.
+          </p>
+          <p class="text-[14px] text-cool/60 mb-6">
+            你可以联系 ROHAN，要求查看、更正或删除你已提交的信息。
+          </p>
+
+          <ul class="space-y-3 text-[14px] text-cool/80 list-none mb-6">
+            <li class="flex items-start gap-2">
+              <i class="ph-bold ph-caret-right text-accent mt-0.5"></i>
+              <span>Access submitted information / 查看已提交信息</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="ph-bold ph-caret-right text-accent mt-0.5"></i>
+              <span>Correct inaccurate information / 更正不准确信息</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="ph-bold ph-caret-right text-accent mt-0.5"></i>
+              <span
+                >Delete submitted information where reasonable /
+                在合理范围内删除已提交信息</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="ph-bold ph-caret-right text-accent mt-0.5"></i>
+              <span
+                >Withdraw permission for certain use of materials /
+                撤回某些资料使用授权</span
+              >
+            </li>
+          </ul>
+
+          <div class="bg-surface/30 border border-steel/20 p-5 text-[13px]">
+            <p class="text-cool font-medium mb-1">
+              Some information may need to be retained where required for
+              ongoing communication, confirmed project delivery, or reasonable
+              business records.
+            </p>
+            <p class="text-cool/60 mb-0">
+              对于正在进行的沟通、已确认项目交付或合理业务记录所需的信息，可能需要保留必要内容。
+            </p>
+          </div>
+        </section>
+
+        <!-- 12. Policy Updates -->
+        <section id="policy-updates" class="scroll-mt-32 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 10
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            Policy Updates
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            政策更新
+          </h3>
+
+          <p class="text-[15px]">
+            ROHAN may update this Privacy Policy from time to time to reflect
+            changes in website features, tools, services, or legal requirements.
+            The latest version will be published on this page.
+          </p>
+          <p class="text-[14px] text-cool/60">
+            ROHAN
+            可能会不定期更新本隐私政策，以反映网站功能、工具、服务或相关要求的变化。最新版本将发布在本页面。
+          </p>
+        </section>
+
+        <!-- 13. Contact -->
+        <section
+          id="contact-privacy"
+          class="scroll-mt-32 gs-fade-up border-t border-white/10 pt-16"
+        >
+          <div
+            class="font-tech text-xs text-accent tracking-widest uppercase mb-2"
+          >
+            Section 11
+          </div>
+          <h2
+            class="font-heading text-2xl font-bold uppercase tracking-wide text-cool mb-1"
+          >
+            Contact
+          </h2>
+          <h3 class="font-body text-[15px] font-semibold text-cool/70 mb-6">
+            联系方式
+          </h3>
+
+          <p class="text-[15px] mb-2">
+            For privacy-related questions, requests, or concerns, please
+            contact:
+          </p>
+          <p class="text-[14px] text-cool/60 mb-6">
+            如有与隐私相关的问题、请求或顾虑，请通过以下方式联系：
+          </p>
+
+          <div class="flex items-center gap-4 mb-8">
+            <div
+              class="w-12 h-12 bg-surface/30 border border-steel/30 flex items-center justify-center text-accent"
+            >
+              <i class="ph-fill ph-envelope-simple text-2xl"></i>
+            </div>
+            <div>
+              <div
+                class="font-tech text-[10px] text-steel uppercase tracking-widest mb-1"
+              >
+                Email
+              </div>
+              <a
+                href="mailto:rohanyangrh@outlook.com"
+                class="font-tech text-lg text-cool hover:text-accent transition-colors tracking-wide"
+                >rohanyangrh@outlook.com</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="contact.html#diagnosis-form"
+            class="btn-outline px-8 py-4 font-medium inline-flex items-center justify-center gap-2 rounded-sm text-sm"
+          >
+            CONTACT ROHAN <i class="ph-bold ph-arrow-right"></i>
+          </a>
+        </section>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer
+      class="bg-[#070C1A] border-t border-white/5 pt-20 pb-10 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-blueprint opacity-10 pointer-events-none"
+      ></div>
+      <div class="max-w-[1400px] mx-auto px-6 relative z-10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16"
+        >
+          <div class="lg:col-span-2">
+            <a href="index.html" class="inline-block mb-6">
+              <img
+                src="./rohan-logo-low.png"
+                alt="ROHAN logo"
+                class="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            <p
+              class="text-cool/60 text-sm mb-6 max-w-sm leading-relaxed font-body"
+            >
+              Industrial B2B digital architecture for manufacturing companies.
+              Clearer, sharper, and more credible.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="https://www.linkedin.com/in/rohanyang?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                class="w-10 h-10 border border-white/10 flex items-center justify-center text-cool/60 hover:text-accent hover:border-accent transition-colors bg-surface/30"
+              >
+                <i class="ph-bold ph-linkedin-logo text-lg"></i>
+              </a>
+              <a
+                href="mailto:rohanyangrh@outlook.com"
+                class="w-10 h-10 border border-white/10 flex items-center justify-center text-cool/60 hover:text-accent hover:border-accent transition-colors bg-surface/30"
+              >
+                <i class="ph-bold ph-envelope-simple text-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4
+              class="font-tech text-xs text-cool uppercase tracking-widest mb-6"
+            >
+              Solutions
+            </h4>
+            <ul class="space-y-4 text-sm text-cool/60 font-body">
+              <li>
+                <a
+                  href="solutions.html#website-architecture"
+                  class="hover:text-accent transition-colors"
+                  >Website Architecture</a
+                >
+              </li>
+              <li>
+                <a
+                  href="solutions.html#seo-geo-aeo"
+                  class="hover:text-accent transition-colors"
+                  >SEO / GEO</a
+                >
+              </li>
+              <li>
+                <a
+                  href="solutions.html#social-media-assets"
+                  class="hover:text-accent transition-colors"
+                  >Social Media Assets</a
+                >
+              </li>
+              <li>
+                <a
+                  href="solutions.html#ai-training"
+                  class="hover:text-accent transition-colors"
+                  >AI Training</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="font-tech text-xs text-cool uppercase tracking-widest mb-6"
+            >
+              Company
+            </h4>
+            <ul class="space-y-4 text-sm text-cool/60 font-body">
+              <li>
+                <a href="about.html" class="hover:text-accent transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="approach.html"
+                  class="hover:text-accent transition-colors"
+                  >Approach</a
+                >
+              </li>
+              <li>
+                <a href="cases.html" class="hover:text-accent transition-colors"
+                  >Cases</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pricing.html"
+                  class="hover:text-accent transition-colors"
+                  >Pricing</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="font-tech text-xs text-cool uppercase tracking-widest mb-6"
+            >
+              Insights
+            </h4>
+            <ul class="space-y-4 text-sm text-cool/60 font-body">
+              <li>
+                <a
+                  href="insights.html#ai-manufacturing"
+                  class="hover:text-accent transition-colors"
+                  >AI for Manufacturing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="insights.html#b2b-social-media"
+                  class="hover:text-accent transition-colors"
+                  >B2B Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="insights.html#industrial-website-design"
+                  class="hover:text-accent transition-colors"
+                  >Industrial Website Design</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-cool/40 font-tech tracking-wider"
+        >
+          <p>&copy; 2026 ROHAN Digital Architecture. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="privacy-policy.html" class="text-accent transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="terms-of-use.html"
+              class="hover:text-cool transition-colors"
+              >Terms of Use</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+        const icon = mobileMenuBtn.querySelector("i");
+        if (mobileMenu.classList.contains("hidden")) {
+          icon.classList.remove("ph-x");
+          icon.classList.add("ph-list");
+        } else {
+          icon.classList.remove("ph-list");
+          icon.classList.add("ph-x");
+        }
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("ph-x");
+          icon.classList.add("ph-list");
+        });
+      });
+
+      // Reveal Animations on Scroll
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".gs-fade-up").forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(20px)";
+        el.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+        observer.observe(el);
+      });
+
+      // Hero Entry Animation (Immediate)
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.querySelectorAll(".hero-element").forEach((el, index) => {
+            setTimeout(() => {
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0)";
+              el.style.transition =
+                "opacity 0.8s ease-out, transform 0.8s ease-out";
+            }, index * 150);
+          });
+        }, 100);
+      });
+    </script>
+  </body>
+</html>

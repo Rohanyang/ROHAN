@@ -1,0 +1,2010 @@
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing | ROHAN Industrial B2B Digital Architect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: "#0B1324",
+              surface: "#2D3E5F",
+              surfaceLight: "#1A2642",
+              accent: "#176BFF",
+              steel: "#4B5563",
+              cool: "#F5F7FA",
+              darker: "#070C1A",
+            },
+            fontFamily: {
+              heading: ['"Exo 2"', "sans-serif"],
+              body: ["Raleway", "sans-serif"],
+              tech: ["Orbitron", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0b1324;
+        color: #f5f7fa;
+        font-family: "Raleway", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .site-logo {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .bg-blueprint {
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          );
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+      }
+      .bg-diagonal {
+        background-image: linear-gradient(
+          -45deg,
+          transparent 48%,
+          rgba(23, 107, 255, 0.05) 50%,
+          transparent 52%
+        );
+        background-size: 30px 30px;
+      }
+      .glass-panel {
+        background: rgba(45, 62, 95, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(23, 107, 255, 0.15);
+      }
+      .clip-text {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      .reveal-line {
+        display: inline-block;
+        transform: translateY(110%);
+        will-change: transform;
+      }
+      .bento-card {
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgba(45, 62, 95, 0.4) 0%,
+          rgba(11, 19, 36, 0.6) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        overflow: hidden;
+        transition:
+          border-color 0.4s,
+          transform 0.4s;
+      }
+      .bento-card:hover {
+        border-color: rgba(23, 107, 255, 0.4);
+      }
+      .bento-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          600px circle at var(--mouse-x) var(--mouse-y),
+          rgba(23, 107, 255, 0.1),
+          transparent 40%
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .bento-card:hover::before {
+        opacity: 1;
+      }
+
+      .btn-accent {
+        position: relative;
+        background: #176bff;
+        color: #f5f7fa;
+        border: 1px solid #176bff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .btn-accent:hover {
+        background: transparent;
+        color: #176bff;
+        box-shadow: 0 0 20px rgba(23, 107, 255, 0.3);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(23, 107, 255, 0.4);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+      }
+      .btn-outline:hover {
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.1);
+      }
+
+      .hero-3d-scene {
+        perspective: 1500px;
+        transform-style: preserve-3d;
+      }
+      .hero-3d-group {
+        transform: translateX(200px) translateY(-50px) scale(1.4) rotateX(15deg)
+          rotateY(-20deg) rotateZ(5deg);
+        transform-style: preserve-3d;
+        position: relative;
+      }
+      .card-3d {
+        position: absolute;
+        width: 380px;
+        background: rgba(45, 62, 95, 0.85);
+        border: 1px solid rgba(23, 107, 255, 0.2);
+        backdrop-filter: blur(8px);
+        border-radius: 4px;
+        box-shadow:
+          -20px 20px 40px rgba(11, 19, 36, 0.9),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      }
+
+      .tech-input {
+        background: rgba(45, 62, 95, 0.2);
+        border: 1px solid rgba(75, 85, 99, 0.4);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+      }
+      .tech-input:focus {
+        outline: none;
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.05);
+        box-shadow: 0 0 15px rgba(23, 107, 255, 0.1);
+      }
+
+      /* Custom scrollbar for comparison table */
+      .comparison-scroll::-webkit-scrollbar {
+        height: 6px;
+      }
+      .comparison-scroll::-webkit-scrollbar-track {
+        background: #0b1324;
+      }
+      .comparison-scroll::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 0px;
+      }
+      .comparison-scroll::-webkit-scrollbar-thumb:hover {
+        background: #176bff;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b1324;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #176bff;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-accent selection:text-white">
+    <div class="bg-blueprint"></div>
+    <div
+      class="fixed top-[-50%] right-[-10%] w-[120%] h-[150%] bg-surface/5 transform skew-x-12 pointer-events-none z-[-1]"
+    ></div>
+
+    <!-- Header -->
+    <header
+      class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="flex items-center hover:opacity-80 transition-opacity duration-300 z-50"
+        >
+          <img
+            src="./rohan-logo-top.png"
+            alt="ROHAN logo"
+            class="site-logo h-11 md:h-14 w-auto"
+          />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center gap-8 font-tech text-xs tracking-widest text-cool/80"
+        >
+          <a href="index.html" class="hover:text-accent transition-colors"
+            >Home</a
+          >
+          <a href="solutions.html" class="hover:text-accent transition-colors"
+            >Solutions</a
+          >
+          <a href="cases.html" class="hover:text-accent transition-colors"
+            >Cases</a
+          >
+          <!-- Pricing 保持高亮 -->
+          <a href="pricing.html" class="text-accent font-bold transition-colors"
+            >Pricing</a
+          >
+          <a href="insights.html" class="hover:text-accent transition-colors"
+            >Insights</a
+          >
+          <a href="contact.html" class="hover:text-accent transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="contact.html"
+            class="text-xs font-tech tracking-wider border border-accent/40 px-5 py-2.5 hover:border-accent hover:bg-accent/10 transition-colors duration-300 backdrop-blur-md rounded-sm hidden md:block"
+          >
+            LET'S TALK
+          </a>
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-cool p-2 hover:text-accent transition-colors z-50"
+          >
+            <i class="ph-bold ph-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Panel -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-base/98 backdrop-blur-xl z-40 hidden flex-col pt-28 px-8 items-center border-t border-accent/20"
+      >
+        <nav
+          class="flex flex-col gap-8 text-center font-tech text-sm tracking-[0.2em] w-full"
+        >
+          <a
+            href="index.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >HOME</a
+          >
+          <a
+            href="solutions.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >SOLUTIONS</a
+          >
+          <a
+            href="cases.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >CASES</a
+          >
+          <a
+            href="pricing.html"
+            class="mobile-link text-accent pb-4 border-b border-steel/20 block"
+            >PRICING</a
+          >
+          <a
+            href="insights.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >INSIGHTS</a
+          >
+          <a
+            href="contact.html"
+            class="mobile-link text-cool hover:text-accent pb-4 block"
+            >LET'S TALK</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section
+      class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/5 blur-[120px] rounded-full pointer-events-none"
+      ></div>
+
+      <div
+        class="max-w-[1400px] mx-auto px-6 w-full flex flex-col lg:flex-row items-center relative z-10"
+      >
+        <!-- Left: Typography -->
+        <div class="lg:w-[55%] z-20">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-6 hero-element opacity-0 translate-y-4 flex items-center gap-2"
+          >
+            <i class="ph-fill ph-money"></i> Service & Investment
+          </div>
+
+          <h1
+            class="font-heading text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.15] mb-6 uppercase"
+          >
+            <div class="clip-text">
+              <span class="reveal-line text-steel">Start Small.</span>
+            </div>
+            <div class="clip-text">
+              <span class="reveal-line text-accent">Scale When</span>
+            </div>
+            <div class="clip-text">
+              <span class="reveal-line text-cool">It Works.</span>
+            </div>
+          </h1>
+
+          <h2
+            class="font-heading text-xl md:text-2xl text-cool font-semibold mb-6 hero-element opacity-0 translate-y-4"
+          >
+            先小成本验证，再系统化投入。
+          </h2>
+
+          <p
+            class="text-cool/80 text-[15px] md:text-lg font-light max-w-lg mb-10 leading-relaxed clip-text font-body"
+          >
+            A practical pricing structure for manufacturing companies that want
+            to build overseas digital assets without committing blindly.<br /><br />
+            为中小制造企业设计的外贸数字资产服务结构：先通过样板测试验证专业度，再根据实际需求选择建站、内容增长或
+            AI 工作流服务。
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 hero-element opacity-0 translate-y-4 font-tech text-xs md:text-sm"
+          >
+            <a
+              href="#packages"
+              class="btn-accent px-8 py-4 font-semibold flex items-center justify-center gap-2 rounded-sm"
+            >
+              COMPARE PACKAGES <i class="ph-bold ph-arrow-down"></i>
+            </a>
+            <a
+              href="#sample-project"
+              class="btn-outline px-8 py-4 font-medium flex items-center justify-center gap-2 rounded-sm"
+            >
+              START WITH ¥999 SAMPLE
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: 3D UI Console -->
+        <div class="hidden lg:block w-[45%] mt-12 lg:mt-0">
+          <div class="hero-3d-scene w-full h-full">
+            <div class="hero-3d-group w-full h-full">
+              <!-- Console Back Panel -->
+              <div
+                class="card-3d p-6 border-accent/40 shadow-[0_0_50px_rgba(23,107,255,0.15)]"
+                style="transform: translateZ(100px)"
+              >
+                <div
+                  class="flex justify-between items-center border-b border-accent/40 pb-3 mb-4"
+                >
+                  <span
+                    class="font-tech text-xs text-accent tracking-widest flex items-center gap-2"
+                  >
+                    <i class="ph-bold ph-terminal-window"></i> PRICING_MODEL.exe
+                  </span>
+                  <div class="flex gap-1.5">
+                    <div class="w-2 h-2 rounded-full bg-steel/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-steel/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-accent/80"></div>
+                  </div>
+                </div>
+
+                <div
+                  class="font-tech text-[11px] text-cool/80 leading-loose opacity-90 mt-2 space-y-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Stage 01: Sample
+                    validation...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Stage 02: Digital
+                    foundation...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Stage 03: Growth
+                    system...
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cool/40">></span> Scope boundaries
+                    loaded...
+                  </div>
+                  <div
+                    class="text-accent mt-4 bg-accent/10 border border-accent/30 p-2 inline-block shadow-[inset_0_0_10px_rgba(23,107,255,0.1)]"
+                  >
+                    <span class="animate-pulse">_</span> Ready for decision.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PRICING PHILOSOPHY -->
+    <section
+      class="py-24 bg-surfaceLight border-y border-white/5 bg-diagonal relative scroll-mt-20"
+    >
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-20 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+          >
+            Pricing Philosophy
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4 text-cool"
+          >
+            Not Cheap Packages. <br />
+            <span class="text-steel">Clear Decision Stages.</span>
+          </h2>
+          <p class="text-cool/80 text-[15px] max-w-2xl mx-auto leading-relaxed">
+            我们不建议制造企业一开始就投入大额预算盲目打包，也不建议只买一个廉价模板。更合理的路径是：先验证表达能力，再搭建基础设施，最后持续积累资产。
+          </p>
+        </div>
+
+        <!-- 3-Stage Visual -->
+        <div class="relative max-w-4xl mx-auto gs-fade-up">
+          <!-- Connection Line (Desktop) -->
+          <div
+            class="hidden md:block absolute top-[50px] left-[15%] right-[15%] h-[2px] bg-steel/30 z-0"
+          >
+            <div
+              class="absolute inset-0 bg-accent w-1/2 animate-[slide_4s_ease-in-out_infinite_alternate]"
+            ></div>
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row justify-between gap-12 md:gap-0 relative z-10"
+          >
+            <!-- Stage 1 -->
+            <div class="flex flex-col items-center text-center flex-1 relative">
+              <div
+                class="md:hidden absolute top-12 bottom-[-40px] left-1/2 w-[2px] bg-steel/30 -translate-x-1/2 -z-10"
+              ></div>
+              <div
+                class="w-24 h-24 rounded-full border-2 border-steel bg-base flex flex-col items-center justify-center mb-6 shadow-[0_0_15px_rgba(11,19,36,0.8)]"
+              >
+                <span class="font-tech text-accent text-xl font-bold">01</span>
+                <span
+                  class="font-tech text-[9px] text-steel uppercase tracking-widest mt-1"
+                  >Verify</span
+                >
+              </div>
+              <h4 class="font-heading font-bold text-cool uppercase mb-2">
+                ¥999 Sample Project
+              </h4>
+              <p class="text-xs text-cool/60 max-w-[200px] leading-relaxed">
+                验证设计水准、行业理解力和合作适配度。拒绝盲目重投入。
+              </p>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="flex flex-col items-center text-center flex-1 relative">
+              <div
+                class="md:hidden absolute top-12 bottom-[-40px] left-1/2 w-[2px] bg-steel/30 -translate-x-1/2 -z-10"
+              ></div>
+              <div
+                class="w-24 h-24 rounded-full border-2 border-accent bg-accent/5 flex flex-col items-center justify-center mb-6 shadow-[0_0_25px_rgba(23,107,255,0.2)]"
+              >
+                <span class="font-tech text-accent text-xl font-bold">02</span>
+                <span
+                  class="font-tech text-[9px] text-accent uppercase tracking-widest mt-1"
+                  >Build</span
+                >
+              </div>
+              <h4 class="font-heading font-bold text-accent uppercase mb-2">
+                Digital Foundation
+              </h4>
+              <p class="text-xs text-cool/80 max-w-[200px] leading-relaxed">
+                建立可展示、可搜索、可转化的海外独立站与基础内容架构。
+              </p>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="flex flex-col items-center text-center flex-1 relative">
+              <div
+                class="w-24 h-24 rounded-full border-2 border-steel bg-base flex flex-col items-center justify-center mb-6 shadow-[0_0_15px_rgba(11,19,36,0.8)]"
+              >
+                <span class="font-tech text-accent text-xl font-bold">03</span>
+                <span
+                  class="font-tech text-[9px] text-steel uppercase tracking-widest mt-1"
+                  >Grow</span
+                >
+              </div>
+              <h4 class="font-heading font-bold text-cool uppercase mb-2">
+                Growth System
+              </h4>
+              <p class="text-xs text-cool/60 max-w-[200px] leading-relaxed">
+                持续做内容、社媒矩阵、SEO 积累和团队 AI 工作流优化。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          @keyframes slide {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+        </style>
+      </div>
+    </section>
+
+    <!-- 3. PRICING PACKAGES -->
+    <section id="packages" class="py-24 bg-base relative scroll-mt-20">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="text-center mb-16 gs-fade-up">
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4 text-cool"
+          >
+            Choose The Right <span class="text-accent">Starting Point.</span>
+          </h2>
+          <p class="text-cool/80 text-[15px] max-w-2xl mx-auto leading-relaxed">
+            不同阶段、不同预算、不同需求，都可以找到最清晰的切入点。
+          </p>
+        </div>
+
+        <!-- Cards Container -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
+          <!-- Package 1: Sample -->
+          <div
+            id="sample-project"
+            class="scroll-mt-32 bento-card border border-steel/30 bg-surface/20 flex flex-col p-8 md:p-10 gs-fade-up"
+          >
+            <div class="mb-8">
+              <div
+                class="font-tech text-[10px] text-steel uppercase tracking-widest mb-4 flex items-center gap-2"
+              >
+                <i class="ph-fill ph-shield-check"></i> 01 / VERIFY
+              </div>
+              <div
+                class="font-tech text-[10px] text-accent border border-accent/40 bg-accent/5 px-2 py-1 inline-block mb-4 tracking-widest"
+              >
+                INITIAL PROTOCOL
+              </div>
+              <h3
+                class="font-heading text-2xl font-bold uppercase text-cool mb-2"
+              >
+                Sample Project
+              </h3>
+              <p class="text-sm text-cool/60 font-semibold mb-6">
+                入门样板测试
+              </p>
+
+              <div class="mb-4">
+                <span class="font-heading text-4xl font-bold text-cool"
+                  >¥999</span
+                >
+              </div>
+              <p
+                class="text-xs font-tech text-steel tracking-wider uppercase mb-2"
+              >
+                Fixed entry project
+              </p>
+              <p class="text-[11px] text-cool/50 mb-6 flex items-center gap-2">
+                <i class="ph-light ph-clock text-accent"></i> Delivery: 2-3
+                working days
+              </p>
+            </div>
+
+            <!-- Best For -->
+            <div class="mb-8 flex-1">
+              <h4
+                class="text-xs font-tech text-cool uppercase border-b border-steel/30 pb-2 mb-4 tracking-widest"
+              >
+                Best For
+              </h4>
+              <ul class="space-y-3 text-[13px] text-cool/70 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-steel mt-1 shrink-0"
+                  ></i>
+                  还不确定是否要做完整网站
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-steel mt-1 shrink-0"
+                  ></i>
+                  手上有旧官网、旧画册或零散产品图片
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-steel mt-1 shrink-0"
+                  ></i>
+                  想先看看我们能不能把制造业资料做高级
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-steel mt-1 shrink-0"
+                  ></i>
+                  想用低试错成本验证合作适配度，不盲目投入
+                </li>
+              </ul>
+            </div>
+
+            <!-- Deliverables -->
+            <div class="mb-8 flex-1">
+              <h4
+                class="text-xs font-tech text-accent uppercase border-b border-accent/20 pb-2 mb-4 tracking-widest"
+              >
+                Core Output
+              </h4>
+              <ul
+                class="space-y-3 text-[14px] text-cool/85 font-medium leading-relaxed"
+              >
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  旧官网 / 画册快速诊断建议
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i> 1
+                  个首页局部高保真视觉样板
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i> 1
+                  段核心产品/工艺英文文案重构
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i> 1
+                  个社媒内容方向建议
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i> 1
+                  份明确的下一步改造计划清单
+                </li>
+              </ul>
+            </div>
+
+            <!-- Not Included -->
+            <div
+              class="mb-8 bg-[#070C1A] border border-steel/20 p-4 rounded-sm"
+            >
+              <h4
+                class="text-[10px] font-tech text-steel uppercase mb-3 tracking-widest flex items-center gap-2"
+              >
+                <i class="ph-fill ph-prohibit"></i> Not Included
+              </h4>
+              <ul class="space-y-2 text-[12px] text-cool/50 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-x mt-0.5 shrink-0"></i>
+                  不包含完整网站或后端开发
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-x mt-0.5 shrink-0"></i>
+                  不包含复杂技术资料深度全翻译
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-x mt-0.5 shrink-0"></i>
+                  不包含无限轮次修改 (含1轮)
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href="index.html#contact"
+              class="btn-outline w-full py-4 text-xs font-tech font-bold flex items-center justify-center gap-2 uppercase tracking-widest mt-auto"
+            >
+              Start Sample <i class="ph-bold ph-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Package 2: Foundation (Highlighted) -->
+          <div
+            id="digital-foundation"
+            class="scroll-mt-32 bento-card border border-accent/50 bg-[#1A2642] shadow-[0_0_40px_rgba(23,107,255,0.1)] flex flex-col p-8 md:p-10 gs-fade-up relative transform lg:-translate-y-4"
+          >
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-accent/10 blur-[80px] pointer-events-none"
+            ></div>
+
+            <div class="mb-8 relative z-10">
+              <div
+                class="font-tech text-[10px] text-accent uppercase tracking-widest mb-4 flex items-center gap-2"
+              >
+                <i class="ph-fill ph-rocket"></i> 02 / BUILD
+              </div>
+              <div
+                class="font-tech text-[10px] text-base border border-accent bg-accent px-2 py-1 inline-block mb-4 tracking-widest font-bold"
+              >
+                CORE PACKAGE
+              </div>
+              <h3
+                class="font-heading text-2xl font-bold uppercase text-cool mb-2"
+              >
+                Digital Foundation
+              </h3>
+              <p class="text-sm text-accent font-semibold mb-6">
+                外贸数字门面搭建
+              </p>
+
+              <div class="mb-4">
+                <span class="text-sm text-cool/60 mr-1">From</span>
+                <span class="font-heading text-4xl font-bold text-cool"
+                  >¥9,800</span
+                >
+              </div>
+              <p
+                class="text-xs font-tech text-steel tracking-wider uppercase mb-2"
+              >
+                Project-based
+              </p>
+              <p class="text-[11px] text-cool/50 mb-6 flex items-center gap-2">
+                <i class="ph-light ph-clock text-accent"></i> Delivery: 10-20
+                working days
+              </p>
+            </div>
+
+            <!-- Best For -->
+            <div class="mb-8 flex-1 relative z-10">
+              <h4
+                class="text-xs font-tech text-cool uppercase border-b border-steel/30 pb-2 mb-4 tracking-widest"
+              >
+                Best For
+              </h4>
+              <ul class="space-y-3 text-[13px] text-cool/80 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-accent mt-1 shrink-0"
+                  ></i>
+                  有旧官网，但视觉和表达明显落后
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-accent mt-1 shrink-0"
+                  ></i>
+                  有产品和制造实力，但海外客户看不懂
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-accent mt-1 shrink-0"
+                  ></i>
+                  需要一个能作为顶级销售背书的专业独立站
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-accent mt-1 shrink-0"
+                  ></i>
+                  希望产品、工艺、案例和询盘路径一次性搭起
+                </li>
+              </ul>
+            </div>
+
+            <!-- Deliverables -->
+            <div class="mb-8 flex-1 relative z-10">
+              <h4
+                class="text-xs font-tech text-accent uppercase border-b border-accent/40 pb-2 mb-4 tracking-widest"
+              >
+                Core Output (5-7 Pages)
+              </h4>
+              <ul
+                class="space-y-3 text-[14px] text-cool/90 font-medium leading-relaxed"
+              >
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  首页完整高保真设计与开发
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  Solutions / Products 分类与内容结构
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  Capabilities & Cases 页面框架
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  About & Contact 询盘转化路径
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  基础 SEO/GEO 架构设计 (标题/描述/FAQ)
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  中英文核心文案深度优化及移动端适配
+                </li>
+              </ul>
+            </div>
+
+            <!-- Not Included -->
+            <div
+              class="mb-8 bg-[#070C1A]/50 border border-steel/30 p-4 rounded-sm relative z-10"
+            >
+              <h4
+                class="text-[10px] font-tech text-steel uppercase mb-3 tracking-widest flex items-center gap-2"
+              >
+                <i class="ph-fill ph-prohibit"></i> Scope Boundary
+              </h4>
+              <ul class="space-y-2 text-[12px] text-cool/60 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-x mt-0.5 shrink-0"></i>
+                  不包含复杂后端系统或商城交易
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-x mt-0.5 shrink-0"></i>
+                  不包含海量产品详情页的批量人工录入
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-x mt-0.5 shrink-0"></i> 不承诺短期内 SEO
+                  自然排名的具体名次
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href="index.html#contact"
+              class="btn-accent w-full py-4 text-xs font-tech font-bold flex items-center justify-center gap-2 uppercase tracking-widest mt-auto relative z-10"
+            >
+              Build Foundation <i class="ph-bold ph-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Package 3: Growth -->
+          <div
+            id="growth-system"
+            class="scroll-mt-32 bento-card border border-steel/30 bg-surface/20 flex flex-col p-8 md:p-10 gs-fade-up"
+          >
+            <div class="mb-8">
+              <div
+                class="font-tech text-[10px] text-steel uppercase tracking-widest mb-4 flex items-center gap-2"
+              >
+                <i class="ph-fill ph-chart-line-up"></i> 03 / GROW
+              </div>
+              <div
+                class="font-tech text-[10px] text-accent border border-accent/40 bg-accent/5 px-2 py-1 inline-block mb-4 tracking-widest"
+              >
+                CONTENT MATRIX
+              </div>
+              <h3
+                class="font-heading text-2xl font-bold uppercase text-cool mb-2"
+              >
+                Growth System
+              </h3>
+              <p class="text-sm text-cool/60 font-semibold mb-6">
+                长期内容增长系统
+              </p>
+
+              <div class="mb-4">
+                <span class="text-sm text-cool/60 mr-1">From</span>
+                <span class="font-heading text-4xl font-bold text-cool"
+                  >¥4,800</span
+                >
+                <span class="text-sm text-cool/60 ml-1">/ mo</span>
+              </div>
+              <p
+                class="text-xs font-tech text-steel tracking-wider uppercase mb-2"
+              >
+                Monthly Service
+              </p>
+              <p class="text-[11px] text-cool/50 mb-6 flex items-center gap-2">
+                <i class="ph-light ph-clock text-accent"></i> Recommended 3
+                months minimum
+              </p>
+            </div>
+
+            <!-- Best For -->
+            <div class="mb-8 flex-1">
+              <h4
+                class="text-xs font-tech text-cool uppercase border-b border-steel/30 pb-2 mb-4 tracking-widest"
+              >
+                Best For
+              </h4>
+              <ul class="space-y-3 text-[13px] text-cool/70 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-steel mt-1 shrink-0"
+                  ></i>
+                  官网已建好，但长期没有专业内容更新
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-steel mt-1 shrink-0"
+                  ></i>
+                  LinkedIn / Medium 缺乏高品质的系统运营
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-steel mt-1 shrink-0"
+                  ></i>
+                  想持续建立专业品牌背书，反哺销售沟通
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    class="ph-bold ph-caret-right text-steel mt-1 shrink-0"
+                  ></i>
+                  希望把 AI 工具引入团队工作流提升效率
+                </li>
+              </ul>
+            </div>
+
+            <!-- Deliverables -->
+            <div class="mb-8 flex-1">
+              <h4
+                class="text-xs font-tech text-accent uppercase border-b border-accent/20 pb-2 mb-4 tracking-widest"
+              >
+                Monthly Output
+              </h4>
+              <ul
+                class="space-y-3 text-[14px] text-cool/85 font-medium leading-relaxed"
+              >
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  每月内容主题规划与复盘指导
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  LinkedIn 高质量图文内容 4-8 条
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  Medium / Blog 技术专栏文章 1-2 篇
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  官网 SEO/GEO 增量内容更新建议
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check text-accent mt-1 shrink-0"></i>
+                  社媒视觉模板维护与 AI Prompt 库优化
+                </li>
+              </ul>
+            </div>
+
+            <!-- Not Included -->
+            <div
+              class="mb-8 bg-[#070C1A] border border-steel/20 p-4 rounded-sm"
+            >
+              <h4
+                class="text-[10px] font-tech text-steel uppercase mb-3 tracking-widest flex items-center gap-2"
+              >
+                <i class="ph-fill ph-prohibit"></i> Not Included
+              </h4>
+              <ul class="space-y-2 text-[12px] text-cool/50 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-x mt-0.5 shrink-0"></i>
+                  不包含媒体广告投放与买量费用
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-x mt-0.5 shrink-0"></i>
+                  不包含高频实地短视频拍摄
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-x mt-0.5 shrink-0"></i>
+                  不包含全平台全天候的外贸客服承接
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href="index.html#contact"
+              class="btn-outline w-full py-4 text-xs font-tech font-bold flex items-center justify-center gap-2 uppercase tracking-widest mt-auto"
+            >
+              Plan Growth <i class="ph-bold ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PACKAGE COMPARISON -->
+    <section
+      class="py-24 bg-surfaceLight border-y border-white/5 relative bg-diagonal"
+    >
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="text-center mb-16 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+          >
+            Comparison Matrix
+          </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide text-cool"
+          >
+            What Each Package <span class="text-steel">Is Really For.</span>
+          </h2>
+        </div>
+
+        <!-- Dashboard Table Wrapper -->
+        <div class="w-full overflow-x-auto comparison-scroll pb-6 gs-fade-up">
+          <div class="min-w-[900px] border border-steel/40 bg-base rounded-sm">
+            <!-- Header Row -->
+            <div
+              class="grid grid-cols-4 font-tech text-[10px] text-steel uppercase tracking-widest border-b border-steel/40 bg-surface/40"
+            >
+              <div class="p-4 flex items-center border-r border-steel/40">
+                Attributes
+              </div>
+              <div class="p-4 text-center border-r border-steel/40 text-cool">
+                01 / Sample Project
+              </div>
+              <div
+                class="p-4 text-center border-r border-steel/40 text-accent font-bold bg-accent/5"
+              >
+                02 / Digital Foundation
+              </div>
+              <div class="p-4 text-center text-cool">03 / Growth System</div>
+            </div>
+
+            <!-- Data Rows -->
+            <div
+              class="grid grid-cols-4 text-sm border-b border-steel/20 hover:bg-surface/10 transition-colors"
+            >
+              <div
+                class="p-4 font-tech text-xs text-cool/70 border-r border-steel/40 flex items-center"
+              >
+                Best For
+              </div>
+              <div
+                class="p-4 text-cool/80 border-r border-steel/40 text-center flex items-center justify-center"
+              >
+                First-time cooperation
+              </div>
+              <div
+                class="p-4 text-cool/90 border-r border-steel/40 text-center flex items-center justify-center bg-accent/5 font-medium"
+              >
+                Website rebuild
+              </div>
+              <div
+                class="p-4 text-cool/80 text-center flex items-center justify-center"
+              >
+                Long-term visibility
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-4 text-sm border-b border-steel/20 hover:bg-surface/10 transition-colors"
+            >
+              <div
+                class="p-4 font-tech text-xs text-cool/70 border-r border-steel/40 flex items-center"
+              >
+                Main Goal
+              </div>
+              <div
+                class="p-4 text-cool/80 border-r border-steel/40 text-center flex items-center justify-center"
+              >
+                Verify quality and fit
+              </div>
+              <div
+                class="p-4 text-cool/90 border-r border-steel/40 text-center flex items-center justify-center bg-accent/5 font-medium"
+              >
+                Build overseas digital base
+              </div>
+              <div
+                class="p-4 text-cool/80 text-center flex items-center justify-center"
+              >
+                Content & efficiency system
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-4 text-sm border-b border-steel/20 hover:bg-surface/10 transition-colors"
+            >
+              <div
+                class="p-4 font-tech text-xs text-cool/70 border-r border-steel/40 flex items-center"
+              >
+                Core Output
+              </div>
+              <div
+                class="p-4 text-cool/80 border-r border-steel/40 text-center flex items-center justify-center"
+              >
+                Visual sample + diagnosis
+              </div>
+              <div
+                class="p-4 text-cool/90 border-r border-steel/40 text-center flex items-center justify-center bg-accent/5 font-medium"
+              >
+                Website + architecture
+              </div>
+              <div
+                class="p-4 text-cool/80 text-center flex items-center justify-center"
+              >
+                Monthly content + AI logic
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-4 text-sm border-b border-steel/20 hover:bg-surface/10 transition-colors"
+            >
+              <div
+                class="p-4 font-tech text-xs text-cool/70 border-r border-steel/40 flex items-center"
+              >
+                Delivery Time
+              </div>
+              <div
+                class="p-4 text-cool/80 border-r border-steel/40 text-center flex items-center justify-center"
+              >
+                2-3 working days
+              </div>
+              <div
+                class="p-4 text-cool/90 border-r border-steel/40 text-center flex items-center justify-center bg-accent/5 font-medium"
+              >
+                10-20 working days
+              </div>
+              <div
+                class="p-4 text-cool/80 text-center flex items-center justify-center"
+              >
+                Monthly
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-4 text-sm border-b border-steel/20 hover:bg-surface/10 transition-colors"
+            >
+              <div
+                class="p-4 font-tech text-xs text-cool/70 border-r border-steel/40 flex items-center"
+              >
+                Website Work
+              </div>
+              <div
+                class="p-4 text-cool/80 border-r border-steel/40 text-center flex items-center justify-center"
+              >
+                Partial sample
+              </div>
+              <div
+                class="p-4 text-cool/90 border-r border-steel/40 text-center flex items-center justify-center bg-accent/5 font-medium"
+              >
+                <i class="ph-bold ph-check text-accent mr-2"></i> Full core
+                pages
+              </div>
+              <div
+                class="p-4 text-cool/80 text-center flex items-center justify-center"
+              >
+                Updates / optimization
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-4 text-sm border-b border-steel/20 hover:bg-surface/10 transition-colors"
+            >
+              <div
+                class="p-4 font-tech text-xs text-cool/70 border-r border-steel/40 flex items-center"
+              >
+                SEO/GEO Work
+              </div>
+              <div
+                class="p-4 text-cool/80 border-r border-steel/40 text-center flex items-center justify-center"
+              >
+                Basic direction
+              </div>
+              <div
+                class="p-4 text-cool/90 border-r border-steel/40 text-center flex items-center justify-center bg-accent/5 font-medium"
+              >
+                <i class="ph-bold ph-check text-accent mr-2"></i> Basic
+                structure
+              </div>
+              <div
+                class="p-4 text-cool/80 text-center flex items-center justify-center"
+              >
+                <i class="ph-bold ph-check text-accent mr-2"></i> Ongoing
+                content
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-4 text-sm border-b border-steel/20 hover:bg-surface/10 transition-colors"
+            >
+              <div
+                class="p-4 font-tech text-xs text-cool/70 border-r border-steel/40 flex items-center"
+              >
+                Social Media
+              </div>
+              <div
+                class="p-4 text-cool/80 border-r border-steel/40 text-center flex items-center justify-center"
+              >
+                Topic suggestion
+              </div>
+              <div
+                class="p-4 text-cool/90 border-r border-steel/40 text-center flex items-center justify-center bg-accent/5 font-medium"
+              >
+                Basic asset direction
+              </div>
+              <div
+                class="p-4 text-cool/80 text-center flex items-center justify-center"
+              >
+                <i class="ph-bold ph-check text-accent mr-2"></i> Monthly posts
+                & articles
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-4 text-sm border-b border-steel/40 hover:bg-surface/10 transition-colors"
+            >
+              <div
+                class="p-4 font-tech text-xs text-cool/70 border-r border-steel/40 flex items-center"
+              >
+                AI Workflow
+              </div>
+              <div
+                class="p-4 text-cool/80 border-r border-steel/40 text-center flex items-center justify-center"
+              >
+                Light suggestion
+              </div>
+              <div
+                class="p-4 text-cool/90 border-r border-steel/40 text-center flex items-center justify-center bg-accent/5 font-medium"
+              >
+                Optional setup
+              </div>
+              <div
+                class="p-4 text-cool/80 text-center flex items-center justify-center"
+              >
+                <i class="ph-bold ph-check text-accent mr-2"></i> Prompt lib &
+                training
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. OPTIONAL ADD-ONS -->
+    <section class="py-24 bg-base relative">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-12 gs-fade-up"
+        >
+          <div>
+            <div
+              class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+            >
+              Extensions
+            </div>
+            <h2
+              class="font-heading text-3xl font-bold uppercase tracking-wide text-cool"
+            >
+              Optional <span class="text-steel">Add-ons.</span>
+            </h2>
+          </div>
+          <div
+            class="mt-6 md:mt-0 font-tech text-[10px] text-steel uppercase tracking-widest border border-steel/40 px-3 py-1 bg-surface/20"
+          >
+            Quoted based on scope
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gs-fade-up"
+        >
+          <div
+            class="glass-panel p-6 border-steel/30 hover:border-accent/40 transition-colors group"
+          >
+            <i
+              class="ph-light ph-file-pdf text-3xl text-steel group-hover:text-accent mb-4 block transition-colors"
+            ></i>
+            <h4 class="font-heading font-bold text-cool uppercase mb-2">
+              PDF Brochure Upgrade
+            </h4>
+            <p class="text-[13px] text-cool/60 leading-relaxed mb-4">
+              将旧PPT或散装PDF资料重新排版、提炼文案，升级为极具压迫感的外贸专业展示版本。
+            </p>
+            <span
+              class="text-[10px] font-tech text-steel uppercase tracking-widest"
+              >按页数/复杂度评估</span
+            >
+          </div>
+
+          <div
+            class="glass-panel p-6 border-steel/30 hover:border-accent/40 transition-colors group"
+          >
+            <i
+              class="ph-light ph-copy text-3xl text-steel group-hover:text-accent mb-4 block transition-colors"
+            ></i>
+            <h4 class="font-heading font-bold text-cool uppercase mb-2">
+              Product Page Pack
+            </h4>
+            <p class="text-[13px] text-cool/60 leading-relaxed mb-4">
+              针对多个长尾产品或型号，进行单页结构重设、规格表翻译和基础 SEO/GEO
+              优化配置。
+            </p>
+            <span
+              class="text-[10px] font-tech text-steel uppercase tracking-widest"
+              >按产品批量规模评估</span
+            >
+          </div>
+
+          <div
+            class="glass-panel p-6 border-steel/30 hover:border-accent/40 transition-colors group"
+          >
+            <i
+              class="ph-light ph-translate text-3xl text-steel group-hover:text-accent mb-4 block transition-colors"
+            ></i>
+            <h4 class="font-heading font-bold text-cool uppercase mb-2">
+              Multilingual Lite
+            </h4>
+            <p class="text-[13px] text-cool/60 leading-relaxed mb-4">
+              为重点目标市场（西语、德语、法语等）提供核心展示页面的专业人工或
+              AI+人工精翻配置。
+            </p>
+            <span
+              class="text-[10px] font-tech text-steel uppercase tracking-widest"
+              >按语言种类评估</span
+            >
+          </div>
+
+          <div
+            class="glass-panel p-6 border-steel/30 hover:border-accent/40 transition-colors group"
+          >
+            <i
+              class="ph-light ph-chalkboard-teacher text-3xl text-steel group-hover:text-accent mb-4 block transition-colors"
+            ></i>
+            <h4 class="font-heading font-bold text-cool uppercase mb-2">
+              AI Training Workshop
+            </h4>
+            <p class="text-[13px] text-cool/60 leading-relaxed mb-4">
+              为外贸、项目或工程部门提供 1-2 场内训，实操讲解如何利用 AI
+              加速翻译与日常沟通效率。
+            </p>
+            <span
+              class="text-[10px] font-tech text-steel uppercase tracking-widest"
+              >按课时/定制深度评估</span
+            >
+          </div>
+
+          <div
+            class="glass-panel p-6 border-steel/30 hover:border-accent/40 transition-colors group"
+          >
+            <i
+              class="ph-light ph-identification-card text-3xl text-steel group-hover:text-accent mb-4 block transition-colors"
+            ></i>
+            <h4 class="font-heading font-bold text-cool uppercase mb-2">
+              LinkedIn Profile Opt.
+            </h4>
+            <p class="text-[13px] text-cool/60 leading-relaxed mb-4">
+              全面重写企业核心高管或销售人员的 LinkedIn
+              个人主页，建立符合欧美标准的信任背书形象。
+            </p>
+            <span
+              class="text-[10px] font-tech text-steel uppercase tracking-widest"
+              >按人数/资料评估</span
+            >
+          </div>
+
+          <div
+            class="glass-panel p-6 border-steel/30 hover:border-accent/40 transition-colors group"
+          >
+            <i
+              class="ph-light ph-file-code text-3xl text-steel group-hover:text-accent mb-4 block transition-colors"
+            ></i>
+            <h4 class="font-heading font-bold text-cool uppercase mb-2">
+              Tech Translation Pack
+            </h4>
+            <p class="text-[13px] text-cool/60 leading-relaxed mb-4">
+              针对晦涩的 BOM
+              表、技术规格书、出货检测报告进行专业术语核对与英文工程表达优化。
+            </p>
+            <span
+              class="text-[10px] font-tech text-steel uppercase tracking-widest"
+              >按文档技术深度评估</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PRICING BOUNDARIES -->
+    <section
+      class="py-24 bg-surfaceLight border-y border-white/5 bg-diagonal relative"
+    >
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div
+          class="bg-[#070C1A] border border-steel/40 p-8 md:p-12 gs-fade-up shadow-2xl relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 right-0 w-64 h-64 bg-accent/5 blur-[80px] pointer-events-none"
+          ></div>
+
+          <div class="flex flex-col md:flex-row gap-12 relative z-10">
+            <div class="md:w-1/3">
+              <div
+                class="font-tech text-xs text-steel tracking-[0.2em] uppercase mb-4 flex items-center gap-2"
+              >
+                <i class="ph-fill ph-warning-circle text-accent"></i>
+                Expectations
+              </div>
+              <h2
+                class="font-heading text-3xl font-bold uppercase tracking-wide text-cool mb-4"
+              >
+                Clear Scope.<br /><span class="text-steel"
+                  >Clean Delivery.</span
+                >
+              </h2>
+              <p class="text-[14px] text-cool/60 leading-relaxed">
+                为了避免传统外包合作中的模糊扯皮，我们在项目开始前一定会明确交付物的边界。透明，是专业的基础。
+              </p>
+            </div>
+
+            <div class="md:w-2/3">
+              <ul
+                class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-[14px] text-cool/80"
+              >
+                <li class="flex items-start gap-3">
+                  <i
+                    class="ph-bold ph-bounding-box mt-1 text-steel shrink-0"
+                  ></i>
+                  每个项目启动前，签署范围清晰的交付清单
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    class="ph-bold ph-bounding-box mt-1 text-steel shrink-0"
+                  ></i>
+                  明确页面数量、内容重构深度与修改轮次
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    class="ph-bold ph-bounding-box mt-1 text-steel shrink-0"
+                  ></i>
+                  明确客户方需要提供的基础物料清单
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    class="ph-bold ph-bounding-box mt-1 text-steel shrink-0"
+                  ></i>
+                  不承诺短期内任何虚假暴涨的 SEO 自然排名
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    class="ph-bold ph-bounding-box mt-1 text-steel shrink-0"
+                  ></i>
+                  不代替客户做核心设备的硬核工程技术判断
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    class="ph-bold ph-bounding-box mt-1 text-steel shrink-0"
+                  ></i>
+                  交付的AI文案必须由客户内部进行专业审核
+                </li>
+                <li class="flex items-start gap-3 md:col-span-2">
+                  <i
+                    class="ph-bold ph-bounding-box mt-1 text-steel shrink-0"
+                  ></i>
+                  所有超出协议清单的额外需求，按复杂度和范围补充报价
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="py-24 bg-base relative">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-16 gs-fade-up">
+          <div
+            class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4"
+          >
+            Common Questions
+          </div>
+          <h2
+            class="font-heading text-3xl font-bold uppercase tracking-wide text-cool"
+          >
+            Pricing <span class="text-steel">FAQ.</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 gs-fade-up">
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q1: ¥999 Sample Project 做完之后可以直接用于正式官网吗？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              样板项目主要用于验证方向和质量，它包含的是局部高保真视觉设计与文案测试，不等同于开发完整的官网代码。但一旦您确认方向通过，这些资产将完全作为后续
+              Digital Foundation 的核心地基，无缝接入。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q2: Digital Foundation 的 "From ¥9,800" 具体根据什么浮动？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              最终报价取决于您需要的页面总数、提供资料的混乱程度、需要支持的语种数量，以及视觉特效的定制深度。¥9,800
+              是 5
+              个标准核心页面（首页、产品分类、案例、关于、联系）重构和开发的起步基准。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q3: Growth System 为什么建议至少合作 3 个月？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A: SEO/GEO
+              收录、社媒算法的信任积累和海外买家的心智影响都需要连续的数据支撑。单月做一波内容当然可以交付，但在
+              B2B 工业转化路径中，极难凭借一个月的内容就形成稳定可见的信任复利。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q4: 你们是否承诺 SEO 上首页？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              绝对不承诺短期内的具体自然排名。我们交付的是干净、结构清晰、搜索语义友好、AI
+              极易读取的优质内容基础设施。靠硬核内容和优秀的架构，稳步提升被全球采购商发现的概率，而非黑帽作弊。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q5: 如果我完全没有英文资料，可以开始合作吗？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              当然可以。只要您有中文的公司介绍、产品图片、设备参数表或过往的旧版内销
+              PPT，我们就可以在第一阶段进行深度内容诊断，并提炼成专业的英文工程表达。这正是我们最擅长的领域。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q6: 是否可以只做社媒更新，不做新网站？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              可以，但我们强烈建议您至少有一个专业的基础落地页或官网入口。社媒曝光做得再好，如果客户顺藤摸瓜点进官网发现破旧不堪，前期的信任就会瞬间崩塌，转化路径直接断裂。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q7: AI Training 是不是教业务员用 ChatGPT？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              不仅仅是教工具怎么注册。我们会围绕真实的业务场景（外贸开发信、技术参数表翻译、展会PPT初稿、社媒文案扩写等），为您定制专属的可复用
+              Prompt 模板库，并建立必须的人工风险审核流程。
+            </p>
+          </div>
+
+          <div class="border-t border-steel/30 pt-6">
+            <h4
+              class="font-tech text-[13px] text-accent font-bold uppercase tracking-wider mb-3 leading-relaxed"
+            >
+              Q8: 你们是否支持根据预算定制方案和议价？
+            </h4>
+            <p class="text-[14px] text-cool/70 leading-relaxed">
+              A:
+              可以根据工作范围调整。通过减少重构页面的数量、减少单月交付深度、或分批次阶段执行，都可以控制预算。我们坚持的是边界清晰的透明交付，而不是在工作量不变的情况下做模糊砍价。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CTA -->
+    <section
+      class="pt-32 relative overflow-hidden bg-surfaceLight border-t border-white/5 bg-diagonal"
+    >
+      <div
+        class="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-darker to-transparent pointer-events-none"
+      ></div>
+
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10 gs-fade-up pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2
+              class="font-heading text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wide leading-tight"
+            >
+              Not Sure Which<br />
+              <span class="text-accent">Package Fits?</span>
+            </h2>
+            <p class="text-cool/80 text-[15px] mb-10 max-w-md leading-relaxed">
+              发送你的旧官网、产品画册或零散的公司介绍，我们会免费进行初步诊断，帮您判断当前最适合从
+              Sample、Foundation 还是 Growth 开始。
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+              <a
+                href="index.html#contact"
+                class="btn-accent px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+              >
+                START WITH ¥999 SAMPLE <i class="ph-bold ph-arrow-right"></i>
+              </a>
+              <a
+                href="index.html#contact"
+                class="btn-outline px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+              >
+                SEND WEBSITE / BROCHURE
+              </a>
+            </div>
+            <a
+              href="solutions.html"
+              class="inline-flex items-center gap-2 text-xs font-tech text-cool/60 hover:text-accent transition-colors uppercase tracking-widest"
+            >
+              Explore All Solutions <i class="ph-bold ph-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Diagnostic Abstract Box -->
+          <div
+            class="glass-panel p-8 relative border border-steel/40 shadow-xl"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-[50px] pointer-events-none"
+            ></div>
+
+            <div class="grid grid-cols-2 gap-8">
+              <div>
+                <div
+                  class="font-tech text-xs text-steel mb-4 uppercase tracking-widest border-b border-steel/30 pb-2"
+                >
+                  INPUT DATA
+                </div>
+                <ul
+                  class="space-y-3 font-tech text-[11px] text-cool/70 tracking-wider"
+                >
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-caret-right text-steel"></i> Website
+                    status
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-caret-right text-steel"></i> Brochure
+                    quality
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-caret-right text-steel"></i> Content
+                    frequency
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-caret-right text-steel"></i> Target
+                    market
+                  </li>
+                </ul>
+              </div>
+
+              <div class="relative">
+                <!-- Arrow pointing right -->
+                <div
+                  class="absolute -left-6 top-1/2 -translate-y-1/2 text-accent text-xl hidden md:block"
+                >
+                  <i class="ph-light ph-arrow-right"></i>
+                </div>
+
+                <div
+                  class="font-tech text-xs text-accent mb-4 uppercase tracking-widest border-b border-accent/30 pb-2"
+                >
+                  RECOMMENDATION
+                </div>
+                <ul
+                  class="space-y-3 font-tech text-[11px] text-cool/90 tracking-wider"
+                >
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Best
+                    package
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Scope
+                    direction
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Est.
+                    workload
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-accent"></i> Action
+                    roadmap
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <section class="bg-base relative border-t border-steel/30 pt-16 pb-8">
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+          <!-- Logo Area -->
+          <div class="col-span-2 md:col-span-1">
+            <a
+              href="index.html"
+              class="block hover:opacity-80 transition-opacity duration-300 mb-6"
+            >
+              <img
+                src="./rohan-logo-low.png"
+                alt="ROHAN logo"
+                class="site-logo h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+            </a>
+            <p class="text-cool/50 text-xs leading-relaxed max-w-[200px]">
+              Industrial B2B Digital Architect. <br />Crafting high-conversion
+              assets for global manufacturing excellence.
+            </p>
+          </div>
+
+          <!-- Links -->
+          <div class="md:col-start-2">
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              SOLUTIONS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="solutions.html#website-architecture"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Website Architecture</a
+              >
+              <a
+                href="solutions.html#seo-geo-aeo"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >SEO / GEO</a
+              >
+              <a
+                href="solutions.html#social-media-assets"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Social Media Assets</a
+              >
+              <a
+                href="solutions.html#ai-training"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >AI Training</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              COMPANY
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="about.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >About</a
+              >
+              <a
+                href="approach.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Approach</a
+              >
+              <a
+                href="cases.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Cases</a
+              >
+              <a
+                href="pricing.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Pricing</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              INSIGHTS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="insights.html#ai-manufacturing"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >AI for Manufacturing</a
+              >
+              <a
+                href="insights.html#b2b-marketing"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >B2B Marketing</a
+              >
+              <a
+                href="insights.html#industrial-website-design"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Industrial Website Design</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              CONNECT
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="mailto:rohanyangrh@outlook"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >rohanyangrh@outlook.com</a
+              >
+              <a
+                href="https://www.linkedin.com/in/rohanyang?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                class="text-xs text-cool/70 hover:text-accent transition-colors flex items-center gap-1"
+                >LinkedIn <i class="ph-bold ph-arrow-up-right text-[10px]"></i
+              ></a>
+              <a
+                href="contact.html#diagnosis-form"
+                class="text-xs text-accent hover:text-cool transition-colors mt-2"
+                >Book a Diagnosis &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center border-t border-steel/20 pt-6"
+        >
+          <div
+            class="text-[10px] text-steel font-tech tracking-wider mb-4 md:mb-0"
+          >
+            © 2026 ROHAN. ALL RIGHTS RESERVED.
+          </div>
+          <div
+            class="flex gap-6 text-[10px] font-tech text-steel tracking-wider"
+          >
+            <a
+              href="privacy-policy.html"
+              class="hover:text-cool transition-colors uppercase"
+              >Privacy Policy</a
+            >
+            <a
+              href="terms-of-use.html"
+              class="hover:text-cool transition-colors uppercase"
+              >Terms of Use</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GSAP & JS Logic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+        const icon = mobileBtn.querySelector("i");
+        if (mobileMenu.classList.contains("hidden")) {
+          icon.classList.replace("ph-x", "ph-list");
+        } else {
+          icon.classList.replace("ph-list", "ph-x");
+        }
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          mobileBtn.querySelector("i").classList.replace("ph-x", "ph-list");
+        });
+      });
+
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+      const revealLines = document.querySelectorAll(".reveal-line");
+      const heroElements = document.querySelectorAll(".hero-element");
+      const tlHero = gsap.timeline();
+      tlHero
+        .to(revealLines, {
+          y: 0,
+          duration: 1,
+          stagger: 0.15,
+          ease: "power4.out",
+          delay: 0.1,
+        })
+        .to(
+          heroElements,
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" },
+          "-=0.5",
+        );
+
+      // Hover Effect Logic for Bento Cards
+      const bentoCards = document.querySelectorAll(".bento-card");
+      bentoCards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+          card.style.setProperty("--mouse-x", `${x}px`);
+          card.style.setProperty("--mouse-y", `${y}px`);
+        });
+      });
+
+      // Fade Up Elements
+      const fadeUpElements = document.querySelectorAll(".gs-fade-up");
+      fadeUpElements.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // Hero 3D Scene subtle mouse interaction
+      const scene = document.querySelector(".hero-3d-scene");
+      const group = document.querySelector(".hero-3d-group");
+      if (scene && window.innerWidth > 1024) {
+        scene.addEventListener("mousemove", (e) => {
+          const xAxis = (window.innerWidth / 2 - e.pageX) / 60;
+          const yAxis = (window.innerHeight / 2 - e.pageY) / 60;
+          gsap.to(group, {
+            rotationY: -20 + xAxis,
+            rotationX: 15 - yAxis,
+            duration: 1,
+            ease: "power1.out",
+          });
+        });
+        scene.addEventListener("mouseleave", () => {
+          gsap.to(group, {
+            rotationY: -20,
+            rotationX: 15,
+            duration: 1,
+            ease: "power1.out",
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
