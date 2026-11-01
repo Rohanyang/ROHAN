@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /cdn-cgi/
+
 Sitemap: https://rohanyang.com/sitemap.xml
