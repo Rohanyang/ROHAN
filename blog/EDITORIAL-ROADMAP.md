@@ -86,3 +86,48 @@ Every new article should have:
 6. Use category pages as useful topic hubs, not thin tag archives.
 7. Keep the Tools page as a resource directory; explain tool combinations and step-by-step workflows in Blog articles.
 8. Preserve existing article URLs and use internal links to connect pillar guides, supporting articles, and relevant tools.
+
+
+## 6. Bilingual publishing architecture
+
+Content strategy:
+- Primary audience: Chinese manufacturing owners, export managers, and SME teams in the Pearl River Delta and other manufacturing clusters.
+- Secondary audience: overseas manufacturers, industrial suppliers, and international B2B marketing teams.
+- Editorial effort guideline: approximately 70% Chinese-first original content and 30% English adaptations or English-first flagship content. This is a planning ratio, not a rigid quota.
+- Do not translate every short Chinese insight. Prioritize articles with a distinct international search intent, durable usefulness, and enough depth to justify an English edition.
+- English adaptations should be localized for international search language and examples rather than translated word-for-word.
+
+URL conventions:
+- Chinese Blog home: /blog/ (default Chinese entry).
+- English Blog home: /blog/en/.
+- New Chinese articles: /blog/zh-cn/{slug}/.
+- New English articles: /blog/en/{slug}/.
+- Preserve legacy article URLs such as /articles/P1/p1.html and the existing English pillar URL /blog/manufacturing-seo/. Do not migrate indexed legacy URLs without a separate redirect and monitoring plan.
+- The first bilingual pillar pair is:
+  - English: /blog/manufacturing-seo/
+  - Chinese: /blog/zh-cn/manufacturing-seo/
+
+Language and SEO requirements for every paired article:
+- Set the correct document language (zh-CN or en).
+- Use a self-referencing canonical URL on each language page.
+- Add reciprocal hreflang annotations for zh-CN and en; use x-default only when a sensible default has been chosen.
+- Keep titles, descriptions, Open Graph metadata, Article/BlogPosting schema, and breadcrumb labels in the page language.
+- Set BlogPosting.inLanguage accurately.
+- Add a visible language switch only when a genuine equivalent translation/adaptation exists. Do not link an untranslated article to an unrelated page and imply it is a translation.
+- Include each published language URL in the XML sitemap and include reciprocal xhtml:link alternates for paired pages.
+- Do not automatically redirect visitors based on IP or browser language; let visitors choose.
+
+Publishing workflow:
+1. Validate the Chinese search intent and primary keyword first.
+2. Draft the Chinese article for the domestic manufacturing audience.
+3. Decide whether the topic has a distinct international search opportunity.
+4. If yes, create an English adaptation with its own search intent, title, examples, and metadata.
+5. Pair the versions using language switch links and hreflang.
+6. Verify canonical URLs, schema, sitemap entries, internal links, and GTM page tracking before publishing.
+7. Review Search Console and GA4 by landing page and language after indexing.
+
+Current bilingual assets:
+- Chinese Blog home: /blog/
+- English Blog home: /blog/en/
+- Chinese manufacturing SEO guide: /blog/zh-cn/manufacturing-seo/
+- English manufacturing SEO guide: /blog/manufacturing-seo/
