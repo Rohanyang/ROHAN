@@ -36,6 +36,7 @@
     .glass{background:rgba(20,32,55,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
     .blueprint{background-image:linear-gradient(to right,rgba(23,107,255,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(23,107,255,.045) 1px,transparent 1px);background-size:40px 40px}
     .tool-card{background:linear-gradient(145deg,rgba(20,35,62,.92),rgba(11,19,36,.92));border:1px solid rgba(255,255,255,.10);transition:border-color .2s ease,transform .2s ease,background .2s ease}
+    .tool-card[hidden]{display:none!important}
     .tool-card:hover{border-color:rgba(105,160,255,.62);transform:translateY(-3px);background:linear-gradient(145deg,rgba(24,48,84,.96),rgba(11,19,36,.96))}
     .tool-icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(105,160,255,.28);background:rgba(23,107,255,.10);border-radius:10px;color:#8bb5ff;flex:none}
     .filter-btn[aria-pressed="true"]{background:#176bff;border-color:#176bff;color:white}
@@ -97,20 +98,34 @@
     ]
   }
   </script>
+<!-- Google Tag Manager -->
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TTJPFHJ4');
+</script>
+<!-- End Google Tag Manager -->
 </head>
 <body class="lang-zh">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTJPFHJ4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <header class="fixed top-0 w-full z-50 glass border-b border-white/5 transition-all duration-300">
   <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
     <a href="../index.html" class="flex items-center hover:opacity-80 transition-opacity duration-300 z-50" aria-label="ROHAN Growth Studio home">
       <img src="../rohan-logo-top.png" alt="ROHAN logo" class="site-logo h-11 md:h-14 w-auto">
     </a>
-    <nav class="hidden md:flex items-center gap-8 font-tech text-xs tracking-widest text-white/80" aria-label="Main navigation">
+    <nav class="hidden md:flex items-center gap-5 font-tech text-xs tracking-widest text-white/80" aria-label="Main navigation">
       <a href="../index.html" class="hover:text-[#69a0ff] transition-colors">Home</a>
       <a href="../solutions.html" class="hover:text-[#69a0ff] transition-colors">Solutions</a>
       <a href="../cases.html" class="hover:text-[#69a0ff] transition-colors">Cases</a>
       <a href="../pricing.html" class="hover:text-[#69a0ff] transition-colors">Pricing</a>
       <a href="../insights.html" class="hover:text-[#69a0ff] transition-colors">Insights</a>
       <a href="../blog/" class="hover:text-[#69a0ff] transition-colors">Blog</a>
+      <a href="./" class="text-[#69a0ff] font-semibold" aria-current="page">Tools</a>
       <a href="../contact.html" class="hover:text-[#69a0ff] transition-colors">Contact</a>
     </nav>
     <div class="flex items-center gap-4">
@@ -125,6 +140,7 @@
     <a href="../pricing.html" class="text-white/80 hover:text-[#69a0ff]">PRICING</a>
     <a href="../insights.html" class="text-white/80 hover:text-[#69a0ff]">INSIGHTS</a>
     <a href="../blog/" class="text-white/80 hover:text-[#69a0ff]">BLOG</a>
+      <a href="./" class="text-[#69a0ff]" aria-current="page">TOOLS</a>
     <a href="../contact.html" class="text-white/80 hover:text-[#69a0ff]">CONTACT</a>
   </nav>
 </header>
@@ -180,7 +196,7 @@
       </div>
 
       <div class="flex items-center justify-between gap-4 mb-5">
-        <p id="result-count" class="text-xs text-white/40">21 curated tools</p>
+        <p id="result-count" class="text-xs text-white/40" aria-live="polite">21 curated tools</p>
         <p class="text-[10px] text-white/35"><span data-lang="en">Select a category or search by name.</span><span data-lang="zh">选择分类，或按名称和用途搜索。</span></p>
       </div>
 
@@ -478,9 +494,10 @@
     let visible = 0;
     cards.forEach(card => {
       const categoryMatch = activeCategory === "all" || card.dataset.category === activeCategory;
-      const searchMatch = !query || (card.dataset.search + " " + card.innerText).toLowerCase().includes(query);
+      const searchMatch = !query || (card.dataset.search + " " + card.textContent).toLowerCase().includes(query);
       const show = categoryMatch && searchMatch;
       card.hidden = !show;
+      card.classList.toggle("hidden", !show);
       if (show) visible++;
     });
     resultCount.textContent = translations[currentLanguage].count(visible);
@@ -500,6 +517,7 @@
     filterTools();
   }));
   searchInput.addEventListener("input", filterTools);
+  searchInput.addEventListener("search", filterTools);
 
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -514,7 +532,7 @@
   });
 
   let savedLanguage = "zh";
-  try { savedLanguage = localStorage.getItem("rgs-tools-language") || "en"; } catch (error) {}
+  try { savedLanguage = localStorage.getItem("rgs-tools-language") || "zh"; } catch (error) {}
   setLanguage(savedLanguage === "en" ? "en" : "zh");
 })();
 </script>
