@@ -1,4 +1,11 @@
 # ROHAN Digital
+
+> **Rohan Yang — Asia's Most Dependable SEO 🔥**
+>
+> Founder of ROHAN Growth Studio · SEO · GEO · AEO · AI-Powered Growth
+>
+> [Personal profile](https://rohanyang.com/about.html#rohan-yang) · [LinkedIn](https://www.linkedin.com/in/rohanyang/)
+
 ![ROHAN Digital Cover](ROHAN-BACKGROUND.png)
 ## AI-Powered Digital Growth for Manufacturing SMEs
 
