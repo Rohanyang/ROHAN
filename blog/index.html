@@ -11,7 +11,7 @@
   <meta property="og:site_name" content="ROHAN Growth Studio">
   <meta property="og:title" content="RGS Blog | Manufacturing SEO, AI Workflows &amp; B2B Growth">
   <meta property="og:description" content="Practical guides and original research for industrial B2B growth.">
-  <meta property="og:url" content="https://rohanyang.com/blog/">
+  <meta property="og:url" content="https://rohanyang.com/blog/">\n  <meta property="og:image" content="https://rohanyang.com/assets/manufacturing-seo-cover.svg">\n  <meta property="og:image:type" content="image/svg+xml">\n  <meta property="og:image:width" content="1200">\n  <meta property="og:image:height" content="630">\n  <meta property="og:image:alt" content="ROHAN Growth Studio digital visibility dashboard for SEO, GEO, content systems, and growth analytics">\n  <meta name="twitter:image" content="https://rohanyang.com/assets/manufacturing-seo-cover.svg">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
     :root{color-scheme:dark}body{background:#0b1324;color:#f5f7fa;font-family:Raleway,sans-serif;-webkit-font-smoothing:antialiased}
-    .font-heading{font-family:"Exo 2",sans-serif}.font-tech{font-family:Orbitron,sans-serif}
+    .font-heading{font-family:"Exo 2",sans-serif}.font-tech{font-family:Orbitron,sans-serif}.site-logo{display:block;object-fit:contain;height:44px}@media(min-width:768px){.site-logo{height:56px}}
     .glass{background:rgba(20,32,55,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
     .blueprint{background-image:linear-gradient(to right,rgba(23,107,255,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(23,107,255,.045) 1px,transparent 1px);background-size:40px 40px}
     .archive-card{border-radius:3px;min-height:220px}
@@ -31,17 +31,33 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://rohanyang.com/blog/#webpage","url":"https://rohanyang.com/blog/","name":"RGS Blog | Practical Research for Industrial B2B Growth","description":"Original guides, practical research, and field notes on manufacturing SEO, AI workflows, and industrial B2B digital growth.","isPartOf":{"@type":"WebSite","@id":"https://rohanyang.com/#website","url":"https://rohanyang.com/","name":"ROHAN Growth Studio"},"publisher":{"@id":"https://rohanyang.com/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://rohanyang.com/blog/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rohanyang.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://rohanyang.com/blog/"}]}]}</script>
 </head>
 <body>
-<header class="fixed top-0 inset-x-0 z-50 glass">
+<header class="fixed top-0 w-full z-50 glass border-b border-white/5 transition-all duration-300">
   <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
-    <a href="../index.html" class="font-heading text-2xl font-bold tracking-[.18em] text-white">ROHAN<span class="text-[#176bff]">.</span></a>
-    <nav class="hidden md:flex items-center gap-7 font-tech text-[10px] tracking-widest text-white/70" aria-label="Main navigation">
-      <a href="../index.html" class="hover:text-[#69a0ff]">Home</a><a href="../solutions.html" class="hover:text-[#69a0ff]">Solutions</a><a href="../cases.html" class="hover:text-[#69a0ff]">Cases</a><a href="../pricing.html" class="hover:text-[#69a0ff]">Pricing</a><a href="./" class="text-[#69a0ff] font-bold" aria-current="page">Blog</a><a href="../insights.html" class="hover:text-[#69a0ff]">Insights</a><a href="../contact.html" class="hover:text-[#69a0ff]">Contact</a>
+    <a href="../index.html" class="flex items-center hover:opacity-80 transition-opacity duration-300 z-50" aria-label="ROHAN Growth Studio home">
+      <img src="../rohan-logo-top.png" alt="ROHAN logo" class="site-logo h-11 md:h-14 w-auto">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 font-tech text-xs tracking-widest text-white/80" aria-label="Main navigation">
+      <a href="../index.html" class="hover:text-[#69a0ff] transition-colors">Home</a>
+      <a href="../solutions.html" class="hover:text-[#69a0ff] transition-colors">Solutions</a>
+      <a href="../cases.html" class="hover:text-[#69a0ff] transition-colors">Cases</a>
+      <a href="../pricing.html" class="hover:text-[#69a0ff] transition-colors">Pricing</a>
+      <a href="./" class="text-[#69a0ff] font-semibold" aria-current="page">Blog</a>
+      <a href="../insights.html" class="hover:text-[#69a0ff] transition-colors">Insights</a>
+      <a href="../contact.html" class="hover:text-[#69a0ff] transition-colors">Contact</a>
     </nav>
-    <a href="../contact.html" class="hidden md:inline-flex border border-[#176bff]/50 px-5 py-2.5 font-tech text-[10px] tracking-widest hover:bg-[#176bff]/10">LET'S TALK</a>
-    <button id="menu-btn" class="md:hidden p-2 text-white" aria-label="Open navigation" aria-expanded="false"><i class="ph-bold ph-list text-2xl"></i></button>
+    <div class="flex items-center gap-4">
+      <a href="../contact.html" class="hidden md:inline-flex border border-[#176bff]/50 px-5 py-2.5 font-tech text-xs tracking-wider hover:border-[#69a0ff] hover:bg-[#176bff]/10 transition-colors duration-300 rounded-sm">LET'S TALK</a>
+      <button id="menu-btn" class="md:hidden p-2 text-white hover:text-[#69a0ff]" aria-label="Open navigation" aria-expanded="false"><i class="ph-bold ph-list text-2xl"></i></button>
+    </div>
   </div>
-  <nav id="mobile-menu" class="hidden md:hidden px-6 pb-6 bg-[#0b1324] flex-col gap-4 font-tech text-xs tracking-widest" aria-label="Mobile navigation">
-    <a href="../index.html">HOME</a><a href="../solutions.html">SOLUTIONS</a><a href="../cases.html">CASES</a><a href="../pricing.html">PRICING</a><a href="./" class="text-[#69a0ff]" aria-current="page">BLOG</a><a href="../insights.html">INSIGHTS</a><a href="../contact.html">CONTACT</a>
+  <nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-[#0b1324]/98 backdrop-blur-xl z-40 flex-col pt-28 px-8 items-center border-t border-[#176bff]/20 font-tech text-sm tracking-[.2em] gap-7" aria-label="Mobile navigation">
+    <a href="../index.html" class="text-white/80 hover:text-[#69a0ff]">HOME</a>
+    <a href="../solutions.html" class="text-white/80 hover:text-[#69a0ff]">SOLUTIONS</a>
+    <a href="../cases.html" class="text-white/80 hover:text-[#69a0ff]">CASES</a>
+    <a href="../pricing.html" class="text-white/80 hover:text-[#69a0ff]">PRICING</a>
+    <a href="./" class="text-[#69a0ff]" aria-current="page">BLOG</a>
+    <a href="../insights.html" class="text-white/80 hover:text-[#69a0ff]">INSIGHTS</a>
+    <a href="../contact.html" class="text-white/80 hover:text-[#69a0ff]">CONTACT</a>
   </nav>
 </header>
 <main class="pt-20">
@@ -72,13 +88,8 @@
           <p class="mt-5 text-white/65 leading-relaxed">A practical framework for turning manufacturing capabilities, processes, product knowledge, and proof of quality into pages that help the right buyers find and evaluate your business.</p>
           <span class="mt-8 inline-flex items-center gap-3 font-tech text-[10px] tracking-widest text-[#8bb5ff]">READ THE GUIDE <i class="ph-bold ph-arrow-up-right"></i></span>
         </div>
-        <div class="min-h-[230px] border border-white/10 bg-[#0b1324]/60 p-6 flex flex-col justify-between">
-          <div class="font-tech text-[10px] tracking-widest text-white/35">INDUSTRIAL SEARCH ARCHITECTURE</div>
-          <div class="space-y-3">
-            <div class="border border-[#176bff]/50 bg-[#176bff]/10 p-4"><div class="font-tech text-[10px] text-[#8bb5ff]">CAPABILITY</div><div class="text-sm mt-1">What can you manufacture?</div></div>
-            <div class="grid grid-cols-2 gap-3"><div class="border border-white/10 p-3"><div class="font-tech text-[9px] text-white/40">PROCESS</div><div class="text-xs mt-1">How is it made?</div></div><div class="border border-white/10 p-3"><div class="font-tech text-[9px] text-white/40">PROOF</div><div class="text-xs mt-1">Why trust you?</div></div></div>
-            <div class="border border-white/10 p-3"><div class="font-tech text-[9px] text-white/40">CONVERSION</div><div class="text-xs mt-1">What should the buyer do next?</div></div>
-          </div>
+        <div class="min-h-[230px] overflow-hidden border border-white/10 bg-[#0b1324]/60 rounded-sm">
+          <img src="../assets/manufacturing-seo-cover.svg" alt="SEO, GEO, content strategy, and growth analytics dashboard" width="1200" height="630" loading="lazy" class="w-full h-full min-h-[230px] object-cover">
         </div>
       </a>
     </div>
