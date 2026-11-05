@@ -12,7 +12,7 @@
   <meta property="og:title" content="RGS Blog | Manufacturing SEO, AI Workflows &amp; B2B Growth">
   <meta property="og:description" content="Practical guides and original research for industrial B2B growth.">
   <meta property="og:url" content="https://rohanyang.com/blog/">\n  <meta property="og:image" content="https://rohanyang.com/assets/manufacturing-seo-cover.svg">\n  <meta property="og:image:type" content="image/svg+xml">\n  <meta property="og:image:width" content="1200">\n  <meta property="og:image:height" content="630">\n  <meta property="og:image:alt" content="ROHAN Growth Studio digital visibility dashboard for SEO, GEO, content systems, and growth analytics">\n  <meta name="twitter:image" content="https://rohanyang.com/assets/manufacturing-seo-cover.svg">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,14 @@
     .archive-card{border-radius:3px;min-height:220px}
     .feature-panel{background:linear-gradient(135deg,rgba(23,107,255,.15),rgba(45,62,95,.2) 55%,rgba(11,19,36,.8));border:1px solid rgba(23,107,255,.28)}
     a:focus-visible{outline:2px solid #69a0ff;outline-offset:4px}
+
+    .filter-button{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.14);padding:10px 14px;border-radius:2px;color:rgba(255,255,255,.68);font:10px Orbitron,sans-serif;letter-spacing:.06em;text-transform:uppercase;transition:all .2s ease}
+    .filter-button:hover{border-color:rgba(105,160,255,.65);color:#fff}
+    .filter-button.is-active,.filter-button[aria-pressed="true"]{background:#176bff;border-color:#176bff;color:#fff}
+    .filter-button span{font-size:9px;opacity:.8}
+    .topic-card{min-height:190px}
+    .archive-card[hidden]{display:none!important}
+    @media(max-width:640px){.filter-button{padding:9px 10px;font-size:9px}.topic-card{min-height:0}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://rohanyang.com/blog/#webpage","url":"https://rohanyang.com/blog/","name":"RGS Blog | Practical Research for Industrial B2B Growth","description":"Original guides, practical research, and field notes on manufacturing SEO, AI workflows, and industrial B2B digital growth.","isPartOf":{"@type":"WebSite","@id":"https://rohanyang.com/#website","url":"https://rohanyang.com/","name":"ROHAN Growth Studio"},"publisher":{"@id":"https://rohanyang.com/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://rohanyang.com/blog/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rohanyang.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://rohanyang.com/blog/"}]}]}</script>
 <!-- Google Tag Manager -->
@@ -86,7 +94,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="mt-3 max-w-2xl text-white/45 text-sm leading-relaxed">面向制造业与外贸团队的实用指南、原创研究和工作流实践。把真实的行业知识转化为可搜索、可理解、可持续积累的数字资产。</p>
       <div class="mt-9 flex flex-wrap gap-3 text-[10px] font-tech tracking-widest uppercase">
         <a href="#featured" class="bg-[#176bff] px-6 py-3 hover:bg-[#3d83ff]">Featured Guide <span aria-hidden="true">↓</span></a>
-        <a href="#insights-archive" class="border border-white/20 px-6 py-3 hover:border-[#69a0ff]">Insights Archive</a>
+        <a href="#topics" class="border border-white/20 px-6 py-3 hover:border-[#69a0ff]">Explore Topics</a>
+        <a href="#insights-archive" class="border border-white/20 px-6 py-3 hover:border-[#69a0ff]">All Articles</a>
       </div>
     </div>
   </section>
@@ -109,149 +118,259 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
     </div>
   </section>
+  <section id="topics" class="py-20">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8">
+        <div><div class="font-tech text-[10px] tracking-[.2em] uppercase text-[#69a0ff] mb-3">02 / EXPLORE BY TOPIC</div><h2 class="font-heading text-3xl md:text-4xl font-bold">Explore the Knowledge Hub</h2><p class="mt-3 text-white/60 max-w-2xl leading-relaxed">Browse practical research by the business problem you want to solve. 按照实际业务问题寻找相关指南与研究。</p></div>
+        <span class="text-xs text-white/40">5 core topics · Growing library</span>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"><a href="#insights-archive" data-topic-link="seo" class="topic-card group block border border-white/10 bg-[#101c33] p-5 hover:border-[#176bff]/60 transition-all rounded-sm">
+  <div class="flex items-center justify-between gap-3 mb-3"><span class="font-tech text-[10px] tracking-widest text-[#69a0ff]">SEO &amp; Search Visibility</span><span class="text-xs text-white/40">3 articles</span></div>
+  <h3 class="font-heading text-lg font-semibold text-white group-hover:text-[#69a0ff]">搜索引擎与 AI 搜索可见度</h3>
+  <p class="mt-2 text-sm text-white/55 leading-relaxed">Keyword research, technical SEO, GEO, indexing, and structured content.</p>
+  <span class="mt-4 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-[#8bb5ff]">EXPLORE TOPIC <span aria-hidden="true">↗</span></span>
+</a>
+<a href="#insights-archive" data-topic-link="website" class="topic-card group block border border-white/10 bg-[#101c33] p-5 hover:border-[#176bff]/60 transition-all rounded-sm">
+  <div class="flex items-center justify-between gap-3 mb-3"><span class="font-tech text-[10px] tracking-widest text-[#69a0ff]">Industrial Website</span><span class="text-xs text-white/40">2 articles</span></div>
+  <h3 class="font-heading text-lg font-semibold text-white group-hover:text-[#69a0ff]">工业独立站与网站架构</h3>
+  <p class="mt-2 text-sm text-white/55 leading-relaxed">B2B website structure, capability pages, user experience, and conversion.</p>
+  <span class="mt-4 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-[#8bb5ff]">EXPLORE TOPIC <span aria-hidden="true">↗</span></span>
+</a>
+<a href="#insights-archive" data-topic-link="content" class="topic-card group block border border-white/10 bg-[#101c33] p-5 hover:border-[#176bff]/60 transition-all rounded-sm">
+  <div class="flex items-center justify-between gap-3 mb-3"><span class="font-tech text-[10px] tracking-widest text-[#69a0ff]">B2B Content &amp; Social</span><span class="text-xs text-white/40">3 articles</span></div>
+  <h3 class="font-heading text-lg font-semibold text-white group-hover:text-[#69a0ff]">B2B 内容营销与海外社媒</h3>
+  <p class="mt-2 text-sm text-white/55 leading-relaxed">LinkedIn, content strategy, social proof, and content repurposing.</p>
+  <span class="mt-4 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-[#8bb5ff]">EXPLORE TOPIC <span aria-hidden="true">↗</span></span>
+</a>
+<a href="#insights-archive" data-topic-link="ai" class="topic-card group block border border-white/10 bg-[#101c33] p-5 hover:border-[#176bff]/60 transition-all rounded-sm">
+  <div class="flex items-center justify-between gap-3 mb-3"><span class="font-tech text-[10px] tracking-widest text-[#69a0ff]">AI &amp; Workflow Automation</span><span class="text-xs text-white/40">3 articles</span></div>
+  <h3 class="font-heading text-lg font-semibold text-white group-hover:text-[#69a0ff]">制造业 AI 应用与工作流自动化</h3>
+  <p class="mt-2 text-sm text-white/55 leading-relaxed">Practical AI applications, export communication, and document workflows.</p>
+  <span class="mt-4 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-[#8bb5ff]">EXPLORE TOPIC <span aria-hidden="true">↗</span></span>
+</a>
+<a href="#insights-archive" data-topic-link="growth" class="topic-card group block border border-white/10 bg-[#101c33] p-5 hover:border-[#176bff]/60 transition-all rounded-sm">
+  <div class="flex items-center justify-between gap-3 mb-3"><span class="font-tech text-[10px] tracking-widest text-[#69a0ff]">Digital Assets &amp; Export Growth</span><span class="text-xs text-white/40">3 articles</span></div>
+  <h3 class="font-heading text-lg font-semibold text-white group-hover:text-[#69a0ff]">数字资产建设与外贸增长</h3>
+  <p class="mt-2 text-sm text-white/55 leading-relaxed">Brand assets, export strategy, digital foundations, and low-cost validation.</p>
+  <span class="mt-4 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-[#8bb5ff]">EXPLORE TOPIC <span aria-hidden="true">↗</span></span>
+</a></div>
+    </div>
+  </section>
   <section id="insights-archive" class="py-20 bg-[#101a2d] border-y border-white/10">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="mb-10"><div class="font-tech text-[10px] tracking-[.2em] uppercase text-[#69a0ff] mb-3">02 / EXISTING LIBRARY</div><h2 class="font-heading text-3xl md:text-4xl font-bold">Insights Archive</h2><p class="mt-4 text-white/60 max-w-2xl leading-relaxed">A curated directory of existing RGS articles. Original article URLs are preserved; this page provides another clear route to discover them.</p></div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-<a href="../articles/P1/p1.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">Digital Assets</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+        <div><div class="font-tech text-[10px] tracking-[.2em] uppercase text-[#69a0ff] mb-3">03 / ARTICLE LIBRARY</div><h2 class="font-heading text-3xl md:text-4xl font-bold">Latest Articles &amp; Research</h2><p class="mt-3 text-white/60 max-w-2xl leading-relaxed">Practical guides, tutorials, and original insights for industrial B2B growth.</p></div>
+        <label class="relative block w-full lg:w-[360px]">
+          <span class="sr-only">Search articles</span><i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-white/40 text-lg" aria-hidden="true"></i>
+          <input id="article-search" type="search" autocomplete="off" placeholder="Search articles, topics, or keywords..." class="w-full bg-[#0b1324] border border-white/15 rounded-sm pl-11 pr-4 py-3 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[#69a0ff]" />
+        </label>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 mb-6" role="group" aria-label="Filter articles by topic">
+        <button type="button" data-filter="all" aria-pressed="true" class="filter-button is-active">All articles <span>14</span></button>
+        <button type="button" data-filter="seo" aria-pressed="false" class="filter-button">SEO &amp; Search</button>
+        <button type="button" data-filter="website" aria-pressed="false" class="filter-button">Industrial Website</button>
+        <button type="button" data-filter="content" aria-pressed="false" class="filter-button">B2B Content</button>
+        <button type="button" data-filter="ai" aria-pressed="false" class="filter-button">AI &amp; Workflow</button>
+        <button type="button" data-filter="growth" aria-pressed="false" class="filter-button">Digital Growth</button>
+      </div>
+      <div class="flex items-center justify-between gap-4 mb-5 text-xs text-white/45"><p id="article-count" aria-live="polite">14 articles</p><p>Search supports English and Chinese keywords</p></div>
+      <div id="article-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"><article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="seo" data-search="FAQ page SEO manufacturing FAQ GEO AEO structured content buyer questions 常见问题 页面 优化 搜索">
+  <a href="../articles/P8/p8.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 为什么 FAQ 页面正在变得比你想象中更重要？">
+    <img src="../articles/P8/cover.png" alt="为什么 FAQ 页面正在变得比你想象中更重要？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">SEO &amp; Search Visibility</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-06-28">28 Jun 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">为什么 FAQ 页面正在变得比你想象中更重要？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">How well-written FAQs help manufacturing websites answer buyer questions, clarify technical details, and support search visibility.</p>
+    <a href="../articles/P8/p8.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">外贸独立站不是展示柜，而是信任转化系统</h3>
-  <p class="text-sm text-white/60 leading-relaxed">Why a B2B manufacturing website must explain capability, credibility, and the next step—not just display a company profile.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P2/p2.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">SEO / GEO / AEO</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="growth" data-search="low cost validation manufacturing export growth digital investment export marketing 低成本 试错 制造业 出海">
+  <a href="../articles/P14/p14.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 低成本试错为什么比一次性大投入更适合制造出海？">
+    <img src="../articles/P14/cover.png" alt="低成本试错为什么比一次性大投入更适合制造出海？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">Digital Assets &amp; Export Growth</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-06-25">25 Jun 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">低成本试错为什么比一次性大投入更适合制造出海？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">Why small validation projects can reduce risk before scaling digital investment, content, and export marketing.</p>
+    <a href="../articles/P14/p14.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">AI 搜索时代，制造业官网内容应该怎么写？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">How manufacturing websites can structure product, process, FAQ, and technical content for clearer search and AI understanding.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P3/p3.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">AI for Manufacturing</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="ai" data-search="technical translation manufacturing AI human review terminology engineering documents 技术资料 翻译 机翻">
+  <a href="../articles/P5/p5.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 技术资料翻译为什么不能只靠机翻？">
+    <img src="../articles/P5/cover.png" alt="技术资料翻译为什么不能只靠机翻？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">AI &amp; Workflow Automation</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-06-15">15 Jun 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">技术资料翻译为什么不能只靠机翻？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">Why manufacturing translation needs terminology control, engineering context, and a human-reviewed AI workflow.</p>
+    <a href="../articles/P5/p5.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">AI 不会替代制造业经验，但会压缩重复劳动</h3>
-  <p class="text-sm text-white/60 leading-relaxed">Where AI can reduce repetitive work while real manufacturing knowledge remains essential.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P4/p4.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">AI for Manufacturing</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="ai" data-search="AI manufacturing productivity workflow automation repetitive work 制造业 人工智能 自动化 效率">
+  <a href="../articles/P3/p3.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read AI 不会替代制造业经验，但会压缩重复劳动">
+    <img src="../articles/P3/cover.png" alt="AI 不会替代制造业经验，但会压缩重复劳动" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">AI &amp; Workflow Automation</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-06-12">12 Jun 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">AI 不会替代制造业经验，但会压缩重复劳动</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">Where AI can help manufacturing teams reduce repetitive work without replacing real industry expertise.</p>
+    <a href="../articles/P3/p3.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">中小制造企业如何从外贸邮件开始使用 AI？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">Practical ways to apply AI to export outreach, customer replies, technical explanations, and follow-ups.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P5/p5.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">Technical Translation</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="growth" data-search="manufacturing brochure company profile capability presentation brand assets certificates 画册 企业介绍 品牌 资产">
+  <a href="../articles/P13/p13.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 为什么客户看完你的画册，还是不知道你强在哪里？">
+    <img src="../articles/P13/cover.png" alt="为什么客户看完你的画册，还是不知道你强在哪里？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">Digital Assets &amp; Export Growth</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-06-12">12 Jun 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">为什么客户看完你的画册，还是不知道你强在哪里？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">How factories can turn equipment lists, certificates, and product photos into clear capability and trust narratives.</p>
+    <a href="../articles/P13/p13.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">技术资料翻译为什么不能只靠机翻？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">Why engineering translation needs terminology control, context, and human review.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P6/p6.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">Website Design</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="seo" data-search="AI search manufacturing website content GEO SEO product process FAQ technical content AI 搜索 官网 内容">
+  <a href="../articles/P2/p2.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read AI 搜索时代，制造业官网内容应该怎么写？">
+    <img src="../articles/P2/cover.png" alt="AI 搜索时代，制造业官网内容应该怎么写？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">SEO &amp; Search Visibility</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-06-10">10 Jun 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">AI 搜索时代，制造业官网内容应该怎么写？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">How export-focused manufacturing websites can structure product, process, FAQ, and technical content for AI search.</p>
+    <a href="../articles/P2/p2.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">为什么制造业官网不能只放设备照片？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">How to turn equipment visuals into meaningful capability and process information.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P7/p7.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">SEO / GEO</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="ai" data-search="AI export sales email automation small manufacturers customer replies follow up 外贸 邮件 自动化">
+  <a href="../articles/P4/p4.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 中小制造企业如何从外贸邮件开始使用 AI？">
+    <img src="../articles/P4/cover.png" alt="中小制造企业如何从外贸邮件开始使用 AI？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">AI &amp; Workflow Automation</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-06-10">10 Jun 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">中小制造企业如何从外贸邮件开始使用 AI？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">Practical ways to apply AI to export outreach, customer replies, technical explanations, and follow-ups.</p>
+    <a href="../articles/P4/p4.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">SEO、GEO、AEO 对中小制造企业分别意味着什么？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">A practical distinction between search visibility, AI visibility, and answer-ready content.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P8/p8.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">SEO / GEO / AEO</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="website" data-search="B2B manufacturing website trust conversion industrial website export website 外贸 独立站 信任 转化">
+  <a href="../articles/P1/p1.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 外贸独立站不是展示柜，而是信任转化系统">
+    <img src="../articles/P1/cover.png" alt="外贸独立站不是展示柜，而是信任转化系统" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">Industrial Website</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-06-08">08 Jun 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">外贸独立站不是展示柜，而是信任转化系统</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">Why a B2B manufacturing website should help buyers understand capability, verify credibility, and take the next step.</p>
+    <a href="../articles/P1/p1.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">为什么 FAQ 页面正在变得比你想象中更重要？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">How well-written FAQs help answer buyer questions and clarify technical details.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P9/p9.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">Social Media</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="website" data-search="manufacturing website equipment photos capability pages industrial website 设备照片 制造业 官网 能力 页面">
+  <a href="../articles/P6/p6.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 为什么制造业官网不能只放设备照片？">
+    <img src="../articles/P6/cover.png" alt="为什么制造业官网不能只放设备照片？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">Industrial Website</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-05-20">20 May 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">为什么制造业官网不能只放设备照片？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">How to turn equipment visuals into meaningful capability, process, project experience, and customer value information.</p>
+    <a href="../articles/P6/p6.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">为什么你的 LinkedIn 发了很多产品图，却没有询盘？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">Why product photos alone rarely communicate the proof and context B2B buyers need.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P10/p10.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">Social Media</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="growth" data-search="small manufacturers export website vs social media export marketing strategy 外贸 网站 社媒 先做哪个">
+  <a href="../articles/P12/p12.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 中小工厂做外贸，先做网站还是先做社媒？">
+    <img src="../articles/P12/cover.png" alt="中小工厂做外贸，先做网站还是先做社媒？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">Digital Assets &amp; Export Growth</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-05-15">15 May 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">中小工厂做外贸，先做网站还是先做社媒？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">How websites build a durable trust foundation while social media creates reach and ongoing customer touchpoints.</p>
+    <a href="../articles/P12/p12.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">制造业社媒不是发朋友圈，而是建立技术信任</h3>
-  <p class="text-sm text-white/60 leading-relaxed">A framework for using social content to explain processes, quality, and project experience.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P11/p11.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">Social Media</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="seo" data-search="SEO GEO AEO manufacturers search visibility AI search answer engine optimization 制造业 搜索">
+  <a href="../articles/P7/p7.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read SEO、GEO、AEO 对中小制造企业分别意味着什么？">
+    <img src="../articles/P7/cover.png" alt="SEO、GEO、AEO 对中小制造企业分别意味着什么？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">SEO &amp; Search Visibility</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-04-25">25 Apr 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">SEO、GEO、AEO 对中小制造企业分别意味着什么？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">A practical distinction between search visibility, AI understanding, and answer-ready content for manufacturers.</p>
+    <a href="../articles/P7/p7.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">一张工厂照片如何拆成 5 条海外社媒内容？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">How one workshop photo can support several distinct, useful B2B content angles.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P12/p12.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">Digital Strategy</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="content" data-search="manufacturing social media content repurposing factory photo LinkedIn content 工厂照片 海外社媒 内容拆解">
+  <a href="../articles/P11/p11.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 一张工厂照片如何拆成 5 条海外社媒内容？">
+    <img src="../articles/P11/cover.png" alt="一张工厂照片如何拆成 5 条海外社媒内容？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">B2B Content &amp; Social</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-04-10">10 Apr 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">一张工厂照片如何拆成 5 条海外社媒内容？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">How one workshop photo can support several distinct B2B content angles, from equipment capability to quality control.</p>
+    <a href="../articles/P11/p11.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">中小工厂做外贸，先做网站还是先做社媒？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">How to prioritize a durable website foundation and social distribution for export growth.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P13/p13.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">Brand Assets</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="content" data-search="manufacturing social media strategy technical trust B2B content process quality control 制造业 社媒 技术信任">
+  <a href="../articles/P10/p10.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 制造业社媒不是发朋友圈，而是建立技术信任">
+    <img src="../articles/P10/cover.png" alt="制造业社媒不是发朋友圈，而是建立技术信任" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">B2B Content &amp; Social</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-03-24">24 Mar 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">制造业社媒不是发朋友圈，而是建立技术信任</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">A framework for using social content to explain processes, quality control, project experience, and capability boundaries.</p>
+    <a href="../articles/P10/p10.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">为什么客户看完你的画册，还是不知道你强在哪里？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">How to turn equipment, certifications, and project materials into clear capability proof.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a>
-
-<a href="../articles/P14/p14.html" class="archive-card group block border border-white/10 bg-[#101c33] p-6 hover:border-[#176bff]/60 transition-all">
-  <div class="flex items-center justify-between gap-4 mb-4">
-    <span class="text-[10px] font-tech uppercase tracking-[.16em] text-[#69a0ff]">Digital Strategy</span>
-    <span class="text-[10px] text-white/35 font-tech">RGS INSIGHTS</span>
+</article>
+<article class="archive-card group flex flex-col overflow-hidden border border-white/10 bg-[#101c33] hover:border-[#176bff]/60 transition-all rounded-sm" data-category="content" data-search="LinkedIn marketing for manufacturers B2B inquiry product photos social selling 领英 制造业 询盘 产品图">
+  <a href="../articles/P9/p9.html" class="block overflow-hidden bg-[#0b1324]" aria-label="Read 为什么你的 LinkedIn 发了很多产品图，却没有询盘？">
+    <img src="../articles/P9/cover.png" alt="为什么你的 LinkedIn 发了很多产品图，却没有询盘？" width="1200" height="630" loading="lazy" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+  </a>
+  <div class="flex flex-col flex-1 p-5">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <span class="text-[10px] font-tech uppercase tracking-[.12em] text-[#69a0ff]">B2B Content &amp; Social</span>
+      <time class="shrink-0 text-[10px] text-white/35 font-tech" datetime="2026-03-16">16 Mar 2026</time>
+    </div>
+    <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">为什么你的 LinkedIn 发了很多产品图，却没有询盘？</h3>
+    <p class="text-sm text-white/60 leading-relaxed flex-1">Why product photos alone rarely communicate the proof and context B2B buyers need to make an inquiry.</p>
+    <a href="../articles/P9/p9.html" class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/65 group-hover:text-[#69a0ff]">READ ARTICLE <span aria-hidden="true">↗</span></a>
   </div>
-  <h3 class="font-heading text-lg md:text-xl font-semibold text-white leading-snug mb-3 group-hover:text-[#69a0ff]">低成本试错为什么比一次性大投入更适合制造出海？</h3>
-  <p class="text-sm text-white/60 leading-relaxed">Why small validation projects can reduce risk before scaling digital investment.</p>
-  <span class="mt-5 inline-flex items-center gap-2 text-[10px] font-tech tracking-widest text-white/60 group-hover:text-[#69a0ff]">READ INSIGHT <span aria-hidden="true">↗</span></span>
-</a></div>
+</article></div>
+      <div id="article-empty" class="hidden border border-white/10 bg-[#0b1324] p-10 text-center rounded-sm"><p class="font-heading text-xl font-semibold">No matching articles found.</p><p class="mt-2 text-sm text-white/50">Try another keyword or select a different topic.</p><button id="clear-article-filters" type="button" class="mt-5 text-xs font-tech tracking-widest text-[#8bb5ff] hover:text-white">CLEAR FILTERS</button></div>
     </div>
   </section>
   <section class="py-20">
@@ -321,6 +440,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 const menuBtn=document.getElementById("menu-btn");const mobileMenu=document.getElementById("mobile-menu");
 menuBtn.addEventListener("click",()=>{const open=mobileMenu.classList.toggle("hidden")===false;mobileMenu.classList.toggle("flex",open);menuBtn.setAttribute("aria-expanded",String(open));menuBtn.setAttribute("aria-label",open?"Close navigation":"Open navigation");const icon=menuBtn.querySelector("i");icon.classList.toggle("ph-list",!open);icon.classList.toggle("ph-x",open);});
+</script>
+
+<script>
+const searchInput=document.getElementById("article-search");
+const articleCards=[...document.querySelectorAll("#article-grid [data-category]")];
+const filterButtons=[...document.querySelectorAll("[data-filter]")];
+const articleCount=document.getElementById("article-count");
+const emptyState=document.getElementById("article-empty");
+let activeFilter="all";
+function applyArticleFilters(){
+  const query=(searchInput.value||"").trim().toLocaleLowerCase();
+  let visible=0;
+  articleCards.forEach(card=>{
+    const categoryMatch=activeFilter==="all"||card.dataset.category===activeFilter;
+    const haystack=(card.dataset.search+" "+card.textContent).toLocaleLowerCase();
+    const searchMatch=!query||haystack.includes(query);
+    const show=categoryMatch&&searchMatch;
+    card.hidden=!show;
+    if(show)visible++;
+  });
+  filterButtons.forEach(button=>{
+    const active=button.dataset.filter===activeFilter;
+    button.classList.toggle("is-active",active);
+    button.setAttribute("aria-pressed",String(active));
+  });
+  articleCount.textContent=visible+" "+(visible===1?"article":"articles");
+  emptyState.classList.toggle("hidden",visible!==0);
+}
+filterButtons.forEach(button=>button.addEventListener("click",()=>{activeFilter=button.dataset.filter;applyArticleFilters();}));
+document.querySelectorAll("[data-topic-link]").forEach(link=>link.addEventListener("click",()=>{activeFilter=link.dataset.topicLink;applyArticleFilters();}));
+searchInput.addEventListener("input",applyArticleFilters);
+document.getElementById("clear-article-filters").addEventListener("click",()=>{activeFilter="all";searchInput.value="";applyArticleFilters();});
+applyArticleFilters();
 </script>
 </body>
 </html>
