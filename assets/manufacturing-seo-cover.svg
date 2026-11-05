@@ -50,18 +50,18 @@
   <rect x="0" y="0" width="650" height="390" rx="20" fill="url(#panel)" stroke="#79b7ff" stroke-opacity=".38" stroke-width="1.5"/>
   <path d="M0 62H650" stroke="#6ea8ff" stroke-opacity=".2"/>
   <circle cx="30" cy="31" r="6" fill="#ff6c78"/><circle cx="52" cy="31" r="6" fill="#ffc65c"/><circle cx="74" cy="31" r="6" fill="#55d69a"/>
-  <text x="105" y="36" fill="#90b9eb" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">ORGANIC PERFORMANCE</text>
+  <text x="105" y="36" fill="#90b9eb" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">DIGITAL GROWTH SYSTEMS</text>
   <rect x="34" y="88" width="176" height="86" rx="12" fill="#10284b" stroke="#5a9eff" stroke-opacity=".35"/>
-  <text x="54" y="116" fill="#85a9d5" font-family="Arial,sans-serif" font-size="12">ORGANIC CLICKS</text>
-  <text x="54" y="151" fill="#f5f8ff" font-family="Arial,sans-serif" font-size="29" font-weight="700">+38.6%</text>
+  <text x="54" y="116" fill="#85a9d5" font-family="Arial,sans-serif" font-size="12">KEYWORD INTENT</text>
+  <text x="54" y="151" fill="#f5f8ff" font-family="Arial,sans-serif" font-size="20" font-weight="700">Research</text>
   <rect x="230" y="88" width="176" height="86" rx="12" fill="#10284b" stroke="#5a9eff" stroke-opacity=".35"/>
-  <text x="250" y="116" fill="#85a9d5" font-family="Arial,sans-serif" font-size="12">KEYWORD COVERAGE</text>
-  <text x="250" y="151" fill="#f5f8ff" font-family="Arial,sans-serif" font-size="29" font-weight="700">1,284</text>
+  <text x="250" y="116" fill="#85a9d5" font-family="Arial,sans-serif" font-size="12">CONTENT SYSTEMS</text>
+  <text x="250" y="151" fill="#f5f8ff" font-family="Arial,sans-serif" font-size="20" font-weight="700">Structure</text>
   <rect x="426" y="88" width="190" height="86" rx="12" fill="#10284b" stroke="#5a9eff" stroke-opacity=".35"/>
-  <text x="446" y="116" fill="#85a9d5" font-family="Arial,sans-serif" font-size="12">LEAD CONVERSION</text>
-  <text x="446" y="151" fill="#f5f8ff" font-family="Arial,sans-serif" font-size="29" font-weight="700">+21.4%</text>
+  <text x="446" y="116" fill="#85a9d5" font-family="Arial,sans-serif" font-size="12">GROWTH ANALYTICS</text>
+  <text x="446" y="151" fill="#f5f8ff" font-family="Arial,sans-serif" font-size="20" font-weight="700">Measure</text>
   <rect x="34" y="194" width="582" height="164" rx="12" fill="#0a1830" stroke="#6ea8ff" stroke-opacity=".18"/>
-  <text x="56" y="222" fill="#a9c8ef" font-family="Arial,sans-serif" font-size="13" font-weight="700">SEARCH VISIBILITY TREND</text>
+  <text x="56" y="222" fill="#a9c8ef" font-family="Arial,sans-serif" font-size="13" font-weight="700">ORGANIC VISIBILITY OVERVIEW</text>
   <g stroke="#5c80ad" stroke-opacity=".18"><path d="M56 250H594M56 284H594M56 318H594"/></g>
   <path d="M56 322C100 310 116 312 151 292S211 298 250 270 315 280 353 250 420 258 455 228 520 230 594 208" fill="none" stroke="#3b91ff" stroke-width="4" stroke-linecap="round"/>
   <path d="M56 322C100 310 116 312 151 292S211 298 250 270 315 280 353 250 420 258 455 228 520 230 594 208V340H56Z" fill="#176bff" opacity=".13"/>
