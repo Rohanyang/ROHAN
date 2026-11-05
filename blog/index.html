@@ -246,7 +246,7 @@
 </footer>
 <script>
 const menuBtn=document.getElementById("menu-btn");const mobileMenu=document.getElementById("mobile-menu");
-menuBtn.addEventListener("click",()=>{const open=mobileMenu.classList.toggle("hidden")===false;menuBtn.setAttribute("aria-expanded",String(open));menuBtn.setAttribute("aria-label",open?"Close navigation":"Open navigation");const icon=menuBtn.querySelector("i");icon.classList.toggle("ph-list",!open);icon.classList.toggle("ph-x",open);});
+menuBtn.addEventListener("click",()=>{const open=mobileMenu.classList.toggle("hidden")===false;mobileMenu.classList.toggle("flex",open);menuBtn.setAttribute("aria-expanded",String(open));menuBtn.setAttribute("aria-label",open?"Close navigation":"Open navigation");const icon=menuBtn.querySelector("i");icon.classList.toggle("ph-list",!open);icon.classList.toggle("ph-x",open);});
 </script>
 </body>
 </html>
