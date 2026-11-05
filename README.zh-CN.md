@@ -1,4 +1,11 @@
 # ROHAN Digital
+
+> **Rohan Yang — 亚洲最夯 SEO 🔥**
+>
+> ROHAN Growth Studio 创始人 · SEO · GEO · AEO · AI 赋能数字增长
+>
+> [创始人介绍](https://rohanyang.com/about.html#rohan-yang) · [LinkedIn](https://www.linkedin.com/in/rohanyang/)
+
 ![ROHAN Digital Cover](ROHAN-BACKGROUND.png)
 ## 面向中小制造企业的 AI 赋能数字化增长服务
 
