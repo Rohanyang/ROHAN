@@ -135,7 +135,7 @@
     <div class="max-w-[1200px] mx-auto px-6 pt-14 md:pt-20 pb-16 md:pb-20 relative z-10">
       <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
         <nav aria-label="Breadcrumb" class="font-tech text-[10px] tracking-widest uppercase text-white/40 flex flex-wrap gap-2">
-          <a href="../index.html" class="hover:text-[#8bb5ff]">Home</a><span>/</span><span class="text-[#8bb5ff]">Tools & Resources</span>
+          <a href="../index.html" class="hover:text-[#8bb5ff]"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a><span>/</span><span class="text-[#8bb5ff]">Tools & Resources</span>
         </nav>
         <div class="inline-flex items-center gap-1 rounded-full border border-white/15 bg-[#0b1324]/75 p-1" role="group" aria-label="Language selector">
           <button type="button" class="lang-btn rounded-full px-3 py-1.5 text-[10px] font-tech tracking-wider text-white/60 hover:text-white" data-set-lang="en" aria-pressed="false">EN</button>
@@ -189,7 +189,7 @@
           <div class="flex items-start gap-3 mb-4"><div class="tool-icon"><i class="ph ph-google-logo text-2xl"></i></div><div class="min-w-0"><h3 class="font-heading text-lg font-semibold">Google Search Console</h3><p class="text-[10px] text-[#8bb5ff] font-tech tracking-wider mt-1"><span data-lang="en">SEARCH PERFORMANCE</span><span data-lang="zh">搜索表现监测</span></p></div></div>
           <p class="text-sm text-white/65 leading-relaxed mb-4"><span data-lang="en">See how your website performs in Google Search, including queries, impressions, clicks, and indexing issues.</span><span data-lang="zh">查看网站在 Google 搜索中的查询词、曝光、点击和索引情况，是网站运营者的基础工具。</span></p>
           <div class="text-xs text-white/45 mb-4"><strong class="text-white/65"><span data-lang="en">Best for:</span><span data-lang="zh">适合：</span></strong><span data-lang="en"> Website owners and SEO beginners.</span><span data-lang="zh">工厂官网负责人、SEO 初学者。</span></div>
-          <div class="mt-auto"><div class="flex flex-wrap gap-2 mb-4"><span class="text-[10px] border border-emerald-400/25 text-emerald-300 px-2 py-1"><span data-lang="en">FREE</span><span data-lang="zh">免费</span></span><span class="text-[10px] border border-white/10 text-white/45 px-2 py-1"><span data-lang="en">START HERE</span><span data-lang="zh">建议入门</span></span></div><p class="text-xs text-[#9dbce9] leading-relaxed mb-4"><strong>RGS Tip:</strong> <span data-lang="en">Connect it as soon as your website goes live. It provides first-party Google Search data that third-party tools cannot fully replace.</span><span data-lang="zh">网站上线后尽早接入。它提供来自 Google 的第一方搜索数据，第三方工具无法完全替代。</span></p><a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-tech tracking-wider text-white/75 hover:text-[#8bb5ff]">VISIT OFFICIAL SITE <i class="ph-bold ph-arrow-up-right"></i></a></div>
+          <div class="mt-auto"><div class="flex flex-wrap gap-2 mb-4"><span class="text-[10px] border border-emerald-400/25 text-emerald-300 px-2 py-1"><span data-lang="en">FREE</span><span data-lang="zh">免费</span></span><span class="text-[10px] border border-white/10 text-white/45 px-2 py-1"><span data-lang="en">START HERE</span><span data-lang="zh">建议入门</span></span></div><p class="text-xs text-[#9dbce9] leading-relaxed mb-4"><strong><span data-lang="en">RGS Tip:</span><span data-lang="zh">RGS 建议：</span></strong> <span data-lang="en">Connect it as soon as your website goes live. It provides first-party Google Search data that third-party tools cannot fully replace.</span><span data-lang="zh">网站上线后尽早接入。它提供来自 Google 的第一方搜索数据，第三方工具无法完全替代。</span></p><a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-tech tracking-wider text-white/75 hover:text-[#8bb5ff]"><span data-lang="en">VISIT OFFICIAL SITE</span><span data-lang="zh">访问官方网站</span> <i class="ph-bold ph-arrow-up-right"></i></a></div>
         </article>
 
         <article class="tool-card rounded-sm p-5 flex flex-col" data-category="seo" data-search="bing webmaster tools bing search indexing seo 微软必应 网站站长 收录 搜索">
@@ -467,6 +467,7 @@
       button.classList.toggle("text-white", selected);
       button.classList.toggle("text-white/60", !selected);
     });
+    filterButtons.forEach(button => { button.textContent = button.dataset[language === "zh" ? "zh" : "en"]; });
     searchInput.placeholder = searchInput.dataset["placeholder" + (language === "zh" ? "Zh" : "En")];
     try { localStorage.setItem("rgs-tools-language", language); } catch (error) {}
     filterTools();
