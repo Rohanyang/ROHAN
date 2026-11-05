@@ -11,7 +11,13 @@
   <meta property="og:site_name" content="ROHAN Growth Studio">
   <meta property="og:title" content="RGS Blog | Manufacturing SEO, AI Workflows &amp; B2B Growth">
   <meta property="og:description" content="Practical guides and original research for industrial B2B growth.">
-  <meta property="og:url" content="https://rohanyang.com/blog/">\n  <meta property="og:image" content="https://rohanyang.com/assets/manufacturing-seo-cover.svg">\n  <meta property="og:image:type" content="image/svg+xml">\n  <meta property="og:image:width" content="1200">\n  <meta property="og:image:height" content="630">\n  <meta property="og:image:alt" content="ROHAN Growth Studio digital visibility dashboard for SEO, GEO, content systems, and growth analytics">\n  <meta name="twitter:image" content="https://rohanyang.com/assets/manufacturing-seo-cover.svg">
+  <meta property="og:url" content="https://rohanyang.com/blog/">
+  <meta property="og:image" content="https://rohanyang.com/assets/manufacturing-seo-cover.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ROHAN Growth Studio digital visibility dashboard for SEO, GEO, content systems, and growth analytics">
+  <meta name="twitter:image" content="https://rohanyang.com/assets/manufacturing-seo-cover.svg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -166,7 +172,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </label>
       </div>
       <div class="flex flex-wrap items-center gap-2 mb-6" role="group" aria-label="Filter articles by topic">
-        <button type="button" data-filter="all" aria-pressed="true" class="filter-button is-active">All articles <span>14</span></button>
+        <button type="button" data-filter="all" aria-pressed="true" class="filter-button is-active">All articles</button>
         <button type="button" data-filter="seo" aria-pressed="false" class="filter-button">SEO &amp; Search</button>
         <button type="button" data-filter="website" aria-pressed="false" class="filter-button">Industrial Website</button>
         <button type="button" data-filter="content" aria-pressed="false" class="filter-button">B2B Content</button>
@@ -445,6 +451,7 @@ menuBtn.addEventListener("click",()=>{const open=mobileMenu.classList.toggle("hi
 <script>
 const searchInput=document.getElementById("article-search");
 const articleCards=[...document.querySelectorAll("#article-grid [data-category]")];
+document.querySelectorAll("[data-topic-count]").forEach(node=>{const count=articleCards.filter(card=>card.dataset.category===node.dataset.topicCount).length;node.textContent=count+" articles";});
 const filterButtons=[...document.querySelectorAll("[data-filter]")];
 const articleCount=document.getElementById("article-count");
 const emptyState=document.getElementById("article-empty");
