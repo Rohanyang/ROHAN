@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="zh-CN" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tools & Resources | ROHAN Growth Studio</title>
-  <meta name="description" content="A curated directory of SEO, website audit, analytics, content, and AI tools for manufacturers and B2B marketing teams. Clear explanations and practical tips from ROHAN Growth Studio.">
+  <title>工具与资源 | ROHAN Growth Studio</title>
+  <meta name="description" content="为制造企业、外贸团队和 B2B 营销人员精选的 SEO、网站诊断、数据分析、内容设计与 AI 工具，附有通俗说明和实用建议。">
   <link rel="canonical" href="https://rohanyang.com/tools/">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
@@ -98,7 +98,7 @@
   }
   </script>
 </head>
-<body class="lang-en">
+<body class="lang-zh">
 <header class="fixed top-0 w-full z-50 glass border-b border-white/5 transition-all duration-300">
   <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
     <a href="../index.html" class="flex items-center hover:opacity-80 transition-opacity duration-300 z-50" aria-label="ROHAN Growth Studio home">
@@ -138,8 +138,8 @@
           <a href="../index.html" class="hover:text-[#8bb5ff]">Home</a><span>/</span><span class="text-[#8bb5ff]">Tools & Resources</span>
         </nav>
         <div class="inline-flex items-center gap-1 rounded-full border border-white/15 bg-[#0b1324]/75 p-1" role="group" aria-label="Language selector">
-          <button type="button" class="lang-btn rounded-full px-3 py-1.5 text-[10px] font-tech tracking-wider bg-[#176bff] text-white" data-set-lang="en" aria-pressed="true">EN</button>
-          <button type="button" class="lang-btn rounded-full px-3 py-1.5 text-[10px] font-tech tracking-wider text-white/60 hover:text-white" data-set-lang="zh" aria-pressed="false">中文</button>
+          <button type="button" class="lang-btn rounded-full px-3 py-1.5 text-[10px] font-tech tracking-wider text-white/60 hover:text-white" data-set-lang="en" aria-pressed="false">EN</button>
+          <button type="button" class="lang-btn rounded-full px-3 py-1.5 text-[10px] font-tech tracking-wider bg-[#176bff] text-white" data-set-lang="zh" aria-pressed="true">中文</button>
         </div>
       </div>
       <div class="max-w-3xl">
@@ -437,7 +437,7 @@
   const resultCount = document.getElementById("result-count");
   const noResults = document.getElementById("no-results");
   let activeCategory = "all";
-  let currentLanguage = "en";
+  let currentLanguage = "zh";
 
   const translations = {
     en: {
@@ -512,9 +512,9 @@
     icon.classList.toggle("ph-x", open);
   });
 
-  let savedLanguage = "en";
+  let savedLanguage = "zh";
   try { savedLanguage = localStorage.getItem("rgs-tools-language") || "en"; } catch (error) {}
-  setLanguage(savedLanguage === "zh" ? "zh" : "en");
+  setLanguage(savedLanguage === "en" ? "en" : "zh");
 })();
 </script>
 </body>
