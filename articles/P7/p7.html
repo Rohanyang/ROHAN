@@ -610,15 +610,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           class="w-full h-[300px] md:h-[500px] object-cover opacity-90"
           loading="eager"
           decoding="async"
-          onerror="
-            if (!this.dataset.pngFallback) {
-              this.dataset.pngFallback = '1';
-              this.src = '/articles/P7/cover.png?v=20261106';
-            } else {
-              this.onerror = null;
-              this.src = 'https://placehold.co/1200x500/0B1324/176BFF?text=Cover+Image+Placeholder';
-            }
-          "
+
         />
         <div
           class="absolute inset-0 bg-gradient-to-t from-base to-transparent opacity-80 pointer-events-none"
