@@ -253,7 +253,19 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #176bff;
       }
-    </style>
+    
+      .credential-track {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(23, 107, 255, 0.65) rgba(255, 255, 255, 0.06);
+        -webkit-overflow-scrolling: touch;
+      }
+      .credential-track::-webkit-scrollbar { height: 7px; }
+      .credential-track::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
+      .credential-track::-webkit-scrollbar-thumb { background: rgba(23, 107, 255, 0.55); border-radius: 99px; }
+      .credential-card { scroll-snap-align: start; }
+      .credential-card .credential-badge img { transition: transform 0.35s ease; }
+      .credential-card:hover .credential-badge img { transform: scale(1.045); }
+</style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1025,7 +1037,223 @@
       </div>
     </section>
 
-    <!-- 6. HOW ROHAN WORKS -->
+    <!-- 6. PROFESSIONAL CREDENTIALS -->
+    <section
+      id="certifications"
+      class="py-20 md:py-24 bg-base relative border-b border-white/5 scroll-mt-20 overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-blueprint opacity-20 pointer-events-none"></div>
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10 gs-fade-up">
+          <div>
+            <div class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-4">
+              Professional Credentials
+            </div>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold uppercase tracking-wide text-cool">
+              Certifications<span class="text-steel">.</span>
+            </h2>
+          </div>
+          <div class="flex items-center gap-2 self-end sm:self-auto">
+            <button
+              type="button"
+              data-credential-scroll="prev"
+              aria-label="Scroll certifications left"
+              class="w-11 h-11 border border-steel/40 bg-surface/30 text-cool/80 hover:text-cool hover:border-accent hover:bg-accent/10 transition-colors rounded-sm flex items-center justify-center"
+            >
+              <i class="ph-bold ph-arrow-left text-lg"></i>
+            </button>
+            <button
+              type="button"
+              data-credential-scroll="next"
+              aria-label="Scroll certifications right"
+              class="w-11 h-11 border border-steel/40 bg-surface/30 text-cool/80 hover:text-cool hover:border-accent hover:bg-accent/10 transition-colors rounded-sm flex items-center justify-center"
+            >
+              <i class="ph-bold ph-arrow-right text-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="credential-track"
+          class="credential-track flex gap-5 overflow-x-auto pb-5 snap-x snap-mandatory gs-fade-up"
+          aria-label="Professional certifications"
+        >
+          <!-- Add future credentials by duplicating one credential-card and updating its image, title, issuer, and verification URL. -->
+          <a
+            href="https://ahrefs.com/academy/certificate/ae0fed3b53814a5a920c0ae9603d7ed8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="credential-card bento-card group flex flex-col shrink-0 w-[270px] sm:w-[285px] md:w-[300px] min-h-[310px] p-5 border border-steel/30 bg-surface/20 hover:border-accent/70 transition-all duration-300 snap-start"
+            aria-label="Verify Ahrefs Certification"
+          >
+            <div class="credential-badge h-[165px] mb-5 flex items-center justify-center bg-[#080F1E] border border-white/5 rounded-sm overflow-hidden">
+              <img
+                src="https://ahrefs.com/assets/esbuild/certification-icon-ahrefs-OS6CIFEC.png"
+                alt="Ahrefs certification badge"
+                width="132"
+                height="132"
+                loading="lazy"
+                decoding="async"
+                class="max-w-[132px] max-h-[132px] w-auto h-auto object-contain"
+              />
+            </div>
+            <div class="mt-auto">
+              <div class="font-tech text-[10px] text-steel uppercase tracking-widest mb-2">Ahrefs Academy</div>
+              <h3 class="font-heading text-lg font-semibold text-cool leading-snug mb-4">Ahrefs Certification</h3>
+              <div class="flex items-center justify-between border-t border-white/10 pt-3 text-xs font-tech tracking-wide text-accent group-hover:text-cool transition-colors">
+                <span>VIEW CREDENTIAL</span>
+                <i class="ph-bold ph-arrow-up-right text-base"></i>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://ahrefs.com/academy/certificate/6b949b81f4964b5581fc52911ce0f1f9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="credential-card bento-card group flex flex-col shrink-0 w-[270px] sm:w-[285px] md:w-[300px] min-h-[310px] p-5 border border-steel/30 bg-surface/20 hover:border-accent/70 transition-all duration-300 snap-start"
+            aria-label="Verify AEO Certification"
+          >
+            <div class="credential-badge h-[165px] mb-5 flex items-center justify-center bg-[#080F1E] border border-white/5 rounded-sm overflow-hidden">
+              <img
+                src="https://ahrefs.com/assets/esbuild/certification-icon-aeo-W7TLI622.png"
+                alt="Ahrefs AEO certification badge"
+                width="132"
+                height="132"
+                loading="lazy"
+                decoding="async"
+                class="max-w-[132px] max-h-[132px] w-auto h-auto object-contain"
+              />
+            </div>
+            <div class="mt-auto">
+              <div class="font-tech text-[10px] text-steel uppercase tracking-widest mb-2">Ahrefs Academy</div>
+              <h3 class="font-heading text-lg font-semibold text-cool leading-snug mb-4">AEO Certification</h3>
+              <div class="flex items-center justify-between border-t border-white/10 pt-3 text-xs font-tech tracking-wide text-accent group-hover:text-cool transition-colors">
+                <span>VIEW CREDENTIAL</span>
+                <i class="ph-bold ph-arrow-up-right text-base"></i>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://skillshop.credential.net/a3c3e873-0849-4800-b196-0f821e0113fe"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="credential-card bento-card group flex flex-col shrink-0 w-[270px] sm:w-[285px] md:w-[300px] min-h-[310px] p-5 border border-steel/30 bg-surface/20 hover:border-accent/70 transition-all duration-300 snap-start"
+            aria-label="Verify Google Ads Search Certification"
+          >
+            <div class="credential-badge h-[165px] mb-5 flex items-center justify-center bg-[#080F1E] border border-white/5 rounded-sm overflow-hidden">
+              <img
+                src="https://cdn.prod.website-files.com/64fb3aaa0b5ad657cf3e7091/6553beb1f8dc046577d4ee61_Google%20Ads%20Search%20Certification.png"
+                alt="Google Ads Search certification badge"
+                width="144"
+                height="144"
+                loading="lazy"
+                decoding="async"
+                class="max-w-[144px] max-h-[144px] w-auto h-auto object-contain"
+              />
+            </div>
+            <div class="mt-auto">
+              <div class="font-tech text-[10px] text-steel uppercase tracking-widest mb-2">Google Skillshop</div>
+              <h3 class="font-heading text-lg font-semibold text-cool leading-snug mb-2">Google Ads Search Certification (2026)</h3>
+              <p class="text-cool/50 text-xs mb-3">Issued Nov 6, 2026 · Expires Nov 6, 2027</p>
+              <div class="flex items-center justify-between border-t border-white/10 pt-3 text-xs font-tech tracking-wide text-accent group-hover:text-cool transition-colors">
+                <span>VERIFY CREDENTIAL</span>
+                <i class="ph-bold ph-arrow-up-right text-base"></i>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://skillshop.credential.net/bb0d525d-2558-4a16-af5c-4189d4abbc7a"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="credential-card bento-card group flex flex-col shrink-0 w-[270px] sm:w-[285px] md:w-[300px] min-h-[310px] p-5 border border-steel/30 bg-surface/20 hover:border-accent/70 transition-all duration-300 snap-start"
+            aria-label="Verify Conversion Optimization Certification"
+          >
+            <div class="credential-badge h-[165px] mb-5 flex items-center justify-center bg-[#080F1E] border border-white/5 rounded-sm overflow-hidden">
+              <img
+                src="https://www.vhv.rs/dpng/d/201-2017046_google-marketing-platform-certified-hd-png-download.png"
+                alt="Google Marketing Platform certification badge"
+                width="150"
+                height="132"
+                loading="lazy"
+                decoding="async"
+                class="max-w-[150px] max-h-[132px] w-auto h-auto object-contain"
+              />
+            </div>
+            <div class="mt-auto">
+              <div class="font-tech text-[10px] text-steel uppercase tracking-widest mb-2">Google Skillshop</div>
+              <h3 class="font-heading text-lg font-semibold text-cool leading-snug mb-2">Conversion Optimization Certification Exam</h3>
+              <p class="text-cool/50 text-xs mb-3">Issued Nov 6, 2026 · Expires Nov 6, 2027</p>
+              <div class="flex items-center justify-between border-t border-white/10 pt-3 text-xs font-tech tracking-wide text-accent group-hover:text-cool transition-colors">
+                <span>VERIFY CREDENTIAL</span>
+                <i class="ph-bold ph-arrow-up-right text-base"></i>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://skillshop.credential.net/a0aad8ab-8cf0-4b34-a04e-1c687a9b2209"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="credential-card bento-card group flex flex-col shrink-0 w-[270px] sm:w-[285px] md:w-[300px] min-h-[310px] p-5 border border-steel/30 bg-surface/20 hover:border-accent/70 transition-all duration-300 snap-start"
+            aria-label="Verify Google Analytics Certification"
+          >
+            <div class="credential-badge h-[165px] mb-5 flex items-center justify-center bg-[#080F1E] border border-white/5 rounded-sm overflow-hidden">
+              <img
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https%3A/storage.googleapis.com/msgsndr/iukVQcmEzezEMlsepio7/media/6859c45d4fe187496f376985.png"
+                alt="Google Analytics certification badge"
+                width="144"
+                height="144"
+                loading="lazy"
+                decoding="async"
+                class="max-w-[144px] max-h-[144px] w-auto h-auto object-contain"
+              />
+            </div>
+            <div class="mt-auto">
+              <div class="font-tech text-[10px] text-steel uppercase tracking-widest mb-2">Google Skillshop</div>
+              <h3 class="font-heading text-lg font-semibold text-cool leading-snug mb-2">Google Analytics Certification (2026)</h3>
+              <p class="text-cool/50 text-xs mb-3">Issued Nov 3, 2026 · Expires Nov 3, 2027</p>
+              <div class="flex items-center justify-between border-t border-white/10 pt-3 text-xs font-tech tracking-wide text-accent group-hover:text-cool transition-colors">
+                <span>VERIFY CREDENTIAL</span>
+                <i class="ph-bold ph-arrow-up-right text-base"></i>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://app-na2.hubspot.com/academy/achievements/4ym1s08p/en/1/rohan-yang/digital-marketing-certified"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="credential-card bento-card group flex flex-col shrink-0 w-[270px] sm:w-[285px] md:w-[300px] min-h-[310px] p-5 border border-steel/30 bg-surface/20 hover:border-accent/70 transition-all duration-300 snap-start"
+            aria-label="Verify HubSpot Digital Marketing Certification"
+          >
+            <div class="credential-badge h-[165px] mb-5 flex items-center justify-center bg-[#080F1E] border border-white/5 rounded-sm overflow-hidden">
+              <img
+                src="https://www.hubsplanet.com/certifications/digital-marketing.jpg"
+                alt="HubSpot Digital Marketing certification badge"
+                width="144"
+                height="144"
+                loading="lazy"
+                decoding="async"
+                class="max-w-[144px] max-h-[144px] w-auto h-auto object-contain"
+              />
+            </div>
+            <div class="mt-auto">
+              <div class="font-tech text-[10px] text-steel uppercase tracking-widest mb-2">HubSpot Academy</div>
+              <h3 class="font-heading text-lg font-semibold text-cool leading-snug mb-4">Digital Marketing Certified</h3>
+              <div class="flex items-center justify-between border-t border-white/10 pt-3 text-xs font-tech tracking-wide text-accent group-hover:text-cool transition-colors">
+                <span>VIEW CREDENTIAL</span>
+                <i class="ph-bold ph-arrow-up-right text-base"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. HOW ROHAN WORKS -->
     <section class="py-24 bg-base relative scroll-mt-20">
       <div class="max-w-[1200px] mx-auto px-6">
         <div class="text-center mb-16 gs-fade-up">
@@ -1148,7 +1376,7 @@
       </div>
     </section>
 
-    <!-- 7. OPERATING PRINCIPLES -->
+    <!-- 8. OPERATING PRINCIPLES -->
     <section
       class="py-24 bg-[#070C1A] border-y border-white/5 relative overflow-hidden"
     >
@@ -1348,7 +1576,7 @@
       </div>
     </section>
 
-    <!-- 8. WHO ROHAN WORKS BEST WITH -->
+    <!-- 9. WHO ROHAN WORKS BEST WITH -->
     <section class="py-24 bg-surfaceLight relative border-b border-white/5">
       <div class="max-w-[1200px] mx-auto px-6">
         <div class="text-center mb-16 gs-fade-up">
@@ -1486,7 +1714,7 @@
       </div>
     </section>
 
-    <!-- 9. CTA -->
+    <!-- 10. CTA -->
     <section class="py-24 bg-base relative overflow-hidden">
       <div
         class="absolute inset-0 bg-diagonal opacity-50 pointer-events-none"
@@ -1838,6 +2066,16 @@
           const icon = mobileMenuBtn.querySelector("i");
           icon.classList.remove("ph-x");
           icon.classList.add("ph-list");
+        });
+      });
+
+      // Professional credentials carousel controls
+      document.querySelectorAll("[data-credential-scroll]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const track = document.getElementById("credential-track");
+          if (!track) return;
+          const direction = button.dataset.credentialScroll === "next" ? 1 : -1;
+          track.scrollBy({ left: direction * 340, behavior: "smooth" });
         });
       });
 
