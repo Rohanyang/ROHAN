@@ -101,6 +101,10 @@
     </script>
 
     <style>
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+      }
       body {
         background-color: #0b1324;
         color: #f5f7fa;
@@ -154,8 +158,8 @@
       }
       .reveal-line {
         display: inline-block;
-        transform: translateY(110%);
-        will-change: transform;
+        transform: translateY(0);
+        will-change: auto;
       }
       .bento-card {
         position: relative;
@@ -468,6 +472,34 @@
             manufacturing companies that want to compete in global markets with
             clearer, sharper, and more credible digital assets.
           </p>
+
+          <!-- Google Skillshop credentials shortcut -->
+          <a
+            href="#certifications"
+            aria-label="View Google Skillshop certifications"
+            class="group w-full max-w-xl mb-7 p-3 sm:p-4 border border-accent/25 bg-surface/25 hover:bg-accent/[0.07] hover:border-accent/60 rounded-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 transition-all duration-300"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 shrink-0 rounded-sm bg-white flex items-center justify-center">
+                <svg viewBox="0 0 48 48" width="27" height="27" aria-hidden="true">
+                  <path fill="#4285F4" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.1 5.9 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.2-.1-2.3-.4-3.5z"/>
+                  <path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.1 5.9 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+                  <path fill="#FBBC05" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.1 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/>
+                  <path fill="#EA4335" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.1 5.6l6.2 5.2C41 35.8 44 30.3 44 24c0-1.2-.1-2.3-.4-3.5z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-tech text-[9px] sm:text-[10px] tracking-[0.18em] uppercase text-accent mb-1">Google Skillshop</div>
+                <div class="font-heading text-sm sm:text-base font-semibold text-cool">3 Verified Certifications</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5 sm:justify-end">
+              <span class="px-2 py-1 border border-steel/30 text-cool/70 text-[9px] font-tech tracking-wide rounded-sm">ADS SEARCH</span>
+              <span class="px-2 py-1 border border-steel/30 text-cool/70 text-[9px] font-tech tracking-wide rounded-sm">ANALYTICS</span>
+              <span class="px-2 py-1 border border-steel/30 text-cool/70 text-[9px] font-tech tracking-wide rounded-sm">CONVERSION</span>
+              <i class="ph-bold ph-arrow-down text-accent ml-1 group-hover:translate-y-1 transition-transform" aria-hidden="true"></i>
+            </div>
+          </a>
 
           <!-- Founder personal brand: Rohan Yang -->
           <div id="rohan-yang" class="max-w-xl mb-10 p-5 md:p-6 border border-accent/30 bg-surface/25 rounded-sm hero-element opacity-0 translate-y-4">
