@@ -196,6 +196,25 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://rohanyang.com/blog/manufacturing-ai-search/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/manufacturing-ai-search/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/blog/zh-cn/manufacturing-ai-search/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/manufacturing-ai-search/" />
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rohanyang.com/blog/zh-cn/manufacturing-ai-search/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/blog/zh-cn/manufacturing-ai-search/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/manufacturing-ai-search/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/manufacturing-ai-search/" />
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Tools & Resources -->
   <url>
     <loc>https://rohanyang.com/tools/</loc>
