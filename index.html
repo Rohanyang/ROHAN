@@ -273,19 +273,56 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://rohanyang.com/#organization",
-  "name": "ROHAN Growth Studio",
-  "url": "https://rohanyang.com/",
-  "description": "Industrial B2B digital architecture, SEO/GEO content systems, and practical AI workflows for manufacturing companies.",
-  "founder": {
-    "@type": "Person",
-    "@id": "https://rohanyang.com/#rohan-yang",
-    "name": "Rohan Yang",
-    "url": "https://rohanyang.com/about.html"
-  }
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://rohanyang.com/#organization",
+      "name": "ROHAN Growth Studio",
+      "url": "https://rohanyang.com/",
+      "description": "Industrial B2B digital architecture, SEO/GEO content systems, and practical AI workflows for manufacturing companies.",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://rohanyang.com/#rohan-yang",
+        "name": "Rohan Yang",
+        "url": "https://rohanyang.com/about.html",
+        "sameAs": [
+          "https://www.linkedin.com/in/rohanyang/"
+        ]
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rohanyang.com/rohan-logo-top.png"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rohanyang.com/#rohan-yang",
+      "name": "Rohan Yang",
+      "url": "https://rohanyang.com/about.html",
+      "sameAs": [
+        "https://www.linkedin.com/in/rohanyang/"
+      ],
+      "worksFor": {
+        "@id": "https://rohanyang.com/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rohanyang.com/#website",
+      "url": "https://rohanyang.com/",
+      "name": "ROHAN Growth Studio",
+      "publisher": {
+        "@id": "https://rohanyang.com/#organization"
+      },
+      "inLanguage": [
+        "zh-CN",
+        "en"
+      ]
+    }
+  ]
 }
-</script>
+    </script>
 </head>
   <body class="antialiased selection:bg-accent selection:text-white">
     <!-- Google Tag Manager (noscript) -->
