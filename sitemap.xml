@@ -164,7 +164,7 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/blog/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/" />
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -173,7 +173,7 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/blog/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/" />
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -211,6 +211,25 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/manufacturing-ai-search/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/manufacturing-ai-search/" />
     <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rohanyang.com/blog/manufacturing-digital-marketing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/manufacturing-digital-marketing/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/blog/zh-cn/manufacturing-digital-marketing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/manufacturing-digital-marketing/" />
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rohanyang.com/blog/zh-cn/manufacturing-digital-marketing/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/blog/zh-cn/manufacturing-digital-marketing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/manufacturing-digital-marketing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/manufacturing-digital-marketing/" />
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
