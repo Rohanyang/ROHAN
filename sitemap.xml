@@ -383,4 +383,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://rohanyang.com/articles/P15/p15.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/articles/P15/p15.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/manufacturing-rfq-form/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/en/manufacturing-rfq-form/" />
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rohanyang.com/blog/en/manufacturing-rfq-form/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/articles/P15/p15.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/manufacturing-rfq-form/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/en/manufacturing-rfq-form/" />
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
