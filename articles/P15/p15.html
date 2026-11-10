@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <link rel="canonical" href="https://rohanyang.com/articles/P15/p15.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/articles/P15/p15.html">
+    <link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/manufacturing-rfq-form/">
+    <link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/en/manufacturing-rfq-form/">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- META TITLE START -->
+    <title>制造业 RFQ 询价表单怎么设计？减少客户流失，提高有效询盘 | ROHAN Insights</title>
+    <!-- META TITLE END -->
+    <meta name="description" content="制造业外贸网站如何设计 RFQ 询价表单？本文拆解采购商信息、工艺字段、图纸上传、隐私保护、表单转化与询盘质量追踪，帮助工厂减少无效沟通并提升报价效率。">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Open Graph / Social Preview -->
+    <meta
+      property="og:title"
+      content="制造业 RFQ 询价表单怎么设计？减少客户流失，提高有效询盘 | ROHAN Insights"
+    />
+    <meta
+      property="og:description"
+      content="制造业外贸网站如何设计 RFQ 询价表单？本文拆解采购商信息、工艺字段、图纸上传、隐私保护、表单转化与询盘质量追踪，帮助工厂减少无效沟通并提升报价效率。"
+    />
+    <meta
+      property="og:image"
+      content="https://rohanyang.com/articles/P1/cover.webp"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://rohanyang.com/articles/P1/cover.webp"
+    />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1942" />
+    <meta property="og:image:height" content="809" />
+    <meta
+      property="og:url"
+      content="https://rohanyang.com/articles/P1/p1.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="ROHAN Growth Studio" />
+
+    <meta property="article:author" content="ROHAN Team" />
+    <meta
+      property="article:published_time"
+      content="2026-06-08T00:00:00+08:00"
+    />
+    <meta
+      property="article:modified_time" content="2026-11-09T00:00:00+08:00"
+    />
+    <meta property="article:section" content="Digital Assets" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="制造业 RFQ 询价表单怎么设计？减少客户流失，提高有效询盘 | ROHAN Insights"
+    />
+    <meta
+      name="twitter:description"
+      content="A ROHAN insight explaining why a B2B manufacturing website should work as a trust conversion system, not just a static company display shelf, by improving buyer understanding, technical credibility, and inquiry paths."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rohanyang.com/articles/P1/cover.webp"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: "#0B1324",
+              surface: "#2D3E5F",
+              surfaceLight: "#1A2642",
+              accent: "#176BFF",
+              steel: "#4B5563",
+              cool: "#F5F7FA",
+              darker: "#070C1A",
+            },
+            fontFamily: {
+              heading: ['"Exo 2"', "sans-serif"],
+              body: ["Raleway", "sans-serif"],
+              tech: ["Orbitron", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0b1324;
+        color: #f5f7fa;
+        font-family: "Raleway", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .site-logo {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* Background Textures */
+      .bg-blueprint {
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          );
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+      }
+      .bg-diagonal {
+        background-image: linear-gradient(
+          -45deg,
+          transparent 48%,
+          rgba(23, 107, 255, 0.05) 50%,
+          transparent 52%
+        );
+        background-size: 30px 30px;
+      }
+      .glass-panel {
+        background: rgba(45, 62, 95, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(23, 107, 255, 0.15);
+      }
+
+      /* UI Components */
+      .btn-accent {
+        position: relative;
+        background: #176bff;
+        color: #f5f7fa;
+        border: 1px solid #176bff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .btn-accent:hover {
+        background: transparent;
+        color: #176bff;
+        box-shadow: 0 0 20px rgba(23, 107, 255, 0.3);
+      }
+
+      .tech-input {
+        background: rgba(11, 19, 36, 0.6);
+        border: 1px solid rgba(75, 85, 99, 0.5);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+      .tech-input:focus {
+        outline: none;
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.05);
+        box-shadow: 0 0 15px rgba(23, 107, 255, 0.15);
+      }
+
+      /* Insight Card Hover Scanline */
+      .insight-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .insight-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(23, 107, 255, 0.05),
+          transparent
+        );
+        transform: skewX(-20deg);
+        transition: left 0.6s ease;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .insight-card:hover::after {
+        left: 200%;
+      }
+
+      /* Custom Article Typography Styling */
+      .article-prose h2 {
+        font-family: "Exo 2", sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #f5f7fa;
+        margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+        scroll-margin-top: 100px; /* For TOC anchoring */
+      }
+      .article-prose h3 {
+        font-family: "Exo 2", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: rgba(245, 247, 250, 0.9);
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .article-prose p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: rgba(245, 247, 250, 0.8);
+        margin-bottom: 1.5rem;
+      }
+      .article-prose strong {
+        color: #f5f7fa;
+        font-weight: 600;
+      }
+      .article-prose blockquote {
+        border-left: 2px solid #176bff;
+        padding-left: 1.5rem;
+        font-style: italic;
+        color: rgba(245, 247, 250, 0.7);
+        background: rgba(45, 62, 95, 0.15);
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        padding-right: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+      }
+      .article-prose ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 2rem;
+      }
+      .article-prose ul li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: rgba(245, 247, 250, 0.8);
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+      .article-prose ul li::before {
+        content: "•";
+        color: #176bff;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+      .article-prose ol {
+        list-style-type: decimal;
+        padding-left: 1.25rem;
+        margin-bottom: 2rem;
+        color: rgba(245, 247, 250, 0.8);
+        font-size: 0.95rem;
+      }
+      .article-prose ol li {
+        margin-bottom: 0.75rem;
+        line-height: 1.7;
+      }
+      .article-prose figure {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .article-prose figure img {
+        width: 100%;
+        height: auto;
+        border: 1px solid rgba(75, 85, 99, 0.3);
+        background-color: rgba(11, 19, 36, 0.6);
+      }
+      .article-prose figcaption {
+        text-align: center;
+        font-family: "Orbitron", sans-serif;
+        font-size: 0.65rem;
+        color: #4b5563;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 0.75rem;
+      }
+      .article-prose table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        font-size: 0.85rem;
+      }
+      .article-prose th {
+        background: rgba(23, 107, 255, 0.05);
+        color: #f5f7fa;
+        font-weight: 600;
+        padding: 1rem;
+        border: 1px solid rgba(75, 85, 99, 0.3);
+        text-align: left;
+      }
+      .article-prose td {
+        padding: 1rem;
+        border: 1px solid rgba(75, 85, 99, 0.2);
+        color: rgba(245, 247, 250, 0.8);
+      }
+
+      /* TOC Active State */
+      .toc-link {
+        transition: all 0.3s ease;
+      }
+      .toc-link.active {
+        color: #176bff;
+        border-left-color: #176bff;
+        padding-left: 1.25rem;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b1324;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #176bff;
+      }
+    </style>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://rohanyang.com/articles/P15/p15.html#article",
+      "headline": "制造业 RFQ 询价表单怎么设计？减少客户流失，提高有效询盘",
+      "description": "制造业外贸网站如何设计 RFQ 询价表单？本文拆解采购商信息、工艺字段、图纸上传、隐私保护、表单转化与询盘质量追踪，帮助工厂减少无效沟通并提升报价效率。",
+      "image": "https://rohanyang.com/articles/P15/cover.svg",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "author": {
+        "@type": "Organization",
+        "name": "ROHAN Growth Studio",
+        "@id": "https://rohanyang.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://rohanyang.com/#organization"
+      },
+      "articleSection": "Digital Assets",
+      "inLanguage": "zh-CN",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rohanyang.com/articles/P15/p15.html"
+      },
+      "url": "https://rohanyang.com/articles/P15/p15.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rohanyang.com/articles/P15/p15.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rohanyang.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://rohanyang.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "制造业 RFQ 询价表单怎么设计？减少客户流失，提高有效询盘",
+          "item": "https://rohanyang.com/articles/P15/p15.html"
+        }
+      ]
+    }
+  ]
+}</script>
+<!-- Google Tag Manager -->
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TTJPFHJ4');
+</script>
+<!-- End Google Tag Manager -->
+</head>
+  <body class="antialiased selection:bg-accent selection:text-white">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTJPFHJ4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="bg-blueprint"></div>
+    <div
+      class="fixed top-[-50%] left-[-10%] w-[120%] h-[150%] bg-surface/5 transform -skew-x-12 pointer-events-none z-[-1]"
+    ></div>
+
+    <!-- Header (Paths modified to relative ../../) -->
+    <header
+      class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="/"
+          class="flex items-center hover:opacity-80 transition-opacity z-50"
+        >
+          <img
+            src="../../rohan-logo-top.png"
+            alt="ROHAN logo"
+            class="site-logo h-11 md:h-14 w-auto"
+          />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center gap-5 font-tech text-xs tracking-widest text-cool/80"
+        >
+          <a href="/" class="hover:text-accent transition-colors"
+            >Home</a
+          >
+          <a
+            href="../../solutions.html"
+            class="hover:text-accent transition-colors"
+            >Solutions</a
+          >
+          <a href="../../cases.html" class="hover:text-accent transition-colors"
+            >Cases</a
+          >
+          <a
+            href="../../pricing.html"
+            class="hover:text-accent transition-colors"
+            >Pricing</a
+          >
+          <a
+            href="../../blog/"
+            class="text-accent font-bold transition-colors"
+            >Insights</a
+          >
+<a href="../../blog/" class="hover:text-accent transition-colors">Blog</a>
+          <a href="../../tools/" class="hover:text-accent transition-colors">Tools</a>
+          <a
+            href="../../contact.html"
+            class="hover:text-accent transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="../../contact.html"
+            class="text-xs font-tech tracking-wider border border-accent/40 px-5 py-2.5 hover:border-accent hover:bg-accent/10 transition-colors backdrop-blur-md rounded-sm hidden md:block"
+          >
+            LET'S TALK
+          </a>
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-cool p-2 hover:text-accent transition-colors z-50"
+          >
+            <i class="ph-bold ph-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Panel -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-base/98 backdrop-blur-xl z-40 hidden flex-col pt-28 px-8 items-center border-t border-accent/20"
+      >
+        <nav
+          class="flex flex-col gap-8 text-center font-tech text-sm tracking-[0.2em] w-full"
+        >
+          <a
+            href="/"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >HOME</a
+          >
+          <a
+            href="../../solutions.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >SOLUTIONS</a
+          >
+          <a
+            href="../../cases.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >CASES</a
+          >
+          <a
+            href="../../pricing.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >PRICING</a
+          >
+          <a
+            href="../../blog/"
+            class="mobile-link text-accent pb-4 border-b border-steel/20 block"
+            >INSIGHTS</a
+          >
+<a href="../../blog/" class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block">BLOG</a>
+          <a href="../../tools/" class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block">TOOLS</a>
+          <a
+            href="../../contact.html"
+            class="mobile-link text-cool hover:text-accent pb-4 block"
+            >LET'S TALK</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ARTICLE HERO SECTION -->
+    <section class="pt-40 pb-12 relative overflow-hidden">
+      <div class="max-w-[1000px] mx-auto px-6 relative z-10 gs-fade-up">
+        <!-- Breadcrumbs -->
+        <div
+          class="font-tech text-[10px] text-steel uppercase tracking-widest mb-6 flex items-center gap-2"
+        >
+          <a
+            href="../../blog/"
+            class="hover:text-accent transition-colors"
+            >Insights</a
+          >
+          <span>/</span>
+          <!-- META CATEGORY START -->
+          <span
+            class="text-accent border border-accent/30 bg-accent/5 px-2 py-1"
+            >Digital Assets</span
+          >
+          <!-- META CATEGORY END -->
+        </div>
+
+        <!-- TITLE START -->
+        <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-cool">制造业 RFQ 询价表单怎么设计？减少客户流失，提高有效询盘</h1>
+        <!-- TITLE END -->
+
+        <!-- SUBTITLE/SUMMARY START -->
+        <p
+          class="text-cool/80 text-[15px] md:text-lg font-light max-w-3xl mb-8 leading-relaxed font-body border-l-2 border-steel/50 pl-4"
+        >
+          A B2B Website Is Not a Display Shelf. It Is a Trust Conversion System.
+          很多企业把官网当成公司简介的线上版，展示“我们是谁”，却没解释“为什么该相信我们”。有效的外贸独立站应该帮买家快速理解工艺边界、经验和联系路径。
+        </p>
+        <!-- SUBTITLE/SUMMARY END -->
+
+        <!-- META INFO START -->
+        <div class="flex items-center gap-6 border-t border-white/10 pt-6">
+          <div
+            class="font-tech text-xs text-steel flex items-center gap-2 tracking-widest uppercase"
+          >
+            <i class="ph-bold ph-calendar-blank"></i> November 10, 2026
+          </div>
+          <div
+            class="font-tech text-xs text-steel flex items-center gap-2 tracking-widest uppercase"
+          >
+            <i class="ph-bold ph-clock"></i> 9 MIN READ
+          </div>
+          <div
+            class="font-tech text-xs text-steel flex items-center gap-2 tracking-widest uppercase hidden sm:flex"
+          >
+            <i class="ph-bold ph-user"></i> By ROHAN Team
+          </div>
+        </div>
+        <!-- META INFO END -->
+      </div>
+    </section>
+
+    <!-- COVER IMAGE START -->
+    <div class="max-w-[1200px] mx-auto px-6 mb-16 gs-fade-up">
+      <div class="w-full relative border border-steel/30 bg-surface/20">
+        <!-- 默认使用当前目录的 cover.webp -->
+        <img
+          src="./cover.svg"
+          alt="制造业 RFQ 询价表单怎么设计？减少客户流失，提高有效询盘"
+          class="w-full h-[300px] md:h-[500px] object-cover opacity-90"
+          onerror="
+            this.src =
+              'https://placehold.co/1200x500/0B1324/176BFF?text=Cover+Image+Placeholder'
+          "
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-base to-transparent opacity-80 pointer-events-none"
+        ></div>
+      </div>
+    </div>
+    <!-- COVER IMAGE END -->
+
+    <!-- MAIN ARTICLE & TOC -->
+    <section class="pb-24 relative z-10">
+      <div
+        class="max-w-[1200px] mx-auto px-6 flex flex-col lg:flex-row gap-16 relative"
+      >
+        <!-- Left: Article Content Layout -->
+        <article
+          class="lg:w-[70%] article-prose gs-fade-up"
+          id="article-content"
+        >
+          <!-- ARTICLE CONTENT START -->
+<h2 id="rfq-role">1. 为什么 RFQ 表单是制造业网站的重要转化节点</h2><p>对制造企业而言，RFQ（Request for Quotation，询价请求）表单不只是一个联系组件，而是把网站访问转化为真实商业沟通的入口。海外采购商可能已经浏览了工艺能力、质量体系、设备信息和项目案例，也初步判断工厂值得进一步接触；但如果最后的表单难以理解、字段过多，或者没有说明提交之后会发生什么，潜在询盘就可能在最后一步流失。</p><p>一份有效的制造业 RFQ 表单，需要同时完成两件事：让真正有项目需求的买家方便地描述需求，也帮助工厂收集足够的信息，判断项目是否匹配、是否值得进入工程评估和报价流程。这两项目标之间需要平衡。字段太少，收到的可能只是“请报价”的模糊留言；字段太多，又会增加买家的填写负担。</p><p>因此，好的 RFQ 表单不是字段越多越专业，也不是越短越好，而是围绕下一步决策收集必要信息，并清楚解释后续流程。</p><h2 id="buyer-info">2. 制造业询价表单应该收集哪些信息？</h2><p>先收集能够识别客户并完成首次回复的信息：联系人姓名、商务邮箱、公司名称、国家或地区，以及简短的项目描述。商务邮箱有助于了解业务背景，但不建议仅因客户使用其他邮箱就直接拒绝有效询盘。</p><p>接下来再收集与实际制造能力有关的项目信息，例如零件或产品名称、加工工艺、材料、尺寸范围、预计数量、目标交期、适用标准，以及项目属于新产品开发还是现有产品转产。</p><p>不要把所有技术信息都设置为必填。采购人员在第一次联系时可能还不知道准确材料牌号；工程师可能有图纸，却还没有最终年度预测量。允许买家先提交现有信息，再由业务或工程团队补充确认。</p><table><thead><tr><th>字段</th><th>用途</th><th>建议设置</th></tr></thead><tbody><tr><td>姓名、商务邮箱</td><td>识别联系人并回复</td><td>必填</td></tr><tr><td>公司、国家或地区</td><td>了解企业背景和市场区域</td><td>必填或强烈建议</td></tr><tr><td>产品/零件描述</td><td>了解客户希望制造什么</td><td>必填，提供足够输入空间</td></tr><tr><td>工艺和材料</td><td>初步判断技术匹配度</td><td>未知时允许留空</td></tr><tr><td>数量和交期</td><td>评估产能与排期</td><td>可选或提供区间</td></tr><tr><td>图纸或技术规格</td><td>支持初步工程评估</td><td>可选上传或后续安全传输</td></tr><tr><td>质量/认证要求</td><td>识别特殊合规和检验需求</td><td>可选</td></tr></tbody></table><p>这只是通用框架，不是所有工厂都适用的固定模板。CNC 加工、冲压模具、注塑件和工业设备供应商需要的技术字段并不相同。表单应围绕业务和工程团队真实用于判断项目的关键问题来设计。</p><h2 id="process-fields">3. 根据制造工艺设计不同的 RFQ 字段</h2><p>一个通用的“请描述您的项目”文本框容易上线，但往往会收到缺少关键背景的询盘。更好的方式是根据主要工艺提供适度的提示或分支问题，让客户知道应该提供什么，而不是一次性展示一长串技术问题。</p><h3>CNC 加工与精密零件</h3><p>可以了解材料、零件尺寸、关键公差特征、表面处理、单批数量、年度需求量，以及是否有 2D 图纸或 3D CAD 文件。不要在工程师尚未查看图纸之前，就要求客户填写大量精密公差。</p><h3>金属冲压与模具</h3><p>可以了解材料类型与厚度、零件尺寸、预计产量、已知的冲床或生产线限制、模具范围以及项目阶段。模具项目还可以询问客户需要的是连续模、传递模还是单工程模，以及是否包含试模、备件或后续工程变更支持。</p><h3>注塑与塑料零件</h3><p>可以询问树脂或材料类别、零件尺寸、预计年需求量、外观要求、颜色、模具状态，以及装配或二次加工要求。如果买家还不清楚材料规格，应允许其上传图纸或先用文字描述，而不是迫使客户猜测。</p><p>技术字段旁边可以加入简短示例。目的是帮助买家准确回答，而不是把表单设计得复杂。</p><h2 id="file-security">4. 图纸、CAD 文件与保密信息应该如何处理？</h2><p>制造业询价经常涉及敏感图纸、3D 模型、技术规格或客户文件。文件上传功能能够提高沟通效率，但同时也带来安全、隐私和运营责任。</p><p>启用上传之前，应明确系统允许的文件格式和大小、文件存储位置、访问权限、保留期限，以及如何处理恶意文件或异常格式。不要把普通网页表单描述成安全的工程数据室，除非系统确实经过相应设计和测试。</p><p>要告诉访客哪些文件适合提交、哪些信息不应通过公开表单上传。如果网站暂时不具备安全文件传输能力，可以先收集基础询盘，再由业务或工程人员通过经过批准的渠道接收图纸。</p><p>隐私说明也应该容易找到。解释收集信息的用途、可能查看信息的人员，以及客户如何联系企业处理相关请求。信任来自清楚、真实的数据处理方式，而不是一句笼统的“我们会保护您的信息”。</p><h2 id="reduce-friction">5. 如何减少填写阻力，同时保留有效筛选信息？</h2><p>每增加一个字段，访客就需要投入更多时间。部分信息确实必要，另一些则只是企业内部希望提前获得的资料，可以留到第一次沟通之后再收集。要区分首次联系的必要信息与后续工程评估需要的详细资料。</p><ul><li>使用清楚的字段标签，不要只依赖输入框里的占位提示。</li><li>明确标注必填项，并解释不常见的技术要求。</li><li>使用合适的输入类型、自动填充和即时校验。</li><li>对于尚未确定的数字，提供合理区间选项。</li><li>确保手机端易于填写，文件上传控件清晰可用。</li><li>校验失败时尽可能保留已填写的信息。</li><li>成功提交后展示清楚的确认信息。</li></ul><p>复杂项目可以采用分步骤表单，但每增加一步都应该有明确理由。如果使用多步骤流程，应显示进度，并解释为什么需要下一项信息。Search Engine Journal 的 CRO 指南建议联系表单聚焦于完成后续跟进所需的信息；只有在确实有助于筛选客户时，才增加行业、预算等字段。对制造业 RFQ 而言，这应当作为需要通过真实询盘验证的设计假设，而不是机械照搬的规则。</p><h2 id="cta-next-step">6. 使用明确的 CTA，并告诉客户提交之后会发生什么</h2><p>“Submit”或“Send”这样的按钮没有说明客户接下来会得到什么。可以根据实际流程使用“提交询价供评估”“发送项目需求”“申请制造报价”等表达。按钮文案必须与企业真正能够提供的下一步一致。</p><p>表单附近应说明提交后的处理流程。例如：“团队将先审核项目信息；如需图纸、规格或补充说明，我们会与您联系后再进入报价评估。”只有企业确实能够稳定做到时，才承诺具体回复时间。工程评估、材料确认和产能核查可能需要时间，不要随意承诺 24 小时完成报价。</p><p>不同阶段的买家也应该有不同入口。已经准备好询价的客户可以使用 RFQ 表单；仍在比较供应商的客户可能更希望先了解工艺能力、预约技术沟通或索取公司资料。不要强迫所有访客完成同一种转化动作。</p><h2 id="measure-quality">7. 如何追踪 RFQ 表单表现与询盘质量？</h2><p>只统计表单提交数量是不够的。表单可能收到很多消息，却只有极少数项目符合工厂的工艺能力。应该从落地页访问一直追踪到成功提交，并让业务或工程团队参与评估询盘质量。</p><p>至少可以追踪 RFQ 页面浏览、表单开始填写、成功提交、校验错误、文件上传错误和有效询盘数量。如果分析工具支持，还可以记录来源页面、营销活动和大致服务兴趣，但不要把客户个人信息或保密表单内容发送到分析平台。</p><p>应当在表单真正成功接收后，才触发转化事件。点击提交按钮不等于成功获得询盘。要亲自测试完整流程，排除内部测试数据，并确认通知能够到达正确的业务邮箱。</p><p>定期整理询盘被拒绝或延迟的原因：缺少图纸、数量不明确、材料不在能力范围内、交期不现实，或者项目工艺与工厂不匹配。如果客户反复缺少同一项信息，可以改善字段提示，或增加一个真正有必要的问题。如果优质客户频繁放弃填写，则应考虑减少阻力，提供更容易开始的入口。</p><p>Search Engine Journal 关于 B2B 买家决策的研究也提醒我们，供应商评估往往发生在客户联系销售之前。因此 RFQ 页面只是完整证据链的一部分：采购商可能先阅读能力页面、比较供应商，再验证专业程度，最后才愿意提交项目资料。</p><h2 id="mistakes">8. 制造业 RFQ 表单常见的七个错误</h2><ul><li><strong>第一次联系就要求填写所有信息：</strong>要求完整技术资料可能让仍在初步评估供应商的买家直接离开。</li><li><strong>所有业务共用一份完全相同的表单：</strong>模具项目、CNC 零件和注塑件的关键问题并不相同。</li><li><strong>强制上传图纸：</strong>客户可能暂时没有图纸，或必须使用公司批准的文件传输渠道。</li><li><strong>没有提交确认：</strong>买家需要知道询盘已经收到，以及下一步是什么。</li><li><strong>承诺不现实的报价时间：</strong>回复预期应符合真实的报价流程。</li><li><strong>没有明确的询盘分配机制：</strong>发送到无人处理的邮箱，等于转化路径失效。</li><li><strong>只追踪按钮点击，不追踪成功提交：</strong>分析数据应该反映真正接收的询盘，而不是用户点击行为。</li></ul><p>这些问题不只是设计问题，也涉及营销、销售、工程、IT 和询盘负责人之间的流程协作。</p><h2 id="action-plan">9. 中小制造企业可以怎样逐步改进 RFQ 表单？</h2><ol><li><strong>梳理现有询盘流程：</strong>询问业务和工程团队，判断项目是否值得评估或报价需要哪些信息。</li><li><strong>区分必要信息和后续信息：</strong>首次联系只要求关键资料，详细技术参数视情况补充。</li><li><strong>先为主要业务建立专用字段：</strong>从询盘最多、最有价值的两三个服务方向开始。</li><li><strong>编写清楚的字段说明：</strong>解释技术术语并给出示例，避免客户猜测。</li><li><strong>审查文件和隐私处理：</strong>确认上传限制、权限、存储、保留期限和安全替代方案。</li><li><strong>测试完整流程：</strong>从电脑和手机分别提交测试，确认通知、成功页面和事件追踪正常。</li><li><strong>每月复盘询盘质量：</strong>结合真实销售反馈调整字段、分配和回复预期。</li></ol><p>对于资源有限的工厂，第一步不必复杂：把普通联系表单改造成清晰的 RFQ 入口，要求客户简要描述项目，允许后续提供图纸，并说明企业接下来会如何处理。只有当询盘量和内部流程确实需要时，再增加复杂功能。</p><h2 id="faqs">常见问题</h2><h3>制造业 RFQ 询价表单应该包含哪些字段？</h3><p>建议先收集姓名、商务邮箱、公司、国家或地区和项目描述，再根据工艺增加材料、尺寸、数量、交期、质量要求和可选图纸上传。</p><h3>RFQ 表单字段越多越好吗？</h3><p>不是。首次联系只需要收集完成下一步沟通所必需的信息，详细技术资料可以在工程评估阶段补充。字段数量应结合真实询盘完成率和质量进行测试。</p><h3>制造企业应该允许客户上传 CAD 图纸吗？</h3><p>可以，但前提是网站具备合适的文件处理机制，包括文件格式、大小限制、访问权限、存储、保留期限和隐私说明。如果不具备安全传输能力，应在初步联系后安排经过批准的文件传输渠道。</p><h3>如何让制造业网站获得更多有效 RFQ？</h3><p>将能力页面与明确的询价入口连接，解释客户应该提供什么信息，减少不必要的表单阻力，展示真实技术证据，并追踪成功提交和询盘质量。</p><h3>普通 Contact Form 和 RFQ Form 有什么区别？</h3><p>Contact Form 用于一般咨询；RFQ Form 则围绕项目需求收集信息，帮助供应商判断技术匹配度并开展报价评估。</p><h2 id="practical-checklist">RFQ 表单优化检查清单</h2><ul><li>明确 RFQ 入口适用的产品、工艺和项目类型。</li><li>先收集联系人和项目基础信息，再逐步补充技术资料。</li><li>买家可能不知道答案的工艺字段应允许选填。</li><li>明确图纸、CAD 文件和保密规格的安全处理方式。</li><li>说明提交后的下一步，回复时间承诺必须真实。</li><li>追踪成功提交，并与业务和工程团队复盘询盘质量。</li></ul><h2 id="references">参考资料与延伸阅读</h2><ul><li><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Google Search Central：生成式 AI 搜索优化指南</a></li><li><a href="https://backlinko.com/website-marketing" target="_blank" rel="noopener noreferrer">Backlinko：2026 年网站营销策略</a></li><li><a href="https://www.searchenginejournal.com/b2b-buyers-choose-a-vendor-before-they-reach-out-3-ways-to-be-visible-when-it-counts/570499/" target="_blank" rel="noopener noreferrer">Search Engine Journal：B2B 买家在联系销售之前就开始选择供应商</a></li><li><a href="https://www.searchenginejournal.com/conversion-rate-optimization-guide/403219/" target="_blank" rel="noopener noreferrer">Search Engine Journal：转化率优化指南</a></li><li><a href="https://searchengineland.com/guide/content-strategy-in-2026" target="_blank" rel="noopener noreferrer">Search Engine Land：2026 年内容策略</a></li></ul><h3>RGS 延伸阅读</h3><ul><li><a href="/articles/P1/p1.html">外贸独立站不是展示柜，而是信任转化系统</a></li><li><a href="/articles/P8/p8.html">制造业 FAQ 页面为什么重要？</a></li><li><a href="/blog/">返回 RGS 制造业数字增长知识库</a></li><li><a href="/solutions.html">了解 RGS 制造业数字增长服务</a></li><li><a href="/contact.html">联系 RGS 讨论网站优化</a></li></ul><p>本文提供的是制造业 RFQ 表单设计框架，并非适用于所有工厂的固定模板。请根据真实工艺能力、文件安全机制、工程资源和报价流程调整字段与承诺。</p>
+          <!-- ARTICLE CONTENT END -->
+
+          <!-- Article Footer Meta -->
+          <div
+            class="mt-16 pt-8 border-t border-steel/30 flex flex-wrap items-center justify-between gap-4"
+          >
+            <div class="flex items-center gap-2">
+              <span
+                class="font-tech text-[10px] text-steel uppercase tracking-widest"
+                >Share Article:</span
+              >
+              <button
+                id="copy-link-btn"
+                class="w-8 h-8 rounded bg-surface/30 border border-steel/30 flex items-center justify-center text-cool hover:text-accent hover:border-accent transition-colors"
+                title="Copy article link"
+              >
+                <i class="ph-bold ph-link"></i>
+              </button>
+
+              <button
+                id="linkedin-share-btn"
+                class="w-8 h-8 rounded bg-surface/30 border border-steel/30 flex items-center justify-center text-cool hover:text-accent hover:border-accent transition-colors"
+                title="Share on LinkedIn"
+              >
+                <i class="ph-bold ph-linkedin-logo"></i>
+              </button>
+            </div>
+            <div>
+              <a
+                href="../../blog/"
+                class="font-tech text-xs text-accent uppercase tracking-widest hover:text-cool transition-colors flex items-center gap-2"
+              >
+                <i class="ph-bold ph-arrow-left"></i> 返回知识库
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right: Sticky TOC Sidebar -->
+        <aside class="lg:w-[30%] relative hidden md:block">
+          <div
+            class="sticky top-32 glass-panel p-6 border border-steel/20 rounded-sm"
+          >
+            <div
+              class="font-tech text-xs text-accent uppercase tracking-widest mb-4 flex items-center gap-2"
+            >
+              <i class="ph-bold ph-list-dashes"></i> Table of Contents
+            </div>
+            <!-- TOC Container: populated by JS -->
+            <ul
+              class="border-l-2 border-steel/20 flex flex-col space-y-1"
+              id="toc-container"
+            >
+              <!-- Automatically generated items will go here -->
+            </ul>
+
+            <!-- Internal Promo Block -->
+            <div class="mt-10 pt-8 border-t border-steel/20">
+              <div
+                class="font-tech text-[10px] text-steel uppercase tracking-widest mb-3"
+              >
+                Service Recommended
+              </div>
+              <a
+                href="../../pricing.html#digital-foundation"
+                class="block bg-base border border-accent/30 p-4 hover:border-accent transition-colors group"
+              >
+                <h4
+                  class="font-heading text-sm font-bold text-cool mb-1 group-hover:text-accent transition-colors"
+                >
+                  Digital Foundation System
+                </h4>
+                <p class="text-[11px] text-cool/60 mb-3 line-clamp-2">
+                  针对制造企业的数字基建服务，包含官网架构重构与品牌视觉升级。
+                </p>
+                <span
+                  class="text-[10px] font-tech text-accent uppercase tracking-widest flex items-center gap-1"
+                  >View Details <i class="ph-bold ph-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RELATED SECTION -->
+    <section
+      class="py-24 bg-surfaceLight border-y border-white/5 bg-diagonal relative"
+    >
+      <div class="max-w-[1200px] mx-auto px-6 gs-fade-up">
+        <div class="mb-12 flex justify-between items-end">
+          <div>
+            <div
+              class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-2"
+            >
+              Continue Reading
+            </div>
+            <h2
+              class="font-heading text-2xl md:text-3xl font-bold uppercase tracking-wide text-cool"
+            >
+              Related <span class="text-steel">Insights.</span>
+            </h2>
+          </div>
+          <a
+            href="../../blog/"
+            class="hidden sm:flex font-tech text-xs text-cool/70 hover:text-accent uppercase tracking-widest items-center gap-2 transition-colors"
+          >
+            View All <i class="ph-bold ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Related Insight 1 -->
+          <a
+            href="../P2/p2.html"
+            class="block bg-base border border-steel/30 p-8 hover:border-accent/50 transition-colors group insight-card"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <span
+                class="font-tech text-[10px] text-accent border border-accent/40 bg-accent/5 px-2 py-1 tracking-widest uppercase"
+                >SEO / GEO</span
+              >
+              <span
+                class="font-tech text-[10px] text-steel flex items-center gap-1"
+                ><i class="ph-bold ph-clock"></i> 7 MIN</span
+              >
+            </div>
+            <h3
+              class="font-heading text-xl font-bold text-cool mb-2 leading-snug group-hover:text-accent transition-colors"
+            >
+              AI 搜索时代，制造业官网内容应该怎么写？
+            </h3>
+            <p
+              class="text-[13px] text-cool/70 leading-relaxed mb-6 font-medium"
+            >
+              如果官网只写 high quality，AI
+              很难理解你的真实制造能力。内容必须围绕产品工艺重新结构化。
+            </p>
+            <div
+              class="border-t border-steel/20 pt-4 flex justify-between items-center"
+            >
+              <span class="text-[10px] font-tech text-cool/60 uppercase"
+                >Read Article</span
+              >
+              <i
+                class="ph-bold ph-arrow-right text-accent group-hover:translate-x-1 transition-transform"
+              ></i>
+            </div>
+          </a>
+
+          <!-- Related Insight 2 -->
+          <a
+            href="../P6/p6.html"
+            class="block bg-base border border-steel/30 p-8 hover:border-accent/50 transition-colors group insight-card"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <span
+                class="font-tech text-[10px] text-accent border border-accent/40 bg-accent/5 px-2 py-1 tracking-widest uppercase"
+                >Digital Assets</span
+              >
+              <span
+                class="font-tech text-[10px] text-steel flex items-center gap-1"
+                ><i class="ph-bold ph-clock"></i> 5 MIN</span
+              >
+            </div>
+            <h3
+              class="font-heading text-xl font-bold text-cool mb-2 leading-snug group-hover:text-accent transition-colors"
+            >
+              为什么客户看完画册，还是不知道你强在哪里？
+            </h3>
+            <p
+              class="text-[13px] text-cool/70 leading-relaxed mb-6 font-medium"
+            >
+              很多传统画册只是在无重点地堆叠设备，却毫无逻辑去解释主营护城河与差异化壁垒。
+            </p>
+            <div
+              class="border-t border-steel/20 pt-4 flex justify-between items-center"
+            >
+              <span class="text-[10px] font-tech text-cool/60 uppercase"
+                >Read Article</span
+              >
+              <i
+                class="ph-bold ph-arrow-right text-accent group-hover:translate-x-1 transition-transform"
+              ></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-24 relative overflow-hidden bg-base">
+      <div
+        class="max-w-[1200px] mx-auto px-6 relative z-10 gs-fade-up text-center"
+      >
+        <h2
+          class="font-heading text-3xl md:text-4xl font-bold mb-4 uppercase tracking-wide"
+        >
+          Ready To Upgrade Your<br />
+          <span class="text-accent">Digital Assets?</span>
+        </h2>
+        <p
+          class="text-cool/80 text-[15px] mb-8 max-w-lg mx-auto leading-relaxed"
+        >
+          不要让陈旧的外贸官网成为阻碍信任建立的短板。预约一次针对现有数字材料的诊断咨询。
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="../../pricing.html#sample-project"
+            class="btn-accent px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+          >
+            START WITH SAMPLE <i class="ph-bold ph-arrow-right"></i>
+          </a>
+          <a
+            href="../../contact.html"
+            class="bg-transparent border border-steel/50 text-cool hover:border-accent hover:bg-accent/10 transition-all px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+          >
+            BOOK A DIAGNOSIS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (Paths modified to relative ../../) -->
+    <section class="bg-base relative border-t border-steel/30 pt-16 pb-8">
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+          <div class="col-span-2 md:col-span-1">
+            <a
+              href="/"
+              class="block hover:opacity-80 transition-opacity duration-300 mb-6"
+            >
+              <img
+                src="../../rohan-logo-low.webp"
+                alt="ROHAN logo"
+                class="site-logo h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            <p class="text-cool/50 text-xs leading-relaxed max-w-[200px]">
+              Industrial B2B Digital Architect. <br />Crafting high-conversion
+              assets for global manufacturing.
+            </p>
+          </div>
+          <div class="md:col-start-2">
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              SOLUTIONS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="../../solutions.html#website-architecture"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Website Architecture</a
+              >
+              <a
+                href="../../solutions.html#seo-geo-aeo"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >SEO / GEO</a
+              >
+              <a
+                href="../../solutions.html#social-media-assets"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Social Media Assets</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              COMPANY
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="../../about.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >About</a
+              >
+              <a
+                href="../../approach.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Approach</a
+              >
+              <a
+                href="../../pricing.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Pricing</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              INSIGHTS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="../../insights.html#ai-manufacturing"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >AI for Manufacturing</a
+              >
+              <a
+                href="../../insights.html#industrial-website-design"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Website Design</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              CONNECT
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="mailto:rohanyangrh@outlook.com"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >rohanyangrh@outlook.com</a
+              >
+              <a
+                href="../../contact.html"
+                class="text-xs text-accent hover:text-cool transition-colors mt-2"
+                >Book Diagnosis &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row justify-between items-center border-t border-steel/20 pt-6"
+        >
+          <div
+            class="text-[10px] text-steel font-tech tracking-wider mb-4 md:mb-0"
+          >
+            © 2026 ROHAN. ALL RIGHTS RESERVED.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      // Mobile Menu Logic
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+        const icon = mobileBtn.querySelector("i");
+        if (mobileMenu.classList.contains("hidden")) {
+          icon.classList.replace("ph-x", "ph-list");
+        } else {
+          icon.classList.replace("ph-list", "ph-x");
+        }
+      });
+
+      // Automated TOC Generator & Scroll Spy
+      document.addEventListener("DOMContentLoaded", () => {
+        const articleContent = document.getElementById("article-content");
+        const headings = articleContent.querySelectorAll("h2");
+        const tocContainer = document.getElementById("toc-container");
+
+        if (headings.length === 0) {
+          tocContainer.parentElement.style.display = "none"; // Hide TOC if no h2
+        }
+
+        const tocLinks = [];
+
+        headings.forEach((h2, index) => {
+          // Generate an ID if not present
+          if (!h2.id) {
+            h2.id = `section-${index + 1}`;
+          }
+
+          // Create TOC item
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `#${h2.id}`;
+          a.className =
+            "toc-link block py-1.5 pl-4 border-l-2 border-transparent text-[13px] text-cool/70 hover:text-accent font-body";
+
+          // Strip numbering like "1. " from h2 text for TOC (optional, basic regex)
+          let titleText = h2.innerText;
+          a.innerText = titleText;
+
+          li.appendChild(a);
+          tocContainer.appendChild(li);
+          tocLinks.push({ element: h2, link: a });
+        });
+
+        // Intersection Observer for scroll spy
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px 0px -80% 0px",
+          threshold: 0,
+        };
+
+        let currentActiveLink = null;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const activeId = entry.target.id;
+
+              tocLinks.forEach((item) => {
+                if (item.link.getAttribute("href") === `#${activeId}`) {
+                  item.link.classList.add("active", "text-accent", "font-bold");
+                  item.link.classList.remove("text-cool/70");
+                } else {
+                  item.link.classList.remove(
+                    "active",
+                    "text-accent",
+                    "font-bold",
+                  );
+                  item.link.classList.add("text-cool/70");
+                }
+              });
+            }
+          });
+        }, observerOptions);
+
+        headings.forEach((h2) => observer.observe(h2));
+
+        // Smooth scroll fallback
+        tocContainer.addEventListener("click", (e) => {
+          if (e.target.tagName === "A") {
+            e.preventDefault();
+            const targetId = e.target.getAttribute("href").slice(1);
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+              window.scrollTo({
+                top: targetEl.offsetTop - 100, // Offset for sticky header
+                behavior: "smooth",
+              });
+            }
+          }
+        });
+      });
+
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+      const fadeUpElements = document.querySelectorAll(".gs-fade-up");
+      fadeUpElements.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+      // Share Article Buttons
+      const copyLinkBtn = document.getElementById("copy-link-btn");
+      const linkedinShareBtn = document.getElementById("linkedin-share-btn");
+
+      if (copyLinkBtn) {
+        copyLinkBtn.addEventListener("click", async () => {
+          const articleUrl = window.location.href;
+
+          try {
+            await navigator.clipboard.writeText(articleUrl);
+            copyLinkBtn.innerHTML = '<i class="ph-bold ph-check"></i>';
+
+            setTimeout(() => {
+              copyLinkBtn.innerHTML = '<i class="ph-bold ph-link"></i>';
+            }, 1600);
+          } catch (err) {
+            alert("Copy failed. Please copy the URL manually.");
+          }
+        });
+      }
+
+      if (linkedinShareBtn) {
+        linkedinShareBtn.addEventListener("click", () => {
+          const articleUrl = encodeURIComponent(window.location.href);
+          const shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${articleUrl}`;
+          window.open(shareUrl, "_blank", "noopener,noreferrer");
+        });
+      }
+    </script>
+  </body>
+</html>
