@@ -401,4 +401,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://rohanyang.com/articles/P16/p16.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/articles/P16/p16.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/manufacturing-seo-link-building/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/en/manufacturing-seo-link-building/" />
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rohanyang.com/blog/en/manufacturing-seo-link-building/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/articles/P16/p16.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/manufacturing-seo-link-building/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/en/manufacturing-seo-link-building/" />
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
