@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <link rel="canonical" href="https://rohanyang.com/articles/P17/p17.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/articles/P17/p17.html">
+    <link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/google-ads-for-manufacturers/">
+    <link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/en/google-ads-for-manufacturers/">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- META TITLE START -->
+    <title>制造业 Google Ads 投放指南：降低无效点击，获取高质量询盘 | RGS</title>
+    <!-- META TITLE END -->
+    <meta name="description" content="制造业 Google Ads 如何投放才能获得有效海外询盘？本文从采购搜索意图、关键词匹配、否定词、广告文案、专属落地页到 GA4、CRM 与离线转化，拆解中小工厂可执行的 B2B PPC 获客流程，避免只看点击和表单数量。">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Open Graph / Social Preview -->
+    <meta og:title="property" content="制造业 Google Ads 投放指南：降低无效点击，获取高质量询盘 | RGS" />
+    <meta og:description="property" content="制造业 Google Ads 如何投放才能获得有效海外询盘？本文从采购搜索意图、关键词匹配、否定词、广告文案、专属落地页到 GA4、CRM 与离线转化，拆解中小工厂可执行的 B2B PPC 获客流程，避免只看点击和表单数量。" />
+    <meta og:image="property" content="https://rohanyang.com/articles/P17/cover.svg" />
+    <meta og:image:secure_url="property" content="https://rohanyang.com/articles/P17/cover.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta og:image:width="property" content="1200" />
+    <meta og:image:height="property" content="630" />
+    <meta og:url="property" content="https://rohanyang.com/articles/P17/p17.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="ROHAN Growth Studio" />
+
+    <meta property="article:author" content="ROHAN Team" />
+    <meta article:published_time="property" content="2026-11-17T00:00:00+08:00" />
+    <meta article:modified_time="property" content="2026-11-17T00:00:00+08:00" />
+    <meta article:section="property" content="付费广告" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta twitter:title="name" content="制造业 Google Ads 投放指南：降低无效点击，获取高质量询盘" />
+    <meta twitter:description="name" content="制造业 Google Ads 如何投放才能获得有效海外询盘？本文从采购搜索意图、关键词匹配、否定词、广告文案、专属落地页到 GA4、CRM 与离线转化，拆解中小工厂可执行的 B2B PPC 获客流程，避免只看点击和表单数量。" />
+    <meta twitter:image="name" content="https://rohanyang.com/articles/P17/cover.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: "#0B1324",
+              surface: "#2D3E5F",
+              surfaceLight: "#1A2642",
+              accent: "#176BFF",
+              steel: "#4B5563",
+              cool: "#F5F7FA",
+              darker: "#070C1A",
+            },
+            fontFamily: {
+              heading: ['"Exo 2"', "sans-serif"],
+              body: ["Raleway", "sans-serif"],
+              tech: ["Orbitron", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0b1324;
+        color: #f5f7fa;
+        font-family: "Raleway", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .site-logo {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* Background Textures */
+      .bg-blueprint {
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(23, 107, 255, 0.05) 1px,
+            transparent 1px
+          );
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+      }
+      .bg-diagonal {
+        background-image: linear-gradient(
+          -45deg,
+          transparent 48%,
+          rgba(23, 107, 255, 0.05) 50%,
+          transparent 52%
+        );
+        background-size: 30px 30px;
+      }
+      .glass-panel {
+        background: rgba(45, 62, 95, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(23, 107, 255, 0.15);
+      }
+
+      /* UI Components */
+      .btn-accent {
+        position: relative;
+        background: #176bff;
+        color: #f5f7fa;
+        border: 1px solid #176bff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .btn-accent:hover {
+        background: transparent;
+        color: #176bff;
+        box-shadow: 0 0 20px rgba(23, 107, 255, 0.3);
+      }
+
+      .tech-input {
+        background: rgba(11, 19, 36, 0.6);
+        border: 1px solid rgba(75, 85, 99, 0.5);
+        color: #f5f7fa;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+      .tech-input:focus {
+        outline: none;
+        border-color: #176bff;
+        background: rgba(23, 107, 255, 0.05);
+        box-shadow: 0 0 15px rgba(23, 107, 255, 0.15);
+      }
+
+      /* Insight Card Hover Scanline */
+      .insight-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .insight-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(23, 107, 255, 0.05),
+          transparent
+        );
+        transform: skewX(-20deg);
+        transition: left 0.6s ease;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .insight-card:hover::after {
+        left: 200%;
+      }
+
+      /* Custom Article Typography Styling */
+      .article-prose h2 {
+        font-family: "Exo 2", sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #f5f7fa;
+        margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+        scroll-margin-top: 100px; /* For TOC anchoring */
+      }
+      .article-prose h3 {
+        font-family: "Exo 2", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: rgba(245, 247, 250, 0.9);
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .article-prose p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: rgba(245, 247, 250, 0.8);
+        margin-bottom: 1.5rem;
+      }
+      .article-prose strong {
+        color: #f5f7fa;
+        font-weight: 600;
+      }
+      .article-prose blockquote {
+        border-left: 2px solid #176bff;
+        padding-left: 1.5rem;
+        font-style: italic;
+        color: rgba(245, 247, 250, 0.7);
+        background: rgba(45, 62, 95, 0.15);
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        padding-right: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+      }
+      .article-prose ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 2rem;
+      }
+      .article-prose ul li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: rgba(245, 247, 250, 0.8);
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+      .article-prose ul li::before {
+        content: "•";
+        color: #176bff;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+      .article-prose ol {
+        list-style-type: decimal;
+        padding-left: 1.25rem;
+        margin-bottom: 2rem;
+        color: rgba(245, 247, 250, 0.8);
+        font-size: 0.95rem;
+      }
+      .article-prose ol li {
+        margin-bottom: 0.75rem;
+        line-height: 1.7;
+      }
+      .article-prose figure {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .article-prose figure img {
+        width: 100%;
+        height: auto;
+        border: 1px solid rgba(75, 85, 99, 0.3);
+        background-color: rgba(11, 19, 36, 0.6);
+      }
+      .article-prose figcaption {
+        text-align: center;
+        font-family: "Orbitron", sans-serif;
+        font-size: 0.65rem;
+        color: #4b5563;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 0.75rem;
+      }
+      .article-prose table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        font-size: 0.85rem;
+      }
+      .article-prose th {
+        background: rgba(23, 107, 255, 0.05);
+        color: #f5f7fa;
+        font-weight: 600;
+        padding: 1rem;
+        border: 1px solid rgba(75, 85, 99, 0.3);
+        text-align: left;
+      }
+      .article-prose td {
+        padding: 1rem;
+        border: 1px solid rgba(75, 85, 99, 0.2);
+        color: rgba(245, 247, 250, 0.8);
+      }
+
+      /* TOC Active State */
+      .toc-link {
+        transition: all 0.3s ease;
+      }
+      .toc-link.active {
+        color: #176bff;
+        border-left-color: #176bff;
+        padding-left: 1.25rem;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b1324;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #176bff;
+      }
+    </style>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://rohanyang.com/articles/P17/p17.html#article",
+      "headline": "制造业 Google Ads 投放指南：降低无效点击，获取高质量询盘",
+      "description": "制造业 Google Ads 如何投放才能获得有效海外询盘？本文从采购搜索意图、关键词匹配、否定词、广告文案、专属落地页到 GA4、CRM 与离线转化，拆解中小工厂可执行的 B2B PPC 获客流程，避免只看点击和表单数量。",
+      "image": "https://rohanyang.com/articles/P17/cover.svg",
+      "datePublished": "2026-11-17",
+      "dateModified": "2026-11-17",
+      "author": {
+        "@type": "Organization",
+        "name": "ROHAN Growth Studio",
+        "@id": "https://rohanyang.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://rohanyang.com/#organization"
+      },
+      "articleSection": "付费广告",
+      "inLanguage": "zh-CN",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rohanyang.com/articles/P17/p17.html"
+      },
+      "url": "https://rohanyang.com/articles/P17/p17.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rohanyang.com/articles/P17/p17.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rohanyang.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://rohanyang.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "制造业 Google Ads 投放指南：降低无效点击，获取高质量询盘",
+          "item": "https://rohanyang.com/articles/P17/p17.html"
+        }
+      ]
+    }
+  ]
+}</script>
+<!-- Google Tag Manager -->
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TTJPFHJ4');
+</script>
+<!-- End Google Tag Manager -->
+</head>
+  <body class="antialiased selection:bg-accent selection:text-white">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTJPFHJ4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="bg-blueprint"></div>
+    <div
+      class="fixed top-[-50%] left-[-10%] w-[120%] h-[150%] bg-surface/5 transform -skew-x-12 pointer-events-none z-[-1]"
+    ></div>
+
+    <!-- Header (Paths modified to relative ../../) -->
+    <header
+      class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="/"
+          class="flex items-center hover:opacity-80 transition-opacity z-50"
+        >
+          <img
+            src="../../rohan-logo-top.png"
+            alt="ROHAN logo"
+            class="site-logo h-11 md:h-14 w-auto"
+          />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center gap-5 font-tech text-xs tracking-widest text-cool/80"
+        >
+          <a href="/" class="hover:text-accent transition-colors"
+            >Home</a
+          >
+          <a
+            href="../../solutions.html"
+            class="hover:text-accent transition-colors"
+            >Solutions</a
+          >
+          <a href="../../cases.html" class="hover:text-accent transition-colors"
+            >Cases</a
+          >
+          <a
+            href="../../pricing.html"
+            class="hover:text-accent transition-colors"
+            >Pricing</a
+          >
+          <a
+            href="../../blog/"
+            class="text-accent font-bold transition-colors"
+            >Insights</a
+          >
+<a href="../../blog/" class="hover:text-accent transition-colors">Blog</a>
+          <a href="../../tools/" class="hover:text-accent transition-colors">Tools</a>
+          <a
+            href="../../contact.html"
+            class="hover:text-accent transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a href="https://rohanyang.com/blog/en/google-ads-for-manufacturers/" lang="en" aria-label="Read the English version" class="border border-accent/40 px-3 py-2 font-tech text-[10px] tracking-widest text-cool/75 hover:border-accent hover:text-cool transition-colors rounded-sm hidden md:block">EN</a>
+          <a
+            href="../../contact.html"
+            class="text-xs font-tech tracking-wider border border-accent/40 px-5 py-2.5 hover:border-accent hover:bg-accent/10 transition-colors backdrop-blur-md rounded-sm hidden md:block"
+          >
+            LET'S TALK
+          </a>
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-cool p-2 hover:text-accent transition-colors z-50"
+          >
+            <i class="ph-bold ph-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Panel -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-base/98 backdrop-blur-xl z-40 hidden flex-col pt-28 px-8 items-center border-t border-accent/20"
+      >
+        <nav
+          class="flex flex-col gap-8 text-center font-tech text-sm tracking-[0.2em] w-full"
+        >
+          <a
+            href="/"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >HOME</a
+          >
+          <a
+            href="../../solutions.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >SOLUTIONS</a
+          >
+          <a
+            href="../../cases.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >CASES</a
+          >
+          <a
+            href="../../pricing.html"
+            class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block"
+            >PRICING</a
+          >
+          <a
+            href="../../blog/"
+            class="mobile-link text-accent pb-4 border-b border-steel/20 block"
+            >INSIGHTS</a
+          >
+<a href="../../blog/" class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block">BLOG</a>
+<a href="https://rohanyang.com/blog/en/google-ads-for-manufacturers/" lang="en" class="mobile-link text-accent pb-4 border-b border-steel/20 block">ENGLISH VERSION</a>
+          <a href="../../tools/" class="mobile-link text-cool hover:text-accent pb-4 border-b border-steel/20 block">TOOLS</a>
+          <a
+            href="../../contact.html"
+            class="mobile-link text-cool hover:text-accent pb-4 block"
+            >LET'S TALK</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ARTICLE HERO SECTION -->
+    <section class="pt-40 pb-12 relative overflow-hidden">
+      <div class="max-w-[1000px] mx-auto px-6 relative z-10 gs-fade-up">
+        <!-- Breadcrumbs -->
+        <div
+          class="font-tech text-[10px] text-steel uppercase tracking-widest mb-6 flex items-center gap-2"
+        >
+          <a
+            href="../../blog/"
+            class="hover:text-accent transition-colors"
+            >Insights</a
+          >
+          <span>/</span>
+          <!-- META CATEGORY START -->
+          <span
+            class="text-accent border border-accent/30 bg-accent/5 px-2 py-1"
+            >Digital Assets</span
+          >
+          <!-- META CATEGORY END -->
+        </div>
+
+        <!-- TITLE START -->
+        <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-cool">制造业 Google Ads 投放指南：降低无效点击，获取高质量询盘</h1>
+        <!-- TITLE END -->
+
+        <!-- SUBTITLE/SUMMARY START -->
+        <p class="text-cool/80 text-[15px] md:text-lg font-light max-w-3xl mb-8 leading-relaxed font-body border-l-2 border-steel/50 pl-4">从采购意图、关键词匹配、否定词和广告文案，到专属落地页、GA4 与 CRM 线索质量回传，建立适合中小制造企业的 B2B 付费搜索获客流程。</p>
+        <!-- SUBTITLE/SUMMARY END -->
+
+        <!-- META INFO START -->
+        <div class="flex items-center gap-6 border-t border-white/10 pt-6">
+          <div
+            class="font-tech text-xs text-steel flex items-center gap-2 tracking-widest uppercase"
+          >
+            <i class="ph-bold ph-calendar-blank"></i> November 17, 2026
+          </div>
+          <div
+            class="font-tech text-xs text-steel flex items-center gap-2 tracking-widest uppercase"
+          >
+            <i class="ph-bold ph-clock"></i> 14 MIN READ
+          </div>
+          <div
+            class="font-tech text-xs text-steel flex items-center gap-2 tracking-widest uppercase hidden sm:flex"
+          >
+            <i class="ph-bold ph-user"></i> By ROHAN Team
+          </div>
+        </div>
+        <!-- META INFO END -->
+      </div>
+    </section>
+
+    <!-- COVER IMAGE START -->
+    <div class="max-w-[1200px] mx-auto px-6 mb-16 gs-fade-up">
+      <div class="w-full relative border border-steel/30 bg-surface/20">
+        <!-- 默认使用当前目录的 cover.webp -->
+        <img
+          src="./cover.svg"
+          alt="制造业 Google Ads 投放指南：降低无效点击，获取高质量询盘"
+          class="w-full h-[300px] md:h-[500px] object-cover opacity-90"
+          onerror="
+            this.src =
+              'https://placehold.co/1200x500/0B1324/176BFF?text=Cover+Image+Placeholder'
+          "
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-base to-transparent opacity-80 pointer-events-none"
+        ></div>
+      </div>
+    </div>
+    <!-- COVER IMAGE END -->
+
+    <!-- MAIN ARTICLE & TOC -->
+    <section class="pb-24 relative z-10">
+      <div
+        class="max-w-[1200px] mx-auto px-6 flex flex-col lg:flex-row gap-16 relative"
+      >
+        <!-- Left: Article Content Layout -->
+        <article
+          class="lg:w-[70%] article-prose gs-fade-up"
+          id="article-content"
+        >
+          <!-- ARTICLE CONTENT START -->
+<h2 id="business-goal">1. 不要只追点击：先定义什么是有效制造业询盘</h2><p>Google Ads 可以让制造企业出现在正在寻找工艺、零部件或生产供应商的采购商面前。但点击和表单提交并不等于商业机会。广告可能吸引学生、求职者、DIY 爱好者、设备买家，甚至正在寻找工厂并不提供的工艺服务的人。广告后台看起来很热闹，业务团队却没有真正可报价的项目。</p><p>投放前先定义什么叫有效询盘。例如：来自企业采购或工程团队、所在市场在工厂可服务范围内、需求属于企业实际承接的工艺或产品，并且具备进一步技术沟通的可能。第一次联系不一定要提供完整工程资料，但至少要符合企业的目标客户画像。</p><p>工业 B2B 采购往往涉及图纸审核、工程验证、样件、供应商审核和采购批准，周期可能远长于普通消费品。Search Engine Land 的 B2B PPC 研究强调，线索数量只是表层指标，合格商机、销售管道价值和最终收入才更能说明投放效果。本文以此为核心：广告不是为了让表单变多，而是为了找到更有可能成交的企业。</p><h2 id="intent-map">2. 投放前先拆分采购商搜索意图</h2><p>不要一开始就把所有包含 manufacturer 的词放进关键词列表。先判断搜索者正在做什么。搜索 custom metal stamping supplier 的采购商，通常比搜索 what is metal stamping 的人更接近供应商筛选；搜索 CNC operator jobs 的人则根本不是采购线索。</p><p>建议分成三类。高商业意图：supplier、manufacturer、contract manufacturing、custom parts、RFQ、quote、sourcing 等词；研究意图：工艺对比、材料解释、设计问题，通常更适合 SEO 内容或单独的小预算测试；无关意图：求职、薪资、培训、DIY、消费维修等企业不提供的服务。</p><p><strong>高商业意图：</strong> custom metal stamping manufacturer、progressive die stamping supplier、CNC machining company、sheet metal fabrication quote、industrial injection molding supplier。</p><p><strong>研究意图：</strong> progressive die vs transfer die、metal stamping design guide、CNC machining tolerances explained。</p><p><strong>通常无关（需先核实）：</strong> stamping jobs、CNC salary、free CAD course、DIY metal stamping、used stamping machine for sale。</p><p>Search Engine Journal 在 PPC 关键词指南中区分了用户实际输入的 Search Term 和广告主设置的 Keyword。制造业企业还需要理解海外买家的真实表达：采购商可能搜索 precision sheet metal fabrication，而不是工厂内部使用的工艺代号。</p><h2 id="campaign-structure">3. 中小工厂如何搭建 Google Search 广告结构？</h2><p>预算有限的制造企业，应优先建立容易管理、容易分析的结构。不同工艺或客户需求不要全部塞进同一个广告组。例如冲压供应商可以拆分 custom metal stamping、progressive die tooling 和 transfer die tooling；同时经营 CNC 与钣金加工的工厂，也不应默认这两类搜索应该使用同一套广告和落地页。</p><p>每个广告组围绕一个相对明确的主题，让关键词、广告文案和落地页描述同一项服务。投放地区应根据企业真实的报价、交付和服务能力确定；语言设置也应匹配目标采购商。不要因为官网有英文版就默认全球所有国家都是有效市场。</p><p>如果目标是先验证主动搜索需求，可以先把 Google Search 作为可控测试入口。在还不知道哪些搜索词能产生有效询盘时，不建议小预算同时铺开 Search、Display、视频和多种自动化广告类型。这是 RGS 针对初期账户的建议，并非适用于所有企业的固定规则；最终仍要看账户历史、受众规模、销售能力和转化数据。</p><p>每个 Campaign 都应有清楚的目标、预算和落地页。不同工艺的利润、客户价值和销售流程不一样，分开统计能避免大量低价值询盘掩盖真正有价值的业务线。</p><h2 id="match-types">4. 关键词匹配方式：控制流量范围与相关性</h2><p>广泛匹配、词组匹配和完全匹配，并不只是关键词拼写是否一致的区别，它们影响广告系统对搜索意图的理解范围。Backlinko 的指南将广泛匹配解释为覆盖范围较广，词组匹配在覆盖与相关性之间取得平衡，完全匹配则更偏向与关键词含义相同的搜索。注意，完全匹配也可能包含近似变体，并不代表用户必须逐字输入完全相同的短语。</p><p>对于缺少转化历史的新制造业账户，可以先从经过筛选的词组匹配和完全匹配开始，围绕企业真正能够承接的服务建立测试范围。等到搜索词数据、否定词管理和有效询盘识别能力逐渐成熟，再谨慎测试广泛匹配。</p><p>不同工艺不能照搬同一套匹配方式。CNC machining 本身含义很宽，而 5-axis aluminum prototype machining supplier 更接近具体采购需求。结合关键词研究、实际 Search Terms 和业务团队反馈，定期把表现好的搜索词整理成更清晰的广告组。</p><h2 id="negative-keywords">5. 制造业广告应该如何建立否定关键词库？</h2><p>否定关键词是避免预算浪费在无关搜索上的实用工具。Backlinko 和 Search Engine Journal 都强调，否定词既要在广告上线前规划，也要在上线后根据真实搜索词持续调整。</p><p>制造业 B2B 供应商可以考虑从 jobs、careers、salary、apprenticeship、internship、course、training、tutorial、DIY、hobby、free、used machine、machine for sale 等词开始检查。但这只是候选清单，不是所有工厂都应该一键排除的标准答案。设备经销商可能需要 machine for sale，培训机构可能需要 course，维修企业可能需要 repair。</p><p>还要特别注意一些看起来像信息词、实际上可能有采购价值的词。例如 drawing、CAD、prototype、sample、repair、low volume 和 small batch。不要因为它们看起来不够商业化就直接屏蔽。先确认企业是否承接相应项目，再检查搜索词、落地页和销售反馈。</p><p>建议定期查看 Search Terms，将查询分为有效、潜在相关、纯研究和无关四类，再根据实际情况新增否定词。否定词管理应该是持续学习过程，而不是上线前上传一次文件就结束。</p><h2 id="ad-copy">6. 广告文案应该帮助工厂提前筛选客户</h2><p>好的工业搜索广告不仅要让合适的采购商愿意点击，也要让不合适的访客知道自己可能不是目标客户。Best Quality、Lowest Price 这样的泛化宣传，很难说明工厂究竟能做什么。应优先展示真实工艺、产品范围、服务地区和可验证的技术证据。</p><p>可以使用一个简单结构：制造能力 + 可信信息或能力边界 + 下一步行动。例如：Custom Metal Stamping Supplier / Progressive & Transfer Tooling / Send Drawings for Engineering Review。CNC 企业可以使用 Precision CNC Machining / Prototype to Production Runs / Request a Project Review。以上只是文案结构示例，必须根据企业真实能力调整。</p><p>如果只承接 B2B 项目，可以直接说明；如果只服务某些国家或地区，也应明确。如果工厂主要承接中大批量冲压，而不是个人 DIY 项目，就不要用含糊的宣传吸引所有人。不要使用无法证明的行业第一、虚构客户 Logo 或未经核实的认证。</p><h2 id="landing-page">7. 为什么广告流量应该进入专属落地页？</h2><p>不要默认所有 Google Ads 点击都进入首页。落地页应该延续搜索词和广告文案开启的对话。搜索 progressive die stamping 的采购商，应该直接看到连续模能力介绍，而不是进入一个需要重新寻找服务入口的公司简介页。</p><p>Backlinko 的 Landing Page 指南强调，转化型落地页应围绕一个主要目标和一致的 CTA 设计。对制造企业来说，这个目标可以是 Submit an RFQ 或 Discuss a Project with Engineering。减少无关导航和相互竞争的按钮，同时保留采购商判断供应商所需要的技术与信任信息。</p><p>页面可以展示：承接工艺和产品范围、材料与尺寸能力、设备及产能背景、质量和检测流程、应用行业、经授权的项目案例、目标市场以及清楚的询价入口。不要公开客户保密图纸，也不要编造公差、产能、认证和客户名称。</p><p>询价表单应收集足以开始沟通的信息，但不必在第一次访问时就要求采购商填写完整工程资料。说明提交后会发生什么，以及图纸如何处理。表单字段设计可以进一步参考 RGS 已发布的<a href='/articles/P15/p15.html'>制造业 RFQ 询价表单指南</a>。</p><h2 id="measurement">8. 连接 Google Ads、GTM、GA4 与 CRM</h2><p>至少要让 Google Ads、Google Tag Manager 和 GA4 能够一致地识别广告流量与关键网站行为。表单转化应以成功提交为准，而不是用户点击提交按钮。根据业务情况，电话点击、邮件点击和图纸上传可以作为诊断事件，但不能全部等同于真实商业结果。</p><p>广告来源和点击信息应尽可能随询盘一起进入 CRM。Search Engine Land 关于 Google Ads 与 CRM 的文章强调，表单提交之后的线索质量信息不能丢失：需要记录线索从新询盘、销售接受、有效商机到最终客户的变化。</p><p>在技术条件和隐私要求允许的情况下，可以把合格线索或线下转化结果回传 Google Ads。这样广告系统得到的信号就不只是表单提交。增强型潜在客户转化和离线转化需要正确配置数据匹配、用户同意和隐私保护，不应在缺乏合法依据或安全措施时随意上传个人信息。</p><p>建议在投放前定义事件与 CRM 状态：表单成功提交、销售已审核、有效线索、创建商机、已报价、成交或丢单。明确哪些事件是广告优化的主要转化，哪些只是辅助观察。如果唯一的主要转化是低门槛表单提交，系统可能学会寻找更多愿意填表的人，而不一定是更可能成为客户的企业。</p><h2 id="metrics">9. 不要只看 CPL：衡量有效线索成本与销售管道</h2><p>CPC、CTR、落地页转化率和 CPL 可以帮助诊断广告，但不能独立证明广告盈利。对于复杂 B2B 采购，还应尽可能统计 Cost per Qualified Lead、Cost per Opportunity、商机金额、成交率以及按 Campaign 归因的收入。</p><p>看一个纯示意的对比：Campaign A 花费 1,200 美元，获得 40 个表单，其中 3 个有效线索，CPL 为 30 美元，但每个有效线索成本为 400 美元。Campaign B 花费 1,000 美元，获得 12 个表单，其中 6 个有效线索，CPL 约 83 美元，而有效线索成本约 167 美元。B 的表单更少、CPL 更高，但有效线索更多，单个有效线索成本反而更低。以上数字仅用于演示计算方法，不是行业基准。</p><p>Search Engine Land 2026 年关于 B2B PPC 的文章提出，应把广告数据与 CRM 结果结合，评估合格销售管道，而不是只庆祝线索数量。销售团队必须共同定义什么是有效线索，并且持续使用一致的标准。</p><h2 id="pilot-plan">10. 中小制造企业的 30 天 Google Ads 测试计划</h2><p>第 1–5 天：基础准备。选择一条工艺业务线和一到两个目标市场，定义目标客户与有效线索标准，完成关键词意图分类、专属落地页、转化追踪和 CRM 字段设置。记录投放前基线，并确定谁负责审核询盘。</p><p>第 6–12 天：小范围上线。建立主题清晰的 Search Campaign，使用经过筛选的词组匹配和完全匹配关键词。广告明确说明真实能力与目标客户，添加初始否定词，但不要在未核实前屏蔽可能有价值的模糊搜索词。</p><p>第 13–20 天：搜索词清理。检查真实触发广告的查询，排除无关流量，找出新的商业意图关键词。按广告组和地区比较询盘质量，并检查落地页是否与搜索意图一致、表单转化是否准确触发。</p><p>第 21–30 天：销售反馈。让销售或工程团队对询盘进行分类，记录接受或拒绝原因。比较 CPL 与有效线索成本，找出带来真实业务沟通的关键词和落地页，再决定优化、暂停或扩大预算。</p><p>30 天测试是学习阶段，并不意味着复杂制造业项目一定能在一个月内成交。工程审核、样件、供应商准入和采购审批都可能延长周期。衡量窗口应与真实销售周期相匹配。</p><h2 id="faqs">常见问题</h2><h3>制造企业 Google Ads 应该把流量全部导向首页吗？</h3><p>通常不建议。应让广告、关键词与落地页保持一致，围绕一个主要行动展示对应工艺能力和可信证据。</p><h3>哪些 Google Ads 关键词适合制造业？</h3><p>优先测试具体工艺加 supplier、manufacturer、custom parts、RFQ、quote 等商业意图词，并结合企业真实能力与买家表达验证。</p><h3>新账户应该一开始就使用广泛匹配吗？</h3><p>不一定。转化历史较少时，可以先用经过筛选的词组匹配和完全匹配，建立否定词并持续审核真实搜索词，再决定是否扩大范围。</p><h3>制造业广告应该屏蔽哪些否定关键词？</h3><p>jobs、careers、salary、DIY、courses、training、used equipment 等可能是候选项，但必须根据企业实际服务范围逐个确认。</p><h3>B2B Google Ads 只看 CPL 可以吗？</h3><p>不够。还应追踪有效线索成本、商机、销售管道价值和最终收入。CPL 较高的广告也可能带来更好的商业结果。</p><h2 id="references">参考资料与延伸阅读</h2><p>本文参考以下专业媒体的 PPC、落地页和 B2B 线索质量研究，并将相关原则转化为制造业外贸场景下的执行建议。案例与示例为 RGS 编辑性扩展，不代表原作者为 RGS 背书。</p><ul><li><a href="https://backlinko.com/keyword-match-types" target="_blank" rel="noopener noreferrer">Backlinko — How to Use Keyword Match Types in Google Ads</a></li><li><a href="https://backlinko.com/landing-page-guide" target="_blank" rel="noopener noreferrer">Backlinko — Landing Pages: The Definitive Guide</a></li><li><a href="https://www.searchenginejournal.com/ppc-guide/keywords/" target="_blank" rel="noopener noreferrer">Search Engine Journal — What Are Keywords & How They Work in PPC</a></li><li><a href="https://searchengineland.com/move-beyond-lead-volume-b2b-ppc-482449" target="_blank" rel="noopener noreferrer">Search Engine Land — How to move beyond lead volume in B2B PPC</a></li><li><a href="https://searchengineland.com/measure-lead-quality-google-ads-485451" target="_blank" rel="noopener noreferrer">Search Engine Land — How to improve Google Ads lead quality with CRM data</a></li></ul><h3>RGS 站内延伸阅读</h3><ul><li><a href="/blog/manufacturing-digital-marketing/">制造业数字营销与 B2B 获客体系</a></li><li><a href="/articles/P15/p15.html">制造业 RFQ 询价表单设计</a></li><li><a href="/articles/P16/p16.html">制造业高质量外链建设</a></li><li><a href="/blog/manufacturing-seo/">制造业 SEO 实战指南</a></li><li><a href="/solutions.html">RGS 解决方案</a></li><li><a href="/contact.html">联系 RGS</a></li></ul>
+<!-- ARTICLE CONTENT END -->
+
+          <!-- Article Footer Meta -->
+          <div
+            class="mt-16 pt-8 border-t border-steel/30 flex flex-wrap items-center justify-between gap-4"
+          >
+            <div class="flex items-center gap-2">
+              <span
+                class="font-tech text-[10px] text-steel uppercase tracking-widest"
+                >Share Article:</span
+              >
+              <button
+                id="copy-link-btn"
+                class="w-8 h-8 rounded bg-surface/30 border border-steel/30 flex items-center justify-center text-cool hover:text-accent hover:border-accent transition-colors"
+                title="Copy article link"
+              >
+                <i class="ph-bold ph-link"></i>
+              </button>
+
+              <button
+                id="linkedin-share-btn"
+                class="w-8 h-8 rounded bg-surface/30 border border-steel/30 flex items-center justify-center text-cool hover:text-accent hover:border-accent transition-colors"
+                title="Share on LinkedIn"
+              >
+                <i class="ph-bold ph-linkedin-logo"></i>
+              </button>
+            </div>
+            <div>
+              <a
+                href="../../blog/"
+                class="font-tech text-xs text-accent uppercase tracking-widest hover:text-cool transition-colors flex items-center gap-2"
+              >
+                <i class="ph-bold ph-arrow-left"></i> 返回知识库
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right: Sticky TOC Sidebar -->
+        <aside class="lg:w-[30%] relative hidden md:block">
+          <div
+            class="sticky top-32 glass-panel p-6 border border-steel/20 rounded-sm"
+          >
+            <div
+              class="font-tech text-xs text-accent uppercase tracking-widest mb-4 flex items-center gap-2"
+            >
+              <i class="ph-bold ph-list-dashes"></i> Table of Contents
+            </div>
+            <!-- TOC Container: populated by JS -->
+            <ul
+              class="border-l-2 border-steel/20 flex flex-col space-y-1"
+              id="toc-container"
+            >
+              <!-- Automatically generated items will go here -->
+            </ul>
+
+            <!-- Internal Promo Block -->
+            <div class="mt-10 pt-8 border-t border-steel/20">
+              <div
+                class="font-tech text-[10px] text-steel uppercase tracking-widest mb-3"
+              >
+                Service Recommended
+              </div>
+              <a
+                href="../../pricing.html#digital-foundation"
+                class="block bg-base border border-accent/30 p-4 hover:border-accent transition-colors group"
+              >
+                <h4
+                  class="font-heading text-sm font-bold text-cool mb-1 group-hover:text-accent transition-colors"
+                >
+                  Digital Foundation System
+                </h4>
+                <p class="text-[11px] text-cool/60 mb-3 line-clamp-2">
+                  针对制造企业的数字基建服务，包含官网架构重构与品牌视觉升级。
+                </p>
+                <span
+                  class="text-[10px] font-tech text-accent uppercase tracking-widest flex items-center gap-1"
+                  >View Details <i class="ph-bold ph-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RELATED SECTION -->
+    <section
+      class="py-24 bg-surfaceLight border-y border-white/5 bg-diagonal relative"
+    >
+      <div class="max-w-[1200px] mx-auto px-6 gs-fade-up">
+        <div class="mb-12 flex justify-between items-end">
+          <div>
+            <div
+              class="font-tech text-xs text-accent tracking-[0.2em] uppercase mb-2"
+            >
+              Continue Reading
+            </div>
+            <h2
+              class="font-heading text-2xl md:text-3xl font-bold uppercase tracking-wide text-cool"
+            >
+              Related <span class="text-steel">Insights.</span>
+            </h2>
+          </div>
+          <a
+            href="../../blog/"
+            class="hidden sm:flex font-tech text-xs text-cool/70 hover:text-accent uppercase tracking-widest items-center gap-2 transition-colors"
+          >
+            View All <i class="ph-bold ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Related Insight 1 -->
+          <a
+            href="../P2/p2.html"
+            class="block bg-base border border-steel/30 p-8 hover:border-accent/50 transition-colors group insight-card"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <span
+                class="font-tech text-[10px] text-accent border border-accent/40 bg-accent/5 px-2 py-1 tracking-widest uppercase"
+                >SEO / GEO</span
+              >
+              <span
+                class="font-tech text-[10px] text-steel flex items-center gap-1"
+                ><i class="ph-bold ph-clock"></i> 7 MIN</span
+              >
+            </div>
+            <h3
+              class="font-heading text-xl font-bold text-cool mb-2 leading-snug group-hover:text-accent transition-colors"
+            >
+              AI 搜索时代，制造业官网内容应该怎么写？
+            </h3>
+            <p
+              class="text-[13px] text-cool/70 leading-relaxed mb-6 font-medium"
+            >
+              如果官网只写 high quality，AI
+              很难理解你的真实制造能力。内容必须围绕产品工艺重新结构化。
+            </p>
+            <div
+              class="border-t border-steel/20 pt-4 flex justify-between items-center"
+            >
+              <span class="text-[10px] font-tech text-cool/60 uppercase"
+                >Read Article</span
+              >
+              <i
+                class="ph-bold ph-arrow-right text-accent group-hover:translate-x-1 transition-transform"
+              ></i>
+            </div>
+          </a>
+
+          <!-- Related Insight 2 -->
+          <a
+            href="../P6/p6.html"
+            class="block bg-base border border-steel/30 p-8 hover:border-accent/50 transition-colors group insight-card"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <span
+                class="font-tech text-[10px] text-accent border border-accent/40 bg-accent/5 px-2 py-1 tracking-widest uppercase"
+                >Digital Assets</span
+              >
+              <span
+                class="font-tech text-[10px] text-steel flex items-center gap-1"
+                ><i class="ph-bold ph-clock"></i> 5 MIN</span
+              >
+            </div>
+            <h3
+              class="font-heading text-xl font-bold text-cool mb-2 leading-snug group-hover:text-accent transition-colors"
+            >
+              为什么客户看完画册，还是不知道你强在哪里？
+            </h3>
+            <p
+              class="text-[13px] text-cool/70 leading-relaxed mb-6 font-medium"
+            >
+              很多传统画册只是在无重点地堆叠设备，却毫无逻辑去解释主营护城河与差异化壁垒。
+            </p>
+            <div
+              class="border-t border-steel/20 pt-4 flex justify-between items-center"
+            >
+              <span class="text-[10px] font-tech text-cool/60 uppercase"
+                >Read Article</span
+              >
+              <i
+                class="ph-bold ph-arrow-right text-accent group-hover:translate-x-1 transition-transform"
+              ></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-24 relative overflow-hidden bg-base">
+      <div
+        class="max-w-[1200px] mx-auto px-6 relative z-10 gs-fade-up text-center"
+      >
+        <h2
+          class="font-heading text-3xl md:text-4xl font-bold mb-4 uppercase tracking-wide"
+        >
+          Ready To Upgrade Your<br />
+          <span class="text-accent">Digital Assets?</span>
+        </h2>
+        <p
+          class="text-cool/80 text-[15px] mb-8 max-w-lg mx-auto leading-relaxed"
+        >
+          不要让陈旧的外贸官网成为阻碍信任建立的短板。预约一次针对现有数字材料的诊断咨询。
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="../../pricing.html#sample-project"
+            class="btn-accent px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+          >
+            START WITH SAMPLE <i class="ph-bold ph-arrow-right"></i>
+          </a>
+          <a
+            href="../../contact.html"
+            class="bg-transparent border border-steel/50 text-cool hover:border-accent hover:bg-accent/10 transition-all px-8 py-4 font-tech font-bold text-xs tracking-widest flex items-center justify-center gap-2 rounded-sm"
+          >
+            BOOK A DIAGNOSIS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (Paths modified to relative ../../) -->
+    <section class="bg-base relative border-t border-steel/30 pt-16 pb-8">
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+          <div class="col-span-2 md:col-span-1">
+            <a
+              href="/"
+              class="block hover:opacity-80 transition-opacity duration-300 mb-6"
+            >
+              <img
+                src="../../rohan-logo-low.webp"
+                alt="ROHAN logo"
+                class="site-logo h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            <p class="text-cool/50 text-xs leading-relaxed max-w-[200px]">
+              Industrial B2B Digital Architect. <br />Crafting high-conversion
+              assets for global manufacturing.
+            </p>
+          </div>
+          <div class="md:col-start-2">
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              SOLUTIONS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="../../solutions.html#website-architecture"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Website Architecture</a
+              >
+              <a
+                href="../../solutions.html#seo-geo-aeo"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >SEO / GEO</a
+              >
+              <a
+                href="../../solutions.html#social-media-assets"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Social Media Assets</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              COMPANY
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="../../about.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >About</a
+              >
+              <a
+                href="../../approach.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Approach</a
+              >
+              <a
+                href="../../pricing.html"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Pricing</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              INSIGHTS
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="../../insights.html#ai-manufacturing"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >AI for Manufacturing</a
+              >
+              <a
+                href="../../insights.html#industrial-website-design"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >Website Design</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-[10px] font-tech text-steel mb-4 uppercase tracking-widest"
+            >
+              CONNECT
+            </div>
+            <div class="flex flex-col gap-3">
+              <a
+                href="mailto:rohanyangrh@outlook.com"
+                class="text-xs text-cool/70 hover:text-accent transition-colors"
+                >rohanyangrh@outlook.com</a
+              >
+              <a
+                href="../../contact.html"
+                class="text-xs text-accent hover:text-cool transition-colors mt-2"
+                >Book Diagnosis &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row justify-between items-center border-t border-steel/20 pt-6"
+        >
+          <div
+            class="text-[10px] text-steel font-tech tracking-wider mb-4 md:mb-0"
+          >
+            © 2026 ROHAN. ALL RIGHTS RESERVED.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      // Mobile Menu Logic
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+        const icon = mobileBtn.querySelector("i");
+        if (mobileMenu.classList.contains("hidden")) {
+          icon.classList.replace("ph-x", "ph-list");
+        } else {
+          icon.classList.replace("ph-list", "ph-x");
+        }
+      });
+
+      // Automated TOC Generator & Scroll Spy
+      document.addEventListener("DOMContentLoaded", () => {
+        const articleContent = document.getElementById("article-content");
+        const headings = articleContent.querySelectorAll("h2");
+        const tocContainer = document.getElementById("toc-container");
+
+        if (headings.length === 0) {
+          tocContainer.parentElement.style.display = "none"; // Hide TOC if no h2
+        }
+
+        const tocLinks = [];
+
+        headings.forEach((h2, index) => {
+          // Generate an ID if not present
+          if (!h2.id) {
+            h2.id = `section-${index + 1}`;
+          }
+
+          // Create TOC item
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `#${h2.id}`;
+          a.className =
+            "toc-link block py-1.5 pl-4 border-l-2 border-transparent text-[13px] text-cool/70 hover:text-accent font-body";
+
+          // Strip numbering like "1. " from h2 text for TOC (optional, basic regex)
+          let titleText = h2.innerText;
+          a.innerText = titleText;
+
+          li.appendChild(a);
+          tocContainer.appendChild(li);
+          tocLinks.push({ element: h2, link: a });
+        });
+
+        // Intersection Observer for scroll spy
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px 0px -80% 0px",
+          threshold: 0,
+        };
+
+        let currentActiveLink = null;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const activeId = entry.target.id;
+
+              tocLinks.forEach((item) => {
+                if (item.link.getAttribute("href") === `#${activeId}`) {
+                  item.link.classList.add("active", "text-accent", "font-bold");
+                  item.link.classList.remove("text-cool/70");
+                } else {
+                  item.link.classList.remove(
+                    "active",
+                    "text-accent",
+                    "font-bold",
+                  );
+                  item.link.classList.add("text-cool/70");
+                }
+              });
+            }
+          });
+        }, observerOptions);
+
+        headings.forEach((h2) => observer.observe(h2));
+
+        // Smooth scroll fallback
+        tocContainer.addEventListener("click", (e) => {
+          if (e.target.tagName === "A") {
+            e.preventDefault();
+            const targetId = e.target.getAttribute("href").slice(1);
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+              window.scrollTo({
+                top: targetEl.offsetTop - 100, // Offset for sticky header
+                behavior: "smooth",
+              });
+            }
+          }
+        });
+      });
+
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+      const fadeUpElements = document.querySelectorAll(".gs-fade-up");
+      fadeUpElements.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+      // Share Article Buttons
+      const copyLinkBtn = document.getElementById("copy-link-btn");
+      const linkedinShareBtn = document.getElementById("linkedin-share-btn");
+
+      if (copyLinkBtn) {
+        copyLinkBtn.addEventListener("click", async () => {
+          const articleUrl = window.location.href;
+
+          try {
+            await navigator.clipboard.writeText(articleUrl);
+            copyLinkBtn.innerHTML = '<i class="ph-bold ph-check"></i>';
+
+            setTimeout(() => {
+              copyLinkBtn.innerHTML = '<i class="ph-bold ph-link"></i>';
+            }, 1600);
+          } catch (err) {
+            alert("Copy failed. Please copy the URL manually.");
+          }
+        });
+      }
+
+      if (linkedinShareBtn) {
+        linkedinShareBtn.addEventListener("click", () => {
+          const articleUrl = encodeURIComponent(window.location.href);
+          const shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${articleUrl}`;
+          window.open(shareUrl, "_blank", "noopener,noreferrer");
+        });
+      }
+    </script>
+  </body>
+</html>
