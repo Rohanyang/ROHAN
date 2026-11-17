@@ -419,4 +419,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://rohanyang.com/articles/P17/p17.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/articles/P17/p17.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/google-ads-for-manufacturers/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/en/google-ads-for-manufacturers/" />
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rohanyang.com/blog/en/google-ads-for-manufacturers/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://rohanyang.com/articles/P17/p17.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rohanyang.com/blog/en/google-ads-for-manufacturers/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rohanyang.com/blog/en/google-ads-for-manufacturers/" />
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
